@@ -36,12 +36,12 @@
 		61882D231659138100D77E9E /* map-pin-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 61882D221659138100D77E9E /* map-pin-red.png */; };
 		61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D2A1659183400D77E9E /* SWDAdsDataController.m */; };
 		61882D2D16592A9000D77E9E /* product_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 61882D2C16592A9000D77E9E /* product_pin.png */; };
+		61882D351659391E00D77E9E /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D341659391E00D77E9E /* SWDShoppingList.m */; };
 		618DC65A1649888400D68861 /* locate-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC6591649888400D68861 /* locate-icon.png */; };
 		618DC65C16498B3200D68861 /* locate-me.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65B16498B3200D68861 /* locate-me.png */; };
 		618DC65E16498BE500D68861 /* locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65D16498BE500D68861 /* locate.png */; };
 		618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */; };
 		61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */; };
-		FF65FBF616591E3C00DA0928 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +87,8 @@
 		61882D291659183300D77E9E /* SWDAdsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDAdsDataController.h; sourceTree = "<group>"; };
 		61882D2A1659183400D77E9E /* SWDAdsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDAdsDataController.m; sourceTree = "<group>"; };
 		61882D2C16592A9000D77E9E /* product_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_pin.png; sourceTree = "<group>"; };
+		61882D331659391E00D77E9E /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
+		61882D341659391E00D77E9E /* SWDShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingList.m; sourceTree = "<group>"; };
 		618DC6591649888400D68861 /* locate-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-icon.png"; sourceTree = "<group>"; };
 		618DC65B16498B3200D68861 /* locate-me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-me.png"; sourceTree = "<group>"; };
 		618DC65D16498BE500D68861 /* locate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate.png; sourceTree = "<group>"; };
@@ -143,6 +145,8 @@
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
 				611418DC1657B68900112294 /* SWDProductItem.h */,
 				611418DD1657B68900112294 /* SWDProductItem.m */,
+				61882D331659391E00D77E9E /* SWDShoppingList.h */,
+				61882D341659391E00D77E9E /* SWDShoppingList.m */,
 				61882D291659183300D77E9E /* SWDAdsDataController.h */,
 				61882D2A1659183400D77E9E /* SWDAdsDataController.m */,
 				61882D181658F24800D77E9E /* SWDProductDataController.h */,
@@ -277,7 +281,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF65FBF616591E3C00DA0928 /* SWDShoppingList.m in Sources */,
 				614005231648FC920035A21D /* main.m in Sources */,
 				614005271648FC920035A21D /* SWDAppDelegate.m in Sources */,
 				614005331648FC920035A21D /* SWDMasterViewController.m in Sources */,
@@ -291,6 +294,7 @@
 				611418DE1657B68900112294 /* SWDProductItem.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
 				61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */,
+				61882D351659391E00D77E9E /* SWDShoppingList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
