@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SWDShoppingList.h"
 
 @interface SWDShoppingListDataController : NSObject
 
 @property (copy, nonatomic) NSMutableArray *shoppingLists;
 
 - (NSUInteger)countOfShoppingLists;
-- (NSString *)objectInShoppingListsAtIndex:(NSUInteger)index;
-- (void)addShoppingListWithShoppingList:(NSString *)shoppingList;
+- (SWDShoppingList *)objectInShoppingListsAtIndex:(NSUInteger)index;
+- (void)addShoppingListWithShoppingList:(SWDShoppingList *)shoppingList;
 
 @end

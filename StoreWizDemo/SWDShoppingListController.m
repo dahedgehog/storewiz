@@ -9,6 +9,7 @@
 #import "SWDShoppingListController.h"
 #import "SWDShoppingListDataController.h"
 #import "SWDShoppingListTabBarController.h"
+#import "SWDShoppingList.h"
 
 @implementation SWDShoppingListController
 
@@ -35,8 +36,8 @@
     static NSString *CellIdentifier = @"ShoppingListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSString *shoppingList = [self.dataController objectInShoppingListsAtIndex:indexPath.row];
-    cell.textLabel.text = shoppingList;
+    SWDShoppingList *shoppingList = [self.dataController objectInShoppingListsAtIndex:indexPath.row];
+    cell.textLabel.text = shoppingList.name;
     return cell;
 }
 
@@ -52,9 +53,10 @@
     if(buttonIndex == 1) {
         NSString *shoppingListName = [alertView textFieldAtIndex:0].text;
         if(![shoppingListName isEqualToString:@""]) {
-            [self.dataController addShoppingListWithShoppingList:shoppingListName];
+            SWDShoppingList *shoppingList = [[SWDShoppingList alloc] initWithName:shoppingListName];
+            [self.dataController addShoppingListWithShoppingList:shoppingList];
             [self.tableView reloadData];
-            NSUInteger index = [self.dataController.shoppingLists indexOfObject:shoppingListName];
+            NSUInteger index = [self.dataController.shoppingLists indexOfObject:shoppingList];
             [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
             [self performSegueWithIdentifier:@"ShowListView" sender:self];
         }
@@ -65,8 +67,8 @@
     if ([[segue identifier] isEqualToString:@"ShowListView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSString* listName = [self.dataController objectInShoppingListsAtIndex:indexPath.row];
-        [[segue destinationViewController] setShoppingList:listName];
+        SWDShoppingList *shoppingList = [self.dataController objectInShoppingListsAtIndex:indexPath.row];
+        [[segue destinationViewController] setShoppingList:shoppingList];
         
         //[self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
