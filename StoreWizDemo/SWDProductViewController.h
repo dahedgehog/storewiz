@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SWDProductItem;
 @interface SWDProductViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) UIImageView *imageView;
-@property (copy, nonatomic) NSString *product;
+@property (copy, nonatomic) SWDProductItem *product;
 
 @end

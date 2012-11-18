@@ -33,6 +33,7 @@
 		6140057E16494D350035A21D /* SWDShoppingListMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140057D16494D350035A21D /* SWDShoppingListMapController.m */; };
 		61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D191658F24800D77E9E /* SWDProductDataController.m */; };
 		61882D1F165902CC00D77E9E /* katalogi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61882D1E165902CC00D77E9E /* katalogi.csv */; };
+		61882D231659138100D77E9E /* map-pin-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 61882D221659138100D77E9E /* map-pin-red.png */; };
 		618DC65A1649888400D68861 /* locate-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC6591649888400D68861 /* locate-icon.png */; };
 		618DC65C16498B3200D68861 /* locate-me.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65B16498B3200D68861 /* locate-me.png */; };
 		618DC65E16498BE500D68861 /* locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65D16498BE500D68861 /* locate.png */; };
@@ -79,6 +80,7 @@
 		61882D181658F24800D77E9E /* SWDProductDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductDataController.h; sourceTree = "<group>"; };
 		61882D191658F24800D77E9E /* SWDProductDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductDataController.m; sourceTree = "<group>"; };
 		61882D1E165902CC00D77E9E /* katalogi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = katalogi.csv; sourceTree = "<group>"; };
+		61882D221659138100D77E9E /* map-pin-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin-red.png"; sourceTree = "<group>"; };
 		618DC6591649888400D68861 /* locate-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-icon.png"; sourceTree = "<group>"; };
 		618DC65B16498B3200D68861 /* locate-me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-me.png"; sourceTree = "<group>"; };
 		618DC65D16498BE500D68861 /* locate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate.png; sourceTree = "<group>"; };
@@ -133,10 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
-				61882D181658F24800D77E9E /* SWDProductDataController.h */,
-				61882D191658F24800D77E9E /* SWDProductDataController.m */,
 				611418DC1657B68900112294 /* SWDProductItem.h */,
 				611418DD1657B68900112294 /* SWDProductItem.m */,
+				61882D181658F24800D77E9E /* SWDProductDataController.h */,
+				61882D191658F24800D77E9E /* SWDProductDataController.m */,
+				61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */,
+				61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */,
 				614005311648FC920035A21D /* SWDMasterViewController.h */,
 				614005321648FC920035A21D /* SWDMasterViewController.m */,
 				6140055516490DBA0035A21D /* SWDProductSearchController.h */,
@@ -145,8 +149,6 @@
 				6140056916491C620035A21D /* SWDProductViewController.m */,
 				61400540164908420035A21D /* SWDShoppingListController.h */,
 				61400541164908420035A21D /* SWDShoppingListController.m */,
-				61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */,
-				61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */,
 				618DC66216498D9600D68861 /* SWDShoppingListTabBarController.h */,
 				618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */,
 				6140056E16491F020035A21D /* SWDShoppingListProductsController.h */,
@@ -161,6 +163,7 @@
 		6140051D1648FC920035A21D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				61882D221659138100D77E9E /* map-pin-red.png */,
 				61882D1E165902CC00D77E9E /* katalogi.csv */,
 				614005251648FC920035A21D /* SWDAppDelegate.h */,
 				614005261648FC920035A21D /* SWDAppDelegate.m */,
@@ -253,6 +256,7 @@
 				611418D81657B4D100112294 /* kinkkumainos.png in Resources */,
 				611418DB1657B59300112294 /* new_grocery_store.jpeg in Resources */,
 				61882D1F165902CC00D77E9E /* katalogi.csv in Resources */,
+				61882D231659138100D77E9E /* map-pin-red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

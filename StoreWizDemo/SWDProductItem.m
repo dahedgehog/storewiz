@@ -25,4 +25,18 @@
     return nil;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    SWDProductItem *copy = [[[self class] alloc] init];
+    if (copy) {
+        copy.label = self.label;
+        copy.price = self.price;
+        copy.coordX = self.coordX;
+        copy.coordY = self.coordY;
+        
+        return copy;
+    }
+    return nil;
+}
+
 @end

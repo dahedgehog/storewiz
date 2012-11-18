@@ -7,22 +7,30 @@
 //
 
 #import "SWDProductViewController.h"
+#import "SWDProductItem.h"
 
 @implementation SWDProductViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = self.product;
+    self.navigationItem.title = self.product.label;
 
-    UIImage *image = [UIImage imageNamed:@"grocery_store.jpeg"];
-    self.imageView = [[UIImageView alloc] initWithImage:image];
-    self.imageView.frame = CGRectMake(0, 0,
+    UIImage *image = [UIImage imageNamed:@"new_grocery_store.jpeg"];
+    UIImage *pin = [UIImage imageNamed:@"map-pin-red.png"];
+    [self.scrollView setContentSize:image.size];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(0, 0,
                                       image.size.width,
                                       image.size.height);
+    [self.scrollView addSubview:imageView];
     
-    [self.scrollView addSubview:self.imageView];
-    [self.scrollView setContentSize:image.size];
+    UIImageView *pinView = [[UIImageView alloc] initWithImage:pin];
+    pinView.frame = CGRectMake(self.product.coordX-pin.size.width/6,
+                               self.product.coordY-pin.size.height/3,
+                               pin.size.width/3, pin.size.height/3);
+    [self.scrollView addSubview:pinView];
 }
 
 @end

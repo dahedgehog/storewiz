@@ -15,12 +15,13 @@
     [super viewDidLoad];
     
     UIImage *image = [UIImage imageNamed:@"new_grocery_store.jpeg"];
-    self.imageView = [[UIImageView alloc] initWithImage:image];
-    self.imageView.frame = CGRectMake(0, 0,
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(0, 0,
                                       image.size.width,
                                       image.size.height);
     
-    [self.scrollView addSubview:self.imageView];
+    [self.scrollView addSubview:imageView];
     [self.scrollView setContentSize:image.size];
 }
 

@@ -47,6 +47,8 @@
     return cell;
 }
 
+#pragma mark - Search bar delegate
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self filterContectForSearchText:searchText];
     [self.tableView reloadData];
@@ -71,7 +73,7 @@
     if ([[segue identifier] isEqualToString:@"ShowProductView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSString* product = [self.searched objectAtIndex:indexPath.row];
+        SWDProductItem* product = [self.searched objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProduct:product];
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
