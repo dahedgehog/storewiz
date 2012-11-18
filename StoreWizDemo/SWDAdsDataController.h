@@ -10,7 +10,7 @@
 
 @interface SWDAdsDataController : NSObject
 
-@property (copy, nonatomic) NSMutableArray *ads;
+@property (copy, nonatomic) NSArray *ads;
 
 - (id)initWithResource:(NSString *)fileName;
 

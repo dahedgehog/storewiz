@@ -32,7 +32,7 @@
                                                                   coordY:[comps[3] integerValue]];
             [products addObject:item];
         }
-        self.products = products;
+        self.products = [NSArray arrayWithArray:products];
         return self;
     }
     return nil;

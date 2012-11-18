@@ -10,7 +10,7 @@
 
 @interface SWDProductDataController : NSObject
 
-@property (copy, nonatomic) NSMutableArray *products;
+@property (copy, nonatomic) NSArray *products;
 
 - (id)initWithResource:(NSString *)fileName;
 

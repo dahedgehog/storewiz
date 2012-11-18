@@ -17,7 +17,7 @@
     if (self) {
         NSError *error;
         
-        NSString *resource = [[NSBundle mainBundle] pathForResource:@"mainokset" ofType:@"csv"];
+        NSString *resource = [[NSBundle mainBundle] pathForResource:fileName ofType:@"csv"];
         NSString *contents = [NSString stringWithContentsOfFile:resource
                                                        encoding:NSUTF8StringEncoding
                                                           error:&error];
@@ -32,7 +32,7 @@
                                                                   coordY:[comps[3] integerValue]];
             [ads addObject:item];
         }
-        self.ads = ads;
+        self.ads = [NSArray arrayWithArray:ads];
         return self;
     }
     return nil;
