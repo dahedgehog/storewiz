@@ -25,7 +25,7 @@
 
 - (void)initializeShoppings {
     NSMutableArray *shoppings = [[NSMutableArray alloc] initWithObjects:
-                                 @"Oma Lista 1", @"Oma Lista 2", @"Oma Lista 3", nil];
+                                 [[SWDShoppingList alloc] initWithName:@"Oma lista"], nil];
     self.shoppingLists = shoppings;
 }
 
@@ -39,11 +39,11 @@
     return [self.shoppingLists count];
 }
 
-- (NSString *)objectInShoppingListsAtIndex:(NSUInteger)index {
+- (SWDShoppingList *)objectInShoppingListsAtIndex:(NSUInteger)index {
     return [self.shoppingLists objectAtIndex:index];
 }
 
-- (void)addShoppingListWithShoppingList:(NSString *)shoppingList {
+- (void)addShoppingListWithShoppingList:(SWDShoppingList *)shoppingList {
     [self.shoppingLists addObject:shoppingList];
 }
 

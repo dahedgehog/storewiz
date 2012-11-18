@@ -13,7 +13,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = self.shoppingList;
+    self.navigationItem.title = self.shoppingList.name;
     
     UIImage *image = [UIImage imageNamed:@"locate.png"];
     
