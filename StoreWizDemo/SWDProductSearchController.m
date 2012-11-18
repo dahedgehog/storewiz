@@ -40,10 +40,12 @@
     static NSString *CellIdentifier = @"ProductSearchCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+    
     SWDProductItem *item = [self.searched objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.label;
     cell.detailTextLabel.text = item.price;
+    
     return cell;
 }
 
@@ -71,6 +73,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowProductView"]) {
+        NSLog(@"Showing product view");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         SWDProductItem* product = [self.searched objectAtIndex:indexPath.row];

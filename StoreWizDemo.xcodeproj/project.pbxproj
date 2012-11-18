@@ -39,18 +39,21 @@
 		618DC65E16498BE500D68861 /* locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65D16498BE500D68861 /* locate.png */; };
 		618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */; };
 		61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */; };
+		703D65B2CDA44F02BF01BFCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE891A4162D442ACBD374453 /* libPods.a */; };
 		FF65FBF616591E3C00DA0928 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
+		FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03F731AF34EA45B0B57396CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		611418D71657B4D100112294 /* kinkkumainos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kinkkumainos.png; sourceTree = "<group>"; };
 		611418DA1657B59300112294 /* new_grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_grocery_store.jpeg; sourceTree = "<group>"; };
 		611418DC1657B68900112294 /* SWDProductItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductItem.h; sourceTree = "<group>"; };
 		611418DD1657B68900112294 /* SWDProductItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductItem.m; sourceTree = "<group>"; };
 		614005121648FC920035A21D /* StoreWizDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreWizDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		614005161648FC920035A21D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		614005181648FC920035A21D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6140051A1648FC920035A21D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		614005161648FC920035A21D /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		614005181648FC920035A21D /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6140051A1648FC920035A21D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6140051E1648FC920035A21D /* StoreWizDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreWizDemo-Info.plist"; sourceTree = "<group>"; };
 		614005201648FC920035A21D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		614005221648FC920035A21D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListTabBarController.m; sourceTree = "<group>"; };
 		61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingListDataController.h; sourceTree = "<group>"; };
 		61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListDataController.m; sourceTree = "<group>"; };
+		AE891A4162D442ACBD374453 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductPickerController.h; sourceTree = "<group>"; };
+		FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductPickerController.m; sourceTree = "<group>"; };
 		FFD9CB5716590887008A4F44 /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
 		FFD9CB5816590887008A4F44 /* SWDShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +107,7 @@
 				614005171648FC920035A21D /* UIKit.framework in Frameworks */,
 				614005191648FC920035A21D /* Foundation.framework in Frameworks */,
 				6140051B1648FC920035A21D /* CoreGraphics.framework in Frameworks */,
+				703D65B2CDA44F02BF01BFCD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +120,7 @@
 				6140051C1648FC920035A21D /* StoreWizDemo */,
 				614005151648FC920035A21D /* Frameworks */,
 				614005131648FC920035A21D /* Products */,
+				03F731AF34EA45B0B57396CC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +138,7 @@
 				614005161648FC920035A21D /* UIKit.framework */,
 				614005181648FC920035A21D /* Foundation.framework */,
 				6140051A1648FC920035A21D /* CoreGraphics.framework */,
+				AE891A4162D442ACBD374453 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,6 +170,8 @@
 				6140051D1648FC920035A21D /* Supporting Files */,
 				FFD9CB5716590887008A4F44 /* SWDShoppingList.h */,
 				FFD9CB5816590887008A4F44 /* SWDShoppingList.m */,
+				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
+				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -203,6 +214,7 @@
 				6140050E1648FC910035A21D /* Sources */,
 				6140050F1648FC910035A21D /* Frameworks */,
 				614005101648FC910035A21D /* Resources */,
+				415CAA4A04DD46808A87E9D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +279,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		415CAA4A04DD46808A87E9D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6140050E1648FC910035A21D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -285,6 +314,7 @@
 				61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */,
 				611418DE1657B68900112294 /* SWDProductItem.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
+				FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +392,7 @@
 		};
 		614005371648FC920035A21D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F731AF34EA45B0B57396CC /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreWizDemo/StoreWizDemo-Prefix.pch";
@@ -373,6 +404,7 @@
 		};
 		614005381648FC920035A21D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F731AF34EA45B0B57396CC /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreWizDemo/StoreWizDemo-Prefix.pch";

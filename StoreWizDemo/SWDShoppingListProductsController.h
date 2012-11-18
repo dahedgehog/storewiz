@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWDShoppingList.h"
+#import "SWDProductPickerController.h"
+ 
+@interface SWDShoppingListProductsController : UITableViewController <SWDProductPickerControllerDelegate>
 
-@interface SWDShoppingListProductsController : UITableViewController
-
-@property (copy, nonatomic) NSArray *products;
+@property (strong, nonatomic) SWDShoppingList *shoppingList;
 
 @end

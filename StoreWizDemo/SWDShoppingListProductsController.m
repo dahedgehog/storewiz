@@ -8,16 +8,23 @@
 
 #import "SWDShoppingListProductsController.h"
 #import "SWDProductViewController.h"
+#import "SWDShoppingListTabBarController.h"
+#import "SWDProductItem.h"
 
 @implementation SWDShoppingListProductsController
+{
+    __weak NSMutableArray *products;
+}
+
+@synthesize shoppingList;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    NSArray *products = [[NSArray alloc] initWithObjects:@"Juusto", @"Leipä", @"Kananmuna", nil];
-    self.products = products;
-                         
+    SWDShoppingListTabBarController *tabBarController = (SWDShoppingListTabBarController *) self.tabBarController;
+    self.shoppingList = tabBarController.shoppingList;
+    products = shoppingList.products;
 }
 
 #pragma mark - Table view data source
@@ -29,7 +36,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.products count];
+    return [products count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -37,7 +44,8 @@
     static NSString *CellIdentifier = @"ProductInfoCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.products objectAtIndex:indexPath.row];
+    SWDProductItem *product = [products objectAtIndex:indexPath.row];
+    cell.textLabel.text = product.label;
     return cell;
 }
 
@@ -45,9 +53,16 @@
     if ([[segue identifier] isEqualToString:@"ShowProductView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSString* product = [self.products objectAtIndex:indexPath.row];
+        SWDProductItem* product = [products objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProduct:product];
     }
+}
+
+- (void)productSelected:(SWDProductItem *)product
+{
+    [products addObject:product];
+    [self.tableView reloadData];
+    [SVProgressHUD showSuccessWithStatus:@"Tuote lisätty"];
 }
 
 @end

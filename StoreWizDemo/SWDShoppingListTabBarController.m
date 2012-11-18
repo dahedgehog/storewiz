@@ -7,6 +7,8 @@
 //
 
 #import "SWDShoppingListTabBarController.h"
+#import "SWDProductPickerController.h"
+#import "SWDShoppingListProductsController.h"
 
 @implementation SWDShoppingListTabBarController
 
@@ -47,6 +49,16 @@
 - (void)locateMe
 {
     //Here the location code for the controller...
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"ShoppingListProductSearch"]) {
+        NSLog(@"Triggered product search dialog");
+        UINavigationController *navigationController = [segue destinationViewController];
+        SWDProductPickerController *productPickerController = navigationController.viewControllers[0];
+        productPickerController.delegate = (SWDShoppingListProductsController *)self.selectedViewController;
+    }
 }
 
 @end

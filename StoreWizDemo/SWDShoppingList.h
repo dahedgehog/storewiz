@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *name;
 
-@property (strong, nonatomic) NSArray *products;
+@property (strong, nonatomic) NSMutableArray *products;
 
 - (id)initWithName:(NSString *)name;
 
