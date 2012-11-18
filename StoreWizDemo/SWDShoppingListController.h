@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class SWDShoppingListDataController;
 
-@interface SWDShoppingListController : UITableViewController
+@interface SWDShoppingListController : UITableViewController<UIAlertViewDelegate>
 
 @property (nonatomic, strong) SWDShoppingListDataController *dataController;
 

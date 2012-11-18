@@ -40,9 +40,25 @@
     return cell;
 }
 
-- (IBAction)addShoppingList:(id)sender {
-    [self.dataController addShoppingListWithShoppingList:@"Oma Lista X"];
-    [self.tableView reloadData];
+- (IBAction)addShoppingList:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uusi ostoslista" message:nil delegate:self cancelButtonTitle:@"Peruuta" otherButtonTitles:@"OK", nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView show];
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1) {
+        NSString *shoppingListName = [alertView textFieldAtIndex:0].text;
+        if(![shoppingListName isEqualToString:@""]) {
+            [self.dataController addShoppingListWithShoppingList:shoppingListName];
+            [self.tableView reloadData];
+            NSUInteger index = [self.dataController.shoppingLists indexOfObject:shoppingListName];
+            [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [self performSegueWithIdentifier:@"ShowListView" sender:self];
+        }
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

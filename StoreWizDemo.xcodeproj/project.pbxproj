@@ -38,6 +38,7 @@
 		618DC65E16498BE500D68861 /* locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65D16498BE500D68861 /* locate.png */; };
 		618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */; };
 		61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */; };
+		FFD9CB5916590887008A4F44 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,8 @@
 		618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListTabBarController.m; sourceTree = "<group>"; };
 		61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingListDataController.h; sourceTree = "<group>"; };
 		61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListDataController.m; sourceTree = "<group>"; };
+		FFD9CB5716590887008A4F44 /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
+		FFD9CB5816590887008A4F44 /* SWDShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				6140057C16494D350035A21D /* SWDShoppingListMapController.h */,
 				6140057D16494D350035A21D /* SWDShoppingListMapController.m */,
 				6140051D1648FC920035A21D /* Supporting Files */,
+				FFD9CB5716590887008A4F44 /* SWDShoppingList.h */,
+				FFD9CB5816590887008A4F44 /* SWDShoppingList.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */,
 				611418DE1657B68900112294 /* SWDProductItem.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
+				FFD9CB5916590887008A4F44 /* SWDShoppingList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
