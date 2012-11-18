@@ -174,10 +174,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BLl-2p-BqN" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3wN-ng-BxZ"/>
+                            <constraint firstItem="BLl-2p-BqN" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" constant="10" id="71N-9J-aVn"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="7I1-d3-htD"/>
                             <constraint firstItem="VJu-4o-4RK" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="7Ot-RZ-Brm"/>
-                            <constraint firstItem="BLl-2p-BqN" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="IRw-Re-84r"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="BLl-2p-BqN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UaB-bE-CVg"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="px7-YS-4SO"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="BLl-2p-BqN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Hud-L7-6lH"/>
                             <constraint firstAttribute="trailing" secondItem="BLl-2p-BqN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v0K-JG-ygd"/>
                             <constraint firstItem="VJu-4o-4RK" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="zGX-I6-z2d"/>
                         </constraints>
@@ -275,13 +275,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b4I-G0-ojm" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2Ij-zR-ttF"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="b4I-G0-ojm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5zM-ge-iEf"/>
+                            <constraint firstItem="b4I-G0-ojm" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" constant="10" id="3Sg-tt-xkd"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" constant="90" id="3Xb-mL-8hp"/>
                             <constraint firstItem="er0-RJ-7fD" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="Fjt-KO-FjT"/>
-                            <constraint firstItem="b4I-G0-ojm" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f4H-mA-a6l"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="SVK-Fj-fT3"/>
+                            <constraint firstItem="b4I-G0-ojm" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zhx-Q8-q7b"/>
+                            <constraint firstAttribute="trailing" secondItem="b4I-G0-ojm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hFi-KJ-1Qb"/>
                             <constraint firstItem="er0-RJ-7fD" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="ovp-it-STr"/>
-                            <constraint firstAttribute="trailing" secondItem="b4I-G0-ojm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rbR-8L-lSn"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="tet-Zi-2cx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
@@ -337,6 +337,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Txw-0v-y7s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dv3-Hg-i9e">
@@ -355,6 +356,55 @@
     <resources>
         <image name="kinkkumainos.png" width="226" height="71"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SWDMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imagePager" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="imageScroller" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductSearchController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
+            <relationships>
+                <relationship kind="action" name="addShoppingList:"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListMapController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListMapController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adBannerImg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListProductsController.h"/>
+        </class>
+        <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="addListItem:"/>
+                <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="locateButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
