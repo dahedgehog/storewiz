@@ -1,26 +1,367 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qd7-Hk-YDJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="5">
+        <!--Master View Controller - Valikko-->
+        <scene sceneID="xzX-6H-E8n">
             <objects>
-                <viewController id="2" customClass="SWDViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="Kch-jt-2Fk" customClass="SWDMasterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qce-aB-o8e">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By3-9P-r4X">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="rU3-cx-yYz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Ostoslistat">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="evT-Qn-8Wr" kind="push" id="tJE-50-rXM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYP-rU-B9r">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="5i7-U9-aDu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Tuotehaku">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bb4-U5-rdJ" kind="push" id="fLl-Pk-TBe"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ItD-kL-l9c">
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-hZ-HCw">
+                                <connections>
+                                    <outlet property="delegate" destination="Kch-jt-2Fk" id="tNE-P0-GNZ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tvo-hZ-HCw" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3O8-uR-rSa"/>
+                            <constraint firstItem="By3-9P-r4X" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6bg-5u-YUS"/>
+                            <constraint firstItem="ItD-kL-l9c" firstAttribute="centerX" secondItem="wYP-rU-B9r" secondAttribute="centerX" type="default" id="7Uw-Bm-FKz"/>
+                            <constraint firstAttribute="trailing" secondItem="By3-9P-r4X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7yQ-s4-goV"/>
+                            <constraint firstAttribute="bottom" secondItem="tvo-hZ-HCw" secondAttribute="bottom" constant="216" id="BML-fy-FYQ"/>
+                            <constraint firstItem="ItD-kL-l9c" firstAttribute="centerY" secondItem="Qce-aB-o8e" secondAttribute="centerY" type="default" id="FDF-6P-Ycb"/>
+                            <constraint firstAttribute="bottom" secondItem="By3-9P-r4X" secondAttribute="bottom" constant="37" id="J7s-U9-ltq"/>
+                            <constraint firstAttribute="trailing" secondItem="wYP-rU-B9r" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e3L-Xt-rs7"/>
+                            <constraint firstItem="wYP-rU-B9r" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gih-3n-KW0"/>
+                            <constraint firstAttribute="bottom" secondItem="wYP-rU-B9r" secondAttribute="bottom" constant="117" id="vHr-dp-fRC"/>
+                            <constraint firstItem="tvo-hZ-HCw" firstAttribute="top" secondItem="Qce-aB-o8e" secondAttribute="top" constant="20" symbolic="YES" type="default" id="y9k-1Q-b0F"/>
+                            <constraint firstAttribute="trailing" secondItem="tvo-hZ-HCw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="z9O-0f-k19"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Valikko" id="l2A-Wh-6pg"/>
+                    <connections>
+                        <outlet property="imagePager" destination="ItD-kL-l9c" id="Qzk-Jt-KM2"/>
+                        <outlet property="imageScroller" destination="tvo-hZ-HCw" id="hL9-Qr-klO"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIH-LR-dGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1260" y="81"/>
+        </scene>
+        <!--Product Search Controller - Tuotehaku-->
+        <scene sceneID="X1M-ut-BXX">
+            <objects>
+                <viewController id="bb4-U5-rdJ" customClass="SWDProductSearchController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPO-GM-Ccf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-o8-C66">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductSearchCell" textLabel="os8-Au-UXc" detailTextLabel="96c-f2-DUh" style="IBUITableViewCellStyleValue1" id="jsz-9V-G9j">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os8-Au-UXc">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96c-f2-DUh">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="M31-zX-pW1" kind="push" identifier="ShowProductView" id="NnO-Pf-4va"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bb4-U5-rdJ" id="aGC-7P-nGl"/>
+                                    <outlet property="delegate" destination="bb4-U5-rdJ" id="yxk-UI-lbb"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-ye-uKL">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="bb4-U5-rdJ" id="nVY-oQ-JBN"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ybl-ye-uKL" firstAttribute="leading" secondItem="kPO-GM-Ccf" secondAttribute="leading" type="default" id="8yN-nR-efa"/>
+                            <constraint firstItem="ybl-ye-uKL" firstAttribute="trailing" secondItem="kPO-GM-Ccf" secondAttribute="trailing" type="default" id="HDa-1A-BQ0"/>
+                            <constraint firstItem="0Fl-o8-C66" firstAttribute="trailing" secondItem="kPO-GM-Ccf" secondAttribute="trailing" type="default" id="I5K-XS-3Mg"/>
+                            <constraint firstItem="0Fl-o8-C66" firstAttribute="bottom" secondItem="kPO-GM-Ccf" secondAttribute="bottom" type="default" id="Ryx-vO-Vr4"/>
+                            <constraint firstItem="ybl-ye-uKL" firstAttribute="top" secondItem="kPO-GM-Ccf" secondAttribute="top" type="default" id="ePq-PV-mGr"/>
+                            <constraint firstItem="0Fl-o8-C66" firstAttribute="leading" secondItem="kPO-GM-Ccf" secondAttribute="leading" type="default" id="ebq-jw-5jZ"/>
+                            <constraint firstItem="0Fl-o8-C66" firstAttribute="top" secondItem="ybl-ye-uKL" secondAttribute="bottom" type="default" id="rcu-iZ-Msx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tuotehaku" id="wd1-D6-duM"/>
+                    <navigationItem key="navigationItem" title="Tuotehaku" id="QFc-uY-9qh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ybl-ye-uKL" id="nwX-Mj-CtZ"/>
+                        <outlet property="tableView" destination="0Fl-o8-C66" id="fRS-ym-LMB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yR-p7-lTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-265"/>
+        </scene>
+        <!--Product View Controller - Tuotetiedot-->
+        <scene sceneID="kaa-XI-JPu">
+            <objects>
+                <viewController id="M31-zX-pW1" customClass="SWDProductViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iAR-b5-xVt">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-4o-4RK"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="kinkkumainos.png" translatesAutoresizingMaskIntoConstraints="NO" id="BLl-2p-BqN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Yeq-Vu-URB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BLl-2p-BqN" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3wN-ng-BxZ"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="7Ot-RZ-Brm"/>
+                            <constraint firstItem="BLl-2p-BqN" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="IRw-Re-84r"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="BLl-2p-BqN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UaB-bE-CVg"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="px7-YS-4SO"/>
+                            <constraint firstAttribute="trailing" secondItem="BLl-2p-BqN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v0K-JG-ygd"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="zGX-I6-z2d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tuotetiedot" id="Szc-FR-cxs"/>
+                    <connections>
+                        <outlet property="scrollView" destination="VJu-4o-4RK" id="JW3-DI-sbm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmj-YB-9vJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="-265"/>
+        </scene>
+        <!--Shopping List Controller - Ostoslistat-->
+        <scene sceneID="3SM-PC-K3y">
+            <objects>
+                <tableViewController id="evT-Qn-8Wr" customClass="SWDShoppingListController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h3F-Fw-Mg1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListCell" id="Em7-EY-urv">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="Tp4-wz-t3b" kind="push" identifier="ShowListView" id="BGV-Iq-wDv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="evT-Qn-8Wr" id="QGh-n4-gd2"/>
+                            <outlet property="delegate" destination="evT-Qn-8Wr" id="O2e-c9-TDz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ostoslistat" id="ahT-mK-3zZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lFF-jJ-2o3">
+                            <connections>
+                                <action selector="addShoppingList:" destination="evT-Qn-8Wr" id="t9e-iz-DUa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8t-h1-MVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="410"/>
+        </scene>
+        <!--Shopping List Tab Bar Controller - Ostoslista-->
+        <scene sceneID="aag-U5-K03">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Tp4-wz-t3b" customClass="SWDShoppingListTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Ostoslista" id="u0x-fX-oaC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="87f-FV-JGV">
+                            <connections>
+                                <action selector="addListItem:" destination="Tp4-wz-t3b" id="IkQ-oy-hOx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Q5G-ZN-jQh">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="addItemButton" destination="87f-FV-JGV" id="YZ0-VP-bsM"/>
+                        <segue destination="Cte-Cv-QL0" kind="relationship" relationship="viewControllers" id="R32-1t-uDY"/>
+                        <segue destination="4M2-nG-95l" kind="relationship" relationship="viewControllers" id="v1Z-Mt-Gcg"/>
+                        <segue destination="bb4-U5-rdJ" kind="relationship" relationship="viewControllers" id="BjD-bZ-Grb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdV-6i-wD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="410"/>
+        </scene>
+        <!--Shopping List Map Controller - Kartta-->
+        <scene sceneID="0Ra-gj-5AB">
+            <objects>
+                <viewController id="4M2-nG-95l" customClass="SWDShoppingListMapController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3Q-uA-zS9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er0-RJ-7fD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="kinkkumainos.png" translatesAutoresizingMaskIntoConstraints="NO" id="b4I-G0-ojm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7yB-FK-Z6F"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b4I-G0-ojm" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2Ij-zR-ttF"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="b4I-G0-ojm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5zM-ge-iEf"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="Fjt-KO-FjT"/>
+                            <constraint firstItem="b4I-G0-ojm" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f4H-mA-a6l"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="ovp-it-STr"/>
+                            <constraint firstAttribute="trailing" secondItem="b4I-G0-ojm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rbR-8L-lSn"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="tet-Zi-2cx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="adBannerImg" destination="b4I-G0-ojm" id="dEt-FW-UYK"/>
+                        <outlet property="scrollView" destination="er0-RJ-7fD" id="JT8-QG-58C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XmT-pX-yDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="737"/>
+        </scene>
+        <!--Shopping List Products Controller - Tuotteet-->
+        <scene sceneID="qJ1-PU-q03">
+            <objects>
+                <tableViewController id="Cte-Cv-QL0" customClass="SWDShoppingListProductsController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mnJ-Ps-nhc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductInfoCell" id="Cv5-0d-HZ9">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="M31-zX-pW1" kind="push" identifier="ShowProductView" id="aNy-ZN-P3d"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cte-Cv-QL0" id="EHJ-xk-K3R"/>
+                            <outlet property="delegate" destination="Cte-Cv-QL0" id="0Qc-zr-Bl5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" tag="1" title="Tuotteet" id="t5V-DS-s4h"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBX-8W-F1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="81"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ofe-DZ-wHB">
+            <objects>
+                <navigationController id="qd7-Hk-YDJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Txw-0v-y7s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dv3-Hg-i9e">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Kch-jt-2Fk" kind="relationship" relationship="rootViewController" id="TAA-9s-tzf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tyt-SJ-b23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kinkkumainos.png" width="226" height="71"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="BjD-bZ-Grb"/>
+        <segue reference="aNy-ZN-P3d"/>
+    </inferredMetricsTieBreakers>
 </document>
