@@ -163,28 +163,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-4o-4RK"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainos_pikkuprinssi.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mnx-Fu-pxY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-1H-uCV"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainos_carlsberg.png" translatesAutoresizingMaskIntoConstraints="NO" id="x3f-1M-Oor">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="Sfg-py-IWV"/>
+                                    <constraint firstAttribute="height" constant="68" id="TdV-Ko-d1l"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="7Ot-RZ-Brm"/>
-                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="7po-LA-8Rp"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="ILD-ol-tVd"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="ZtI-fI-MM5"/>
-                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="aah-8z-bAW"/>
-                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="arT-UH-lWa"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="eiF-pc-3F4"/>
+                            <constraint firstItem="x3f-1M-Oor" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="L33-hf-ZcE"/>
+                            <constraint firstItem="wxl-1H-uCV" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="Rkg-Ot-IiZ"/>
+                            <constraint firstItem="x3f-1M-Oor" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="Xs7-52-gE0"/>
+                            <constraint firstItem="x3f-1M-Oor" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="c7S-eD-Rwz"/>
+                            <constraint firstItem="wxl-1H-uCV" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="c8P-yB-mWm"/>
+                            <constraint firstItem="wxl-1H-uCV" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="eIB-1c-IXF"/>
+                            <constraint firstItem="wxl-1H-uCV" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="lUH-cx-FUv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tuotetiedot" id="Szc-FR-cxs"/>
                     <connections>
-                        <outlet property="adView" destination="Mnx-Fu-pxY" id="9xV-TV-hjr"/>
-                        <outlet property="scrollView" destination="VJu-4o-4RK" id="JW3-DI-sbm"/>
+                        <outlet property="adView" destination="x3f-1M-Oor" id="931-C1-8a5"/>
+                        <outlet property="scrollView" destination="wxl-1H-uCV" id="01X-98-Wtk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmj-YB-9vJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,29 +364,29 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er0-RJ-7fD"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="mainos_carlsberg.png" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-EM-F0y">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-8f-9C5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainos_klementiini.png" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-he-jHU">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="HM2-yP-6Xd"/>
+                                    <constraint firstAttribute="height" constant="68" id="PGn-hd-DgG"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RXi-EM-F0y" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="7xi-Sl-DCq"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="B6J-vl-dEZ"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="Fjt-KO-FjT"/>
-                            <constraint firstItem="RXi-EM-F0y" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="J5P-Re-eph"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="Sgs-mr-6PP"/>
-                            <constraint firstItem="RXi-EM-F0y" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="l7H-3J-UmA"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="ovp-it-STr"/>
+                            <constraint firstItem="aM0-he-jHU" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="7e0-qi-dsM"/>
+                            <constraint firstItem="aM0-he-jHU" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="9l4-T6-Ky6"/>
+                            <constraint firstItem="aM0-he-jHU" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="PyL-95-FwL"/>
+                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="VWP-tE-9HJ"/>
+                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="eqN-q8-p78"/>
+                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="mgJ-SL-eKg"/>
+                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="pOE-VC-nWj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="adView" destination="RXi-EM-F0y" id="aDH-ff-uoH"/>
-                        <outlet property="scrollView" destination="er0-RJ-7fD" id="JT8-QG-58C"/>
+                        <outlet property="adView" destination="aM0-he-jHU" id="zgI-Id-lCT"/>
+                        <outlet property="scrollView" destination="0Jc-8f-9C5" id="lPE-gb-ihh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmT-pX-yDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -453,16 +453,70 @@
     </scenes>
     <resources>
         <image name="mainos_carlsberg.png" width="640" height="135"/>
-        <image name="mainos_pikkuprinssi.png" width="640" height="135"/>
+        <image name="mainos_klementiini.png" width="640" height="133"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SWDMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imagePager" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="imageScroller" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductPickerController" superclassName="SWDProductSearchController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductPickerController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="SWDProductSearchController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
+            <relationships>
+                <relationship kind="action" name="addShoppingList:"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListMapController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListMapController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListProductsController.h"/>
+        </class>
+        <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="addListItem:"/>
+                <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="locateButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BjD-bZ-Grb"/>
-        <segue reference="NnO-Pf-4va"/>
         <segue reference="yFV-Am-nAN"/>
     </inferredMetricsTieBreakers>
 </document>

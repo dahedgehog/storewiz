@@ -30,6 +30,7 @@
 		614005761649444D0035A21D /* btn_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 614005751649444D0035A21D /* btn_background.png */; };
 		6140057816494B9F0035A21D /* grocery_store.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6140057716494B9F0035A21D /* grocery_store.jpeg */; };
 		6140057E16494D350035A21D /* SWDShoppingListMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6140057D16494D350035A21D /* SWDShoppingListMapController.m */; };
+		614E82E6165AD7440042837C /* mainos_klementiini.png in Resources */ = {isa = PBXBuildFile; fileRef = 614E82E5165AD7440042837C /* mainos_klementiini.png */; };
 		61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D191658F24800D77E9E /* SWDProductDataController.m */; };
 		61882D1F165902CC00D77E9E /* katalogi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61882D1E165902CC00D77E9E /* katalogi.csv */; };
 		61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D2A1659183400D77E9E /* SWDAdsDataController.m */; };
@@ -41,19 +42,16 @@
 		618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */; };
 		61A24A3C16598F6500DF0754 /* mainos_carlsberg.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3716598F6500DF0754 /* mainos_carlsberg.png */; };
 		61A24A3D16598F6500DF0754 /* mainos_karjalanpaisti.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3816598F6500DF0754 /* mainos_karjalanpaisti.png */; };
-		61A24A3E16598F6500DF0754 /* Mainos_klementiini.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3916598F6500DF0754 /* Mainos_klementiini.png */; };
 		61A24A3F16598F6500DF0754 /* mainos_pikkuprinssi.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */; };
 		61A24A4016598F6500DF0754 /* mainos_vihrkuulat.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */; };
 		61A24A421659929D00DF0754 /* mainokset.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A411659929D00DF0754 /* mainokset.csv */; };
 		61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */; };
 		703D65B2CDA44F02BF01BFCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE891A4162D442ACBD374453 /* libPods.a */; };
-		FF65FBF616591E3C00DA0928 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
 		FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03F731AF34EA45B0B57396CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		611418D71657B4D100112294 /* kinkkumainos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kinkkumainos.png; sourceTree = "<group>"; };
 		611418DA1657B59300112294 /* new_grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_grocery_store.jpeg; sourceTree = "<group>"; };
 		611418DC1657B68900112294 /* SWDProductItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductItem.h; sourceTree = "<group>"; };
 		611418DD1657B68900112294 /* SWDProductItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductItem.m; sourceTree = "<group>"; };
@@ -88,6 +86,7 @@
 		6140057716494B9F0035A21D /* grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grocery_store.jpeg; sourceTree = "<group>"; };
 		6140057C16494D350035A21D /* SWDShoppingListMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingListMapController.h; sourceTree = "<group>"; };
 		6140057D16494D350035A21D /* SWDShoppingListMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListMapController.m; sourceTree = "<group>"; };
+		614E82E5165AD7440042837C /* mainos_klementiini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_klementiini.png; sourceTree = "<group>"; };
 		61882D181658F24800D77E9E /* SWDProductDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductDataController.h; sourceTree = "<group>"; };
 		61882D191658F24800D77E9E /* SWDProductDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductDataController.m; sourceTree = "<group>"; };
 		61882D1E165902CC00D77E9E /* katalogi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = katalogi.csv; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 		618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListTabBarController.m; sourceTree = "<group>"; };
 		61A24A3716598F6500DF0754 /* mainos_carlsberg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_carlsberg.png; sourceTree = "<group>"; };
 		61A24A3816598F6500DF0754 /* mainos_karjalanpaisti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_karjalanpaisti.png; sourceTree = "<group>"; };
-		61A24A3916598F6500DF0754 /* Mainos_klementiini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mainos_klementiini.png; sourceTree = "<group>"; };
 		61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_pikkuprinssi.png; sourceTree = "<group>"; };
 		61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_vihrkuulat.png; sourceTree = "<group>"; };
 		61A24A411659929D00DF0754 /* mainokset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainokset.csv; sourceTree = "<group>"; };
@@ -187,11 +185,11 @@
 				6140056F16491F020035A21D /* SWDShoppingListProductsController.m */,
 				6140057C16494D350035A21D /* SWDShoppingListMapController.h */,
 				6140057D16494D350035A21D /* SWDShoppingListMapController.m */,
-				6140051D1648FC920035A21D /* Supporting Files */,
 				FFD9CB5716590887008A4F44 /* SWDShoppingList.h */,
 				FFD9CB5816590887008A4F44 /* SWDShoppingList.m */,
 				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
 				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
+				6140051D1648FC920035A21D /* Supporting Files */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -199,11 +197,6 @@
 		6140051D1648FC920035A21D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61A24A3716598F6500DF0754 /* mainos_carlsberg.png */,
-				61A24A3816598F6500DF0754 /* mainos_karjalanpaisti.png */,
-				61A24A3916598F6500DF0754 /* Mainos_klementiini.png */,
-				61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */,
-				61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */,
 				614005751649444D0035A21D /* btn_background.png */,
 				61400571164935C40035A21D /* city_loytoja.png */,
 				61400573164938210035A21D /* citymarket_logo.png */,
@@ -214,11 +207,16 @@
 				6140057716494B9F0035A21D /* grocery_store.jpeg */,
 				6140051F1648FC920035A21D /* InfoPlist.strings */,
 				61882D1E165902CC00D77E9E /* katalogi.csv */,
-				61A24A411659929D00DF0754 /* mainokset.csv */,
 				618DC6591649888400D68861 /* locate-icon.png */,
 				618DC65B16498B3200D68861 /* locate-me.png */,
 				618DC65D16498BE500D68861 /* locate.png */,
 				614005221648FC920035A21D /* main.m */,
+				61A24A411659929D00DF0754 /* mainokset.csv */,
+				61A24A3716598F6500DF0754 /* mainos_carlsberg.png */,
+				61A24A3816598F6500DF0754 /* mainos_karjalanpaisti.png */,
+				614E82E5165AD7440042837C /* mainos_klementiini.png */,
+				61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */,
+				61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */,
 				611418DA1657B59300112294 /* new_grocery_store.jpeg */,
 				61882D2C16592A9000D77E9E /* product_pin.png */,
 				6140051E1648FC920035A21D /* StoreWizDemo-Info.plist */,
@@ -301,10 +299,10 @@
 				61882D2D16592A9000D77E9E /* product_pin.png in Resources */,
 				61A24A3C16598F6500DF0754 /* mainos_carlsberg.png in Resources */,
 				61A24A3D16598F6500DF0754 /* mainos_karjalanpaisti.png in Resources */,
-				61A24A3E16598F6500DF0754 /* Mainos_klementiini.png in Resources */,
 				61A24A3F16598F6500DF0754 /* mainos_pikkuprinssi.png in Resources */,
 				61A24A4016598F6500DF0754 /* mainos_vihrkuulat.png in Resources */,
 				61A24A421659929D00DF0754 /* mainokset.csv in Resources */,
+				614E82E6165AD7440042837C /* mainos_klementiini.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
