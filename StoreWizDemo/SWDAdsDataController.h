@@ -1,5 +1,5 @@
 //
-//  SWDProductDataController.h
+//  SWDAdsDataController.h
 //  StoreWizDemo
 //
 //  Created by Ilari Kontinen on 11/18/12.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SWDProductDataController : NSObject
+@interface SWDAdsDataController : NSObject
 
-@property (copy, nonatomic) NSArray *products;
+@property (copy, nonatomic) NSArray *ads;
 
 - (id)initWithResource:(NSString *)fileName;
 

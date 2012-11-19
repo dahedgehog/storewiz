@@ -164,25 +164,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-4o-4RK"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="kinkkumainos.png" translatesAutoresizingMaskIntoConstraints="NO" id="BLl-2p-BqN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainos_pikkuprinssi.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mnx-Fu-pxY">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Yeq-Vu-URB"/>
+                                    <constraint firstAttribute="height" constant="67" id="Sfg-py-IWV"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BLl-2p-BqN" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3wN-ng-BxZ"/>
                             <constraint firstItem="VJu-4o-4RK" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="7Ot-RZ-Brm"/>
-                            <constraint firstItem="BLl-2p-BqN" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="IRw-Re-84r"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="BLl-2p-BqN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UaB-bE-CVg"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="px7-YS-4SO"/>
-                            <constraint firstAttribute="trailing" secondItem="BLl-2p-BqN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v0K-JG-ygd"/>
-                            <constraint firstItem="VJu-4o-4RK" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="zGX-I6-z2d"/>
+                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="7po-LA-8Rp"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="ILD-ol-tVd"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="bottom" secondItem="iAR-b5-xVt" secondAttribute="bottom" type="default" id="ZtI-fI-MM5"/>
+                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="aah-8z-bAW"/>
+                            <constraint firstItem="Mnx-Fu-pxY" firstAttribute="leading" secondItem="iAR-b5-xVt" secondAttribute="leading" type="default" id="arT-UH-lWa"/>
+                            <constraint firstItem="VJu-4o-4RK" firstAttribute="trailing" secondItem="iAR-b5-xVt" secondAttribute="trailing" type="default" id="eiF-pc-3F4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tuotetiedot" id="Szc-FR-cxs"/>
                     <connections>
+                        <outlet property="adView" destination="Mnx-Fu-pxY" id="9xV-TV-hjr"/>
                         <outlet property="scrollView" destination="VJu-4o-4RK" id="JW3-DI-sbm"/>
                     </connections>
                 </viewController>
@@ -364,27 +365,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er0-RJ-7fD"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="kinkkumainos.png" translatesAutoresizingMaskIntoConstraints="NO" id="b4I-G0-ojm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="mainos_klementiini.png" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-EM-F0y">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="7yB-FK-Z6F"/>
+                                    <constraint firstAttribute="height" constant="68" id="HM2-yP-6Xd"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b4I-G0-ojm" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2Ij-zR-ttF"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="b4I-G0-ojm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5zM-ge-iEf"/>
+                            <constraint firstItem="RXi-EM-F0y" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="7xi-Sl-DCq"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="B6J-vl-dEZ"/>
                             <constraint firstItem="er0-RJ-7fD" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="Fjt-KO-FjT"/>
-                            <constraint firstItem="b4I-G0-ojm" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f4H-mA-a6l"/>
+                            <constraint firstItem="RXi-EM-F0y" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="J5P-Re-eph"/>
+                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="Sgs-mr-6PP"/>
+                            <constraint firstItem="RXi-EM-F0y" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="l7H-3J-UmA"/>
                             <constraint firstItem="er0-RJ-7fD" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="ovp-it-STr"/>
-                            <constraint firstAttribute="trailing" secondItem="b4I-G0-ojm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rbR-8L-lSn"/>
-                            <constraint firstItem="er0-RJ-7fD" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="tet-Zi-2cx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="adBannerImg" destination="b4I-G0-ojm" id="dEt-FW-UYK"/>
                         <outlet property="scrollView" destination="er0-RJ-7fD" id="JT8-QG-58C"/>
                     </connections>
                 </viewController>
@@ -434,6 +434,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Txw-0v-y7s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dv3-Hg-i9e">
@@ -450,14 +451,67 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kinkkumainos.png" width="226" height="71"/>
+        <image name="mainos_klementiini.png" width="16" height="16"/>
+        <image name="mainos_pikkuprinssi.png" width="640" height="135"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SWDMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imagePager" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="imageScroller" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductSearchController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SWDProductViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
+            <relationships>
+                <relationship kind="action" name="addShoppingList:"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListMapController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListMapController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adBannerImg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListProductsController.h"/>
+        </class>
+        <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="addListItem:"/>
+                <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="locateButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="BjD-bZ-Grb"/>
+        <segue reference="NnO-Pf-4va"/>
         <segue reference="yFV-Am-nAN"/>
     </inferredMetricsTieBreakers>
 </document>

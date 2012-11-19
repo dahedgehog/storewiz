@@ -25,8 +25,6 @@
 {
     [super awakeFromNib];
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
-    
     UIImage *cityImage = [UIImage imageNamed:@"citymarket_logo.png"];
     UIImageView *iView = [[UIImageView alloc] initWithImage:cityImage];
     self.navigationItem.titleView = iView;
@@ -61,6 +59,8 @@
     
     [self loadVisiblePages];
 }
+
+# pragma mark - landing page ad scroller
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self loadVisiblePages];
