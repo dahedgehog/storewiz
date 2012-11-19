@@ -86,10 +86,10 @@
             <objects>
                 <viewController id="bb4-U5-rdJ" customClass="SWDProductSearchController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPO-GM-Ccf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-o8-C66">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-o8-C66">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductSearchCell" textLabel="os8-Au-UXc" detailTextLabel="96c-f2-DUh" style="IBUITableViewCellStyleValue1" id="jsz-9V-G9j">
@@ -145,7 +145,6 @@
                             <constraint firstItem="0Fl-o8-C66" firstAttribute="top" secondItem="ybl-ye-uKL" secondAttribute="bottom" type="default" id="rcu-iZ-Msx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tuotehaku" id="wd1-D6-duM"/>
                     <navigationItem key="navigationItem" title="Tuotehaku" id="QFc-uY-9qh"/>
                     <connections>
                         <outlet property="searchBar" destination="ybl-ye-uKL" id="nwX-Mj-CtZ"/>
@@ -161,7 +160,7 @@
             <objects>
                 <viewController id="M31-zX-pW1" customClass="SWDProductViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAR-b5-xVt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJu-4o-4RK"/>
@@ -239,6 +238,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="87f-FV-JGV">
                             <connections>
                                 <action selector="addListItem:" destination="Tp4-wz-t3b" id="IkQ-oy-hOx"/>
+                                <segue destination="MyW-FI-MhN" kind="modal" identifier="ShoppingListProductSearch" id="FHi-v0-9Iq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -252,12 +252,109 @@
                         <outlet property="addItemButton" destination="87f-FV-JGV" id="YZ0-VP-bsM"/>
                         <segue destination="Cte-Cv-QL0" kind="relationship" relationship="viewControllers" id="R32-1t-uDY"/>
                         <segue destination="4M2-nG-95l" kind="relationship" relationship="viewControllers" id="v1Z-Mt-Gcg"/>
-                        <segue destination="bb4-U5-rdJ" kind="relationship" relationship="viewControllers" id="BjD-bZ-Grb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdV-6i-wD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2188" y="410"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NSE-0g-9nd">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="MyW-FI-MhN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Rt-JQ-vwo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.019447422938855929" blue="0.10672464040197538" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PzP-3x-8gA" kind="relationship" relationship="rootViewController" id="Vya-Ep-rgi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIc-jJ-5gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="1053"/>
+        </scene>
+        <!--Product Picker Controller - Tuotehaku-->
+        <scene sceneID="6Hg-vS-RkC">
+            <objects>
+                <viewController id="PzP-3x-8gA" customClass="SWDProductPickerController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3RF-Za-Vnp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kZN-b0-iNF">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductSearchCell" textLabel="BrE-2T-11W" detailTextLabel="PEo-to-wdK" style="IBUITableViewCellStyleValue1" id="wBs-K9-c8k">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BrE-2T-11W">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PEo-to-wdK">
+                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="M31-zX-pW1" kind="push" identifier="ShowProductView" id="yFV-Am-nAN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PzP-3x-8gA" id="U7u-ac-2kg"/>
+                                    <outlet property="delegate" destination="PzP-3x-8gA" id="ApA-m0-jtc"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-c9-Typ">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="PzP-3x-8gA" id="KBN-Ih-pTb"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vbU-c9-Typ" firstAttribute="trailing" secondItem="3RF-Za-Vnp" secondAttribute="trailing" type="default" id="2Sb-g5-Pyi"/>
+                            <constraint firstItem="kZN-b0-iNF" firstAttribute="trailing" secondItem="3RF-Za-Vnp" secondAttribute="trailing" type="default" id="4ei-so-Sa9"/>
+                            <constraint firstItem="vbU-c9-Typ" firstAttribute="leading" secondItem="3RF-Za-Vnp" secondAttribute="leading" type="default" id="Cfa-Yc-7MW"/>
+                            <constraint firstItem="kZN-b0-iNF" firstAttribute="top" secondItem="vbU-c9-Typ" secondAttribute="bottom" type="default" id="Jdy-R0-yfL"/>
+                            <constraint firstItem="kZN-b0-iNF" firstAttribute="leading" secondItem="3RF-Za-Vnp" secondAttribute="leading" type="default" id="OsZ-gm-CZ6"/>
+                            <constraint firstItem="vbU-c9-Typ" firstAttribute="top" secondItem="3RF-Za-Vnp" secondAttribute="top" type="default" id="PdR-xb-Ubf"/>
+                            <constraint firstItem="kZN-b0-iNF" firstAttribute="bottom" secondItem="3RF-Za-Vnp" secondAttribute="bottom" type="default" id="qNh-cp-bsG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tuotehaku" id="nhe-Xj-gQv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eJ8-ye-lMW">
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="PzP-3x-8gA" id="Fyy-fA-Vws"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="vbU-c9-Typ" id="Aj6-6l-xC5"/>
+                        <outlet property="tableView" destination="kZN-b0-iNF" id="qaa-UM-0Pm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3CI-64-FkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="1053"/>
         </scene>
         <!--Shopping List Map Controller - Kartta-->
         <scene sceneID="0Ra-gj-5AB">
@@ -366,5 +463,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="BjD-bZ-Grb"/>
         <segue reference="NnO-Pf-4va"/>
+        <segue reference="yFV-Am-nAN"/>
     </inferredMetricsTieBreakers>
 </document>

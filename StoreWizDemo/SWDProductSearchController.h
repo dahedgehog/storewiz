@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWDProductItem.h"
 
 @interface SWDProductSearchController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 

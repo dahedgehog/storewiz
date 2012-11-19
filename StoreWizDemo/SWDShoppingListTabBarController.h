@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *locateButton;
-@property (copy, nonatomic) SWDShoppingList *shoppingList;
+@property (strong, nonatomic) SWDShoppingList *shoppingList;
 
 - (IBAction)addListItem:(id)sender;
 
