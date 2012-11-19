@@ -20,9 +20,11 @@
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
     SWDProductItem *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
+    UIImage *img  = [UIImage imageNamed:ad.label];
+    self.adView.image = img;
+    
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
     UIImage *pin = [UIImage imageNamed:@"product_pin.png"];
-    UIImage *img  = [UIImage imageNamed:ad.label];
     
     [self.scrollView setContentSize:CGSizeMake(map.size.width+pin.size.width,
                                                map.size.height+pin.size.height+50)];
@@ -36,8 +38,6 @@
     pinView.frame = CGRectMake(self.product.coordX, self.product.coordY+50,
                                pin.size.width, pin.size.height);
     [self.scrollView addSubview:pinView];
-    
-    self.adView.image = img;
 }
 
 - (void)viewDidLayoutSubviews

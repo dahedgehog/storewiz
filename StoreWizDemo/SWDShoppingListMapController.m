@@ -7,6 +7,8 @@
 //
 
 #import "SWDShoppingListMapController.h"
+#import "SWDAdsDataController.h"
+#import "SWDProductItem.h"
 
 @implementation SWDShoppingListMapController
 
@@ -14,15 +16,23 @@
 {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"new_grocery_store.jpeg"];
+    SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
+    SWDProductItem *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake(0, 0,
-                                      image.size.width,
-                                      image.size.height);
+    UIImage *img  = [UIImage imageNamed:ad.label];
+    self.adView.image = img;
+
+    UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
+    UIImage *pin = [UIImage imageNamed:@"product_pin.png"];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:map];
+    imageView.frame = CGRectMake(0, pin.size.height+50,
+                                 map.size.width, map.size.height);
     [self.scrollView addSubview:imageView];
-    [self.scrollView setContentSize:image.size];
+
+    
+    [self.scrollView setContentSize:CGSizeMake(map.size.width+pin.size.width,
+                                               map.size.height+pin.size.height+50)];
 }
 
 @end

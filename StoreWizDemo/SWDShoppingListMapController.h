@@ -11,6 +11,6 @@
 @interface SWDShoppingListMapController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *adBannerImg;
+@property (weak, nonatomic) IBOutlet UIImageView *adView;
 
 @end

@@ -268,7 +268,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er0-RJ-7fD"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="mainos_klementiini.png" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-EM-F0y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="mainos_carlsberg.png" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-EM-F0y">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="HM2-yP-6Xd"/>
                                 </constraints>
@@ -288,6 +288,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="adView" destination="RXi-EM-F0y" id="aDH-ff-uoH"/>
                         <outlet property="scrollView" destination="er0-RJ-7fD" id="JT8-QG-58C"/>
                     </connections>
                 </viewController>
@@ -354,59 +355,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mainos_klementiini.png" width="16" height="16"/>
+        <image name="mainos_carlsberg.png" width="640" height="135"/>
         <image name="mainos_pikkuprinssi.png" width="640" height="135"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SWDMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imagePager" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="imageScroller" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SWDProductSearchController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SWDProductViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SWDShoppingListController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
-            <relationships>
-                <relationship kind="action" name="addShoppingList:"/>
-            </relationships>
-        </class>
-        <class className="SWDShoppingListMapController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListMapController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="adBannerImg" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListProductsController.h"/>
-        </class>
-        <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="addListItem:"/>
-                <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="locateButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
