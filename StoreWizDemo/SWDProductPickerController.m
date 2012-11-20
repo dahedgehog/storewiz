@@ -18,15 +18,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ProductPickerCell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.indentationLevel = 3;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [button addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchDown];
-    button.frame = CGRectMake(10.0, 10.0, 25.0, 25.0);
-    [cell addSubview:button];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.indentationLevel = 3;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        [button addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        button.frame = CGRectMake(10.0, 10.0, 25.0, 25.0);
+        [cell addSubview:button];
+    }
+    
+    SWDProductItem *product = [self.searched objectAtIndex:indexPath.row];
+    cell.textLabel.text = product.label;
+    cell.detailTextLabel.text = [product.price stringByAppendingString:@" €"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"ShowProductView" sender:self];
 }
 
 - (void)addButtonPressed:(id)sender
