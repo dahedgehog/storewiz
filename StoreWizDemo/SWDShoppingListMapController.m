@@ -9,8 +9,19 @@
 #import "SWDShoppingListMapController.h"
 #import "SWDAdsDataController.h"
 #import "SWDProductItem.h"
+#import "SWDShoppingList.h"
+#import "SWDShoppingListTabBarController.h"
+
+@interface SWDShoppingListMapController ()
+
+- (void)renderProduct:(SWDProductItem *)product;
+
+@end
 
 @implementation SWDShoppingListMapController
+{
+    UIImage *_pin;
+}
 
 - (void)viewDidLoad
 {
@@ -23,16 +34,35 @@
     self.adView.image = img;
 
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
-    UIImage *pin = [UIImage imageNamed:@"product_pin.png"];
+    _pin = [UIImage imageNamed:@"product_pin.png"];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:map];
-    imageView.frame = CGRectMake(0, pin.size.height+50,
+    imageView.frame = CGRectMake(0, _pin.size.height+50,
                                  map.size.width, map.size.height);
     [self.scrollView addSubview:imageView];
 
     
-    [self.scrollView setContentSize:CGSizeMake(map.size.width+pin.size.width,
-                                               map.size.height+pin.size.height+50)];
+    [self.scrollView setContentSize:CGSizeMake(map.size.width+_pin.size.width,
+                                               map.size.height+_pin.size.height+50)];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    SWDShoppingList *shoppingList = ((SWDShoppingListTabBarController *)self.tabBarController).shoppingList;
+    
+    [shoppingList.products enumerateObjectsUsingBlock:^(SWDProductItem *product, NSUInteger idx, BOOL *stop) {
+        [self renderProduct:product];
+    }];
+}
+
+- (void)renderProduct:(SWDProductItem *)product
+{
+    UIImageView *pinView = [[UIImageView alloc] initWithImage:_pin];
+    pinView.frame = CGRectMake(product.coordX, product.coordY + 50, _pin.size.width, _pin.size.height);
+    
+    [self.scrollView addSubview:pinView];
 }
 
 @end
