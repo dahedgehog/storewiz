@@ -317,7 +317,7 @@
                                     <outlet property="delegate" destination="PzP-3x-8gA" id="ApA-m0-jtc"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-c9-Typ">
+                            <searchBar contentMode="redraw" text="" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-c9-Typ">
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -341,7 +341,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lisää tuote" id="nhe-Xj-gQv">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eJ8-ye-lMW">
+                        <barButtonItem key="leftBarButtonItem" title="Valmis" id="eJ8-ye-lMW">
                             <connections>
                                 <action selector="closeButtonPressed:" destination="PzP-3x-8gA" id="Fyy-fA-Vws"/>
                             </connections>

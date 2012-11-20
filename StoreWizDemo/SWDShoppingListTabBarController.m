@@ -58,6 +58,7 @@
         UINavigationController *navigationController = [segue destinationViewController];
         SWDProductPickerController *productPickerController = navigationController.viewControllers[0];
         productPickerController.delegate = (SWDShoppingListProductsController *)self.selectedViewController;
+        productPickerController.navigationItem.leftBarButtonItem.title = _shoppingList.name;
     }
 }
 
