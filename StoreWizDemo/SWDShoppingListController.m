@@ -46,9 +46,10 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uusi ostoslista" message:nil delegate:self cancelButtonTitle:@"Peruuta" otherButtonTitles:@"OK", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
+    [[alertView textFieldAtIndex:0] setText:@"Ostoslista"];
 }
 
-- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1) {
         NSString *shoppingListName = [alertView textFieldAtIndex:0].text;
