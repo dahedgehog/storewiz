@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SMCalloutView.h>
 
-@interface SWDShoppingListMapController : UIViewController
+@interface SWDShoppingListMapController : UIViewController <SMCalloutViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *adView;
