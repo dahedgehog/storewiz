@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
-@implementation SWDProductItem
+@implementation SWDProduct
 
 - (id)initWIthLabel:(NSString *)label price:(NSString *)price
              coordX:(NSUInteger)x coordY:(NSUInteger)y
@@ -27,7 +27,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    SWDProductItem *copy = [[[self class] alloc] init];
+    SWDProduct *copy = [[[self class] alloc] init];
     if (copy) {
         copy.label = self.label;
         copy.price = self.price;

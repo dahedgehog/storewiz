@@ -8,14 +8,14 @@
 
 #import "SWDShoppingListMapController.h"
 #import "SWDAdsDataController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 #import "SWDShoppingList.h"
 #import "SWDShoppingListTabBarController.h"
 #import <MapKit/MapKit.h>
 
 @interface SWDShoppingListMapController ()
 
-- (void)renderProduct:(SWDProductItem *)product;
+- (void)renderProduct:(SWDProduct *)product;
 
 @end
 
@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
-    SWDProductItem *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
+    SWDProduct *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
     UIImage *img  = [UIImage imageNamed:ad.label];
     self.adView.image = img;
@@ -57,12 +57,12 @@
     
     _shoppingList = ((SWDShoppingListTabBarController *)self.tabBarController).shoppingList;
     
-    [_shoppingList.products enumerateObjectsUsingBlock:^(SWDProductItem *product, NSUInteger idx, BOOL *stop) {
+    [_shoppingList.products enumerateObjectsUsingBlock:^(SWDProduct *product, NSUInteger idx, BOOL *stop) {
         [self renderProduct:product];
     }];
 }
 
-- (void)renderProduct:(SWDProductItem *)product
+- (void)renderProduct:(SWDProduct *)product
 {
     MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:@""];
     pinAnnotationView.center = CGPointMake(product.coordX, product.coordY);
@@ -77,7 +77,7 @@
 - (void)pinTapped:(UITapGestureRecognizer *)sender
 {
     MKPinAnnotationView *pin = (MKPinAnnotationView *)sender.view;
-    SWDProductItem *product = [_shoppingList.products objectAtIndex:pin.tag];
+    SWDProduct *product = [_shoppingList.products objectAtIndex:pin.tag];
     
     _calloutView.title = product.label;
     _calloutView.subtitle = [product.price stringByAppendingString:@" €"];

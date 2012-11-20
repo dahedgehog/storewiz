@@ -31,7 +31,7 @@
         [cell addSubview:button];
     }
     
-    SWDProductItem *product = [self.searched objectAtIndex:indexPath.row];
+    SWDProduct *product = [self.searched objectAtIndex:indexPath.row];
     cell.textLabel.text = product.label;
     cell.detailTextLabel.text = [product.price stringByAppendingString:@" €"];
     
@@ -47,7 +47,7 @@
 {
     UIButton *button = (UIButton *)sender;
     NSIndexPath *index = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
-    SWDProductItem *product = [self.searched objectAtIndex:index.row];
+    SWDProduct *product = [self.searched objectAtIndex:index.row];
     if([delegate respondsToSelector:@selector(productSelected:)]) {
         [delegate productSelected:product];
     }

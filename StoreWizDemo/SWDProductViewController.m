@@ -8,7 +8,7 @@
 
 #import "SWDProductViewController.h"
 #import "SWDAdsDataController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
 @implementation SWDProductViewController
 
@@ -18,7 +18,7 @@
     self.navigationItem.title = self.product.label;
 
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
-    SWDProductItem *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
+    SWDProduct *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
     UIImage *img  = [UIImage imageNamed:ad.label];
     self.adView.image = img;

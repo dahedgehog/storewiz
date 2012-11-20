@@ -9,7 +9,7 @@
 #import "SWDProductSearchController.h"
 #import "SWDProductViewController.h"
 #import "SWDProductDataController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
 @implementation SWDProductSearchController
 
@@ -48,7 +48,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     
-    SWDProductItem *item = [self.searched objectAtIndex:indexPath.row];
+    SWDProduct *item = [self.searched objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.label;
     cell.detailTextLabel.text = item.price;
@@ -83,7 +83,7 @@
         NSLog(@"Showing product view");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        SWDProductItem* product = [self.searched objectAtIndex:indexPath.row];
+        SWDProduct* product = [self.searched objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProduct:product];
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];

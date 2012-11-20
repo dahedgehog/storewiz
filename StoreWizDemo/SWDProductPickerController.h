@@ -7,11 +7,11 @@
 //
 
 #import "SWDProductSearchController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
 @protocol SWDProductPickerControllerDelegate <NSObject>
 
-- (void)productSelected:(SWDProductItem *)product;
+- (void)productSelected:(SWDProduct *)product;
 
 @end
 

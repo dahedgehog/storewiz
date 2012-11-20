@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		611418DB1657B59300112294 /* new_grocery_store.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 611418DA1657B59300112294 /* new_grocery_store.jpeg */; };
-		611418DE1657B68900112294 /* SWDProductItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 611418DD1657B68900112294 /* SWDProductItem.m */; };
+		611418DE1657B68900112294 /* SWDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 611418DD1657B68900112294 /* SWDProduct.m */; };
 		614005171648FC920035A21D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614005161648FC920035A21D /* UIKit.framework */; };
 		614005191648FC920035A21D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614005181648FC920035A21D /* Foundation.framework */; };
 		6140051B1648FC920035A21D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6140051A1648FC920035A21D /* CoreGraphics.framework */; };
@@ -54,8 +54,8 @@
 /* Begin PBXFileReference section */
 		03F731AF34EA45B0B57396CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		611418DA1657B59300112294 /* new_grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_grocery_store.jpeg; sourceTree = "<group>"; };
-		611418DC1657B68900112294 /* SWDProductItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductItem.h; sourceTree = "<group>"; };
-		611418DD1657B68900112294 /* SWDProductItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductItem.m; sourceTree = "<group>"; };
+		611418DC1657B68900112294 /* SWDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProduct.h; sourceTree = "<group>"; };
+		611418DD1657B68900112294 /* SWDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProduct.m; sourceTree = "<group>"; };
 		614005121648FC920035A21D /* StoreWizDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreWizDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614005161648FC920035A21D /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		614005181648FC920035A21D /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
-				611418DD1657B68900112294 /* SWDProductItem.m */,
+				611418DD1657B68900112294 /* SWDProduct.m */,
 				61882D331659391E00D77E9E /* SWDShoppingList.h */,
 				61882D341659391E00D77E9E /* SWDShoppingList.m */,
 				61882D291659183300D77E9E /* SWDAdsDataController.h */,
@@ -227,7 +227,7 @@
 				614005241648FC920035A21D /* StoreWizDemo-Prefix.pch */,
 				614005251648FC920035A21D /* SWDAppDelegate.h */,
 				614005261648FC920035A21D /* SWDAppDelegate.m */,
-				611418DC1657B68900112294 /* SWDProductItem.h */,
+				611418DC1657B68900112294 /* SWDProduct.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				6140057E16494D350035A21D /* SWDShoppingListMapController.m in Sources */,
 				618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */,
 				61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */,
-				611418DE1657B68900112294 /* SWDProductItem.m in Sources */,
+				611418DE1657B68900112294 /* SWDProduct.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
 				FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */,
 				61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */,

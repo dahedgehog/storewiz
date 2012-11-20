@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SWDProductItem : NSObject <NSCopying>
+@interface SWDProduct : NSObject <NSCopying>
 
 @property (copy, nonatomic) NSString *label;
 @property (copy, nonatomic) NSString *price;

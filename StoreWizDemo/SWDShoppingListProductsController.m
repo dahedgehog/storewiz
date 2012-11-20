@@ -9,7 +9,7 @@
 #import "SWDShoppingListProductsController.h"
 #import "SWDProductViewController.h"
 #import "SWDShoppingListTabBarController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
 @implementation SWDShoppingListProductsController
 {
@@ -44,7 +44,7 @@
     static NSString *CellIdentifier = @"ProductInfoCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    SWDProductItem *product = [products objectAtIndex:indexPath.row];
+    SWDProduct *product = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = product.label;
     return cell;
 }
@@ -53,12 +53,12 @@
     if ([[segue identifier] isEqualToString:@"ShowProductView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        SWDProductItem* product = [products objectAtIndex:indexPath.row];
+        SWDProduct* product = [products objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProduct:product];
     }
 }
 
-- (void)productSelected:(SWDProductItem *)product
+- (void)productSelected:(SWDProduct *)product
 {
     [products addObject:product];
     [self.tableView reloadData];

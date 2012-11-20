@@ -7,7 +7,7 @@
 //
 
 #import "SWDProductDataController.h"
-#import "SWDProductItem.h"
+#import "SWDProduct.h"
 
 @implementation SWDProductDataController
 
@@ -27,7 +27,7 @@
         NSMutableArray *products = [[NSMutableArray alloc] init];
         for (NSString *line in lines) {
             NSArray *comps = [line componentsSeparatedByString:@","];
-            SWDProductItem *item = [[SWDProductItem alloc] initWIthLabel:comps[0] price:comps[1]
+            SWDProduct *item = [[SWDProduct alloc] initWIthLabel:comps[0] price:comps[1]
                                                                   coordX:[comps[2] integerValue]
                                                                   coordY:[comps[3] integerValue]];
             [products addObject:item];
