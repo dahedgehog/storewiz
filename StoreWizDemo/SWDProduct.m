@@ -10,7 +10,7 @@
 
 @implementation SWDProduct
 
-- (id)initWIthLabel:(NSString *)label price:(NSString *)price
+- (id)initWithLabel:(NSString *)label price:(NSString *)price
              coordX:(NSUInteger)x coordY:(NSUInteger)y
 {
     self = [super init];

@@ -193,6 +193,7 @@
 				FFD9CB5816590887008A4F44 /* SWDShoppingList.m */,
 				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
 				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
+				611418DC1657B68900112294 /* SWDProduct.h */,
 				6140051D1648FC920035A21D /* Supporting Files */,
 			);
 			path = StoreWizDemo;
@@ -227,7 +228,6 @@
 				614005241648FC920035A21D /* StoreWizDemo-Prefix.pch */,
 				614005251648FC920035A21D /* SWDAppDelegate.h */,
 				614005261648FC920035A21D /* SWDAppDelegate.m */,
-				611418DC1657B68900112294 /* SWDProduct.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

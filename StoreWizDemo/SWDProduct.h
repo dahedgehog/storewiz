@@ -16,7 +16,7 @@
 @property (nonatomic) NSUInteger coordX;
 @property (nonatomic) NSUInteger coordY;
 
-- (id)initWIthLabel:(NSString *)label price:(NSString *)price
+- (id)initWithLabel:(NSString *)label price:(NSString *)price
              coordX:(NSUInteger)x coordY:(NSUInteger)y;
 
 @end

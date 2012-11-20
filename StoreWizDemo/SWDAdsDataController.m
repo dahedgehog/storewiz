@@ -27,7 +27,7 @@
         NSArray *lines = [contents componentsSeparatedByString:@"\n"];
         for (NSString *line in lines) {
             NSArray *comps = [line componentsSeparatedByString:@","];
-            SWDProduct *item = [[SWDProduct alloc] initWIthLabel:comps[0] price:comps[1]
+            SWDProduct *item = [[SWDProduct alloc] initWithLabel:comps[0] price:comps[1]
                                                                   coordX:[comps[2] integerValue]
                                                                   coordY:[comps[3] integerValue]];
             [ads addObject:item];
