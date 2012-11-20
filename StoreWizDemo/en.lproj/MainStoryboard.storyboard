@@ -274,7 +274,7 @@
             </objects>
             <point key="canvasLocation" x="1683" y="1053"/>
         </scene>
-        <!--Product Picker Controller - Tuotehaku-->
+        <!--Product Picker Controller - Lisää tuote-->
         <scene sceneID="6Hg-vS-RkC">
             <objects>
                 <viewController id="PzP-3x-8gA" customClass="SWDProductPickerController" sceneMemberID="viewController">
@@ -340,7 +340,7 @@
                             <constraint firstItem="kZN-b0-iNF" firstAttribute="bottom" secondItem="3RF-Za-Vnp" secondAttribute="bottom" type="default" id="qNh-cp-bsG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tuotehaku" id="nhe-Xj-gQv">
+                    <navigationItem key="navigationItem" title="Lisää tuote" id="nhe-Xj-gQv">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eJ8-ye-lMW">
                             <connections>
                                 <action selector="closeButtonPressed:" destination="PzP-3x-8gA" id="Fyy-fA-Vws"/>
