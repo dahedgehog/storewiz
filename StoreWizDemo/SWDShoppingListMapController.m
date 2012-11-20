@@ -11,6 +11,7 @@
 #import "SWDProductItem.h"
 #import "SWDShoppingList.h"
 #import "SWDShoppingListTabBarController.h"
+#import <MapKit/MapKit.h>
 
 @interface SWDShoppingListMapController ()
 
@@ -20,7 +21,9 @@
 
 @implementation SWDShoppingListMapController
 {
-    UIImage *_pin;
+    SMCalloutView *_calloutView;
+    UIImageView *_mapView;
+    SWDShoppingList *_shoppingList;
 }
 
 - (void)viewDidLoad
@@ -34,35 +37,57 @@
     self.adView.image = img;
 
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
-    _pin = [UIImage imageNamed:@"product_pin.png"];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:map];
-    imageView.frame = CGRectMake(0, _pin.size.height+50,
-                                 map.size.width, map.size.height);
-    [self.scrollView addSubview:imageView];
-
+    _calloutView = [SMCalloutView new];
+    _calloutView.delegate = self;
     
-    [self.scrollView setContentSize:CGSizeMake(map.size.width+_pin.size.width,
-                                               map.size.height+_pin.size.height+50)];
+    _mapView = [[UIImageView alloc] initWithImage:map];
+    _mapView.userInteractionEnabled = YES;
+    
+    [_mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
+    
+    self.scrollView.contentSize = _mapView.frame.size;
+    
+    [self.scrollView addSubview:_mapView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    SWDShoppingList *shoppingList = ((SWDShoppingListTabBarController *)self.tabBarController).shoppingList;
+    _shoppingList = ((SWDShoppingListTabBarController *)self.tabBarController).shoppingList;
     
-    [shoppingList.products enumerateObjectsUsingBlock:^(SWDProductItem *product, NSUInteger idx, BOOL *stop) {
+    [_shoppingList.products enumerateObjectsUsingBlock:^(SWDProductItem *product, NSUInteger idx, BOOL *stop) {
         [self renderProduct:product];
     }];
 }
 
 - (void)renderProduct:(SWDProductItem *)product
 {
-    UIImageView *pinView = [[UIImageView alloc] initWithImage:_pin];
-    pinView.frame = CGRectMake(product.coordX, product.coordY + 50, _pin.size.width, _pin.size.height);
+    MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:@""];
+    pinAnnotationView.center = CGPointMake(product.coordX, product.coordY);
+    // Hack?
+    pinAnnotationView.tag = [_shoppingList.products indexOfObject:product];
     
-    [self.scrollView addSubview:pinView];
+    [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pinTapped:)]];
+
+    [_mapView addSubview:pinAnnotationView];
+}
+
+- (void)pinTapped:(UITapGestureRecognizer *)sender
+{
+    MKPinAnnotationView *pin = (MKPinAnnotationView *)sender.view;
+    SWDProductItem *product = [_shoppingList.products objectAtIndex:pin.tag];
+    
+    _calloutView.title = product.label;
+    _calloutView.subtitle = [product.price stringByAppendingString:@" €"];
+    _calloutView.calloutOffset = pin.calloutOffset;
+    [_calloutView presentCalloutFromRect:pin.frame inView:_mapView constrainedToView:self.scrollView permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
+}
+
+- (void)mapTapped
+{
+    [_calloutView dismissCalloutAnimated:YES];
 }
 
 @end

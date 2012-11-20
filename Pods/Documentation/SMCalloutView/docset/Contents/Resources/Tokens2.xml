@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SMCalloutViewBackground.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SMCalloutViewBackground</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SMCalloutView.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SMCalloutViewBackground/setBackgroundImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SMCalloutView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIImage *, *, *, *, *backgroundImage</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundImage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SMCalloutViewBackground/backgroundImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SMCalloutView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIImage *, *, *, *, *backgroundImage</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundImage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SMCalloutViewBackground/systemBackground</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>SMCalloutView.h</DeclaredIn>			
+			
+			<Declaration>+ (SMCalloutViewBackground *)systemBackground</Declaration>
+			
+			
+			<Anchor>//api/name/systemBackground</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

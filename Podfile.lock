@@ -1,11 +1,14 @@
 
 PODS:
+- SMCalloutView (1.0.1)
 - SVProgressHUD (0.8)
 
 DEPENDENCIES:
+- SMCalloutView
 - SVProgressHUD
 
 SPEC CHECKSUMS:
+  SMCalloutView: 5039079c2bfee3ece8fae29b77aa1c3049b32f0c
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
 
 COCOAPODS: 0.16.0.rc5
