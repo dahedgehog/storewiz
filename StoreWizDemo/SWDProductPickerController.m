@@ -44,7 +44,6 @@
     if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
         [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.searchBar.text = @"";
     [self searchBar:self.searchBar textDidChange:@""];
 }
@@ -53,7 +52,7 @@
 {
     UIButton *button = (UIButton *)sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
-    [self tableView:self.tableView didDeselectRowAtIndexPath:indexPath];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (IBAction)closeButtonPressed:(id)sender
