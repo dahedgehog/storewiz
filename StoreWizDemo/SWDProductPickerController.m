@@ -40,17 +40,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ShowProductView" sender:self];
+    SWDProduct *product = [self.searched objectAtIndex:indexPath.row];
+    if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
+        [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
+    }
 }
 
 - (void)addButtonPressed:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    NSIndexPath *index = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
-    SWDProduct *product = [self.searched objectAtIndex:index.row];
-    if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
-        [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
+    [self tableView:self.tableView didDeselectRowAtIndexPath:indexPath];
 }
 
 - (IBAction)closeButtonPressed:(id)sender
