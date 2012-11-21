@@ -18,6 +18,7 @@
     if(self) {
         self.name = aName;
         self.products = [NSMutableArray array];
+        self.collectedProducts = [NSMutableArray array];
         self.creationDate = [NSDate date];
         return self;
     }

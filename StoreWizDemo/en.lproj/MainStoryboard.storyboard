@@ -220,7 +220,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ostoslistat" id="ahT-mK-3zZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lFF-jJ-2o3">
+                        <barButtonItem key="rightBarButtonItem" title="Uusi ostoslista" id="lFF-jJ-2o3">
                             <connections>
                                 <action selector="addShoppingList:" destination="evT-Qn-8Wr" id="t9e-iz-DUa"/>
                             </connections>
@@ -236,7 +236,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Tp4-wz-t3b" customClass="SWDShoppingListTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Ostoslista" id="u0x-fX-oaC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="87f-FV-JGV">
+                        <barButtonItem key="rightBarButtonItem" title="Lisää tuote" id="87f-FV-JGV">
                             <connections>
                                 <action selector="addListItem:" destination="Tp4-wz-t3b" id="IkQ-oy-hOx"/>
                                 <segue destination="MyW-FI-MhN" kind="modal" identifier="ShoppingListProductSearch" id="FHi-v0-9Iq"/>
@@ -438,9 +438,6 @@
         </class>
         <class className="SWDProductPickerController" superclassName="SWDProductSearchController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductPickerController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeButtonPressed:"/>
-            </relationships>
         </class>
         <class className="SWDProductSearchController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>

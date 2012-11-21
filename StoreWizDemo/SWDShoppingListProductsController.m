@@ -12,7 +12,8 @@
 
 @implementation SWDShoppingListProductsController
 {
-    __weak NSMutableArray *products;
+    NSMutableArray *products;
+    NSMutableArray *collectedProducts;
 }
 
 @synthesize shoppingList;
@@ -24,28 +25,73 @@
     SWDShoppingListTabBarController *tabBarController = (SWDShoppingListTabBarController *) self.tabBarController;
     self.shoppingList = tabBarController.shoppingList;
     products = shoppingList.products;
+    collectedProducts = shoppingList.collectedProducts;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    // Done and undone sections
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [products count];
+    if(section == 0) {
+        return [products count];
+    } else {
+        return [collectedProducts count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ProductInfoCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ShoppingListProductCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    SWDProduct *product = [products objectAtIndex:indexPath.row];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    SWDProduct *product;
+    if(indexPath.section == 0) {
+        product = [products objectAtIndex:indexPath.row];
+    } else {
+        product = [collectedProducts objectAtIndex:indexPath.row];
+        cell.textLabel.textColor = [UIColor grayColor];
+    }
     cell.textLabel.text = product.label;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView beginUpdates];
+    if(indexPath.section == 0) {
+        NSLog(@"Marking product as selected");
+        SWDProduct *product = [products objectAtIndex:indexPath.row];
+        [products removeObjectAtIndex:indexPath.row];
+        [collectedProducts addObject:product];
+        [tableView moveRowAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForRow:[collectedProducts indexOfObject:product] inSection:1]];
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        SWDProduct *product = [collectedProducts objectAtIndex:indexPath.row];
+        [collectedProducts removeObjectAtIndex:indexPath.row];
+        [products insertObject:product atIndex:0];
+        [tableView moveRowAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForRow:[products indexOfObject:product] inSection:0]];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    [tableView endUpdates];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
