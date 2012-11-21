@@ -10,8 +10,9 @@
 #import "SWDProduct.h"
 
 @protocol SWDProductPickerControllerDelegate <NSObject>
+@required
 
-- (void)productSelected:(SWDProduct *)product;
+- (void)productPickerDidSelectProduct:(SWDProduct *)product;
 
 @end
 

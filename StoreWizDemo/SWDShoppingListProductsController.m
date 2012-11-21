@@ -58,7 +58,7 @@
     }
 }
 
-- (void)productSelected:(SWDProduct *)product
+- (void)productPickerDidSelectProduct:(SWDProduct *)product
 {
     [products addObject:product];
     [self.tableView reloadData];

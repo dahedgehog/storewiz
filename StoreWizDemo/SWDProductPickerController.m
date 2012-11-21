@@ -48,8 +48,8 @@
     UIButton *button = (UIButton *)sender;
     NSIndexPath *index = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
     SWDProduct *product = [self.searched objectAtIndex:index.row];
-    if([delegate respondsToSelector:@selector(productSelected:)]) {
-        [delegate productSelected:product];
+    if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
+        [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }
 }
 
