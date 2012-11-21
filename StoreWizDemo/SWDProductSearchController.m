@@ -20,7 +20,7 @@
     SWDProductDataController *ctrl = [[SWDProductDataController alloc] initWithResource:@"katalogi"];
     
     self.allItems = ctrl.products;
-    self.searched = nil;
+    self.searched = self.allItems;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -74,8 +74,12 @@
 
 - (void)filterContectForSearchText:(NSString *)searchText
 {
-    NSPredicate *resultsPred = [NSPredicate predicateWithFormat:@"label beginswith[cd] %@", searchText];
-    self.searched = [self.allItems filteredArrayUsingPredicate:resultsPred];
+    if (searchText != @"") {
+        NSPredicate *resultsPred = [NSPredicate predicateWithFormat:@"label beginswith[cd] %@", searchText];
+        self.searched = [self.allItems filteredArrayUsingPredicate:resultsPred];
+    } else {
+        self.searched = self.allItems;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
