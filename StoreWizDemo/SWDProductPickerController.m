@@ -44,6 +44,9 @@
     if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
         [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.searchBar.text = @"";
+    [self searchBar:self.searchBar textDidChange:@""];
 }
 
 - (void)addButtonPressed:(id)sender
