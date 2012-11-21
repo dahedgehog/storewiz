@@ -38,6 +38,7 @@
     
     SWDShoppingList *shoppingList = [self.dataController objectInShoppingListsAtIndex:indexPath.row];
     cell.textLabel.text = shoppingList.name;
+    cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:shoppingList.creationDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
     return cell;
 }
 

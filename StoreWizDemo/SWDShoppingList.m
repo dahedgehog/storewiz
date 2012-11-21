@@ -10,7 +10,7 @@
 
 @implementation SWDShoppingList
 
-@synthesize name, products;
+@synthesize name, products, creationDate;
 
 - (id)initWithName:(NSString *)aName
 {
@@ -18,6 +18,7 @@
     if(self) {
         self.name = aName;
         self.products = [NSMutableArray array];
+        self.creationDate = [NSDate date];
         return self;
     }
     return nil;

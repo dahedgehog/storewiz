@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSMutableArray *products;
 
+@property (strong, nonatomic) NSDate *creationDate;
+
 - (id)initWithName:(NSString *)name;
 
 @end
