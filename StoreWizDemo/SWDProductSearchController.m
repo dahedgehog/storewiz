@@ -74,7 +74,7 @@
 
 - (void)filterContectForSearchText:(NSString *)searchText
 {
-    NSPredicate *resultsPred = [NSPredicate predicateWithFormat:@"label contains[cd] %@", searchText];
+    NSPredicate *resultsPred = [NSPredicate predicateWithFormat:@"label beginswith[cd] %@", searchText];
     self.searched = [self.allItems filteredArrayUsingPredicate:resultsPred];
 }
 
