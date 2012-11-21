@@ -1,30 +1,29 @@
 //
-//  SWDShoppingListMapController.m
+//  SWDMapViewController.m
 //  StoreWizDemo
 //
-//  Created by Ilari Kontinen on 6.11.2012.
+//  Created by Sami Kukkonen on 21.11.2012.
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
-#import "SWDShoppingListMapController.h"
-#import "SWDAdsDataController.h"
+#import "SWDMapViewController.h"
 #import "SWDProduct.h"
-#import "SWDShoppingList.h"
-#import "SWDShoppingListTabBarController.h"
+#import "SWDAdsDataController.h"
 #import <MapKit/MapKit.h>
 
-@interface SWDShoppingListMapController ()
+@interface SWDMapViewController ()
 
 - (void)renderProduct:(SWDProduct *)product;
 
 @end
 
-@implementation SWDShoppingListMapController
+@implementation SWDMapViewController
 {
     SMCalloutView *_calloutView;
     UIImageView *_mapView;
-    SWDShoppingList *_shoppingList;
 }
+
+@synthesize products = _products;
 
 - (void)viewDidLoad
 {
@@ -35,7 +34,7 @@
     
     UIImage *img  = [UIImage imageNamed:ad.label];
     self.adView.image = img;
-
+    
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
     
     _calloutView = [SMCalloutView new];
@@ -55,9 +54,7 @@
 {
     [super viewDidAppear:animated];
     
-    _shoppingList = ((SWDShoppingListTabBarController *)self.tabBarController).shoppingList;
-    
-    [_shoppingList.products enumerateObjectsUsingBlock:^(SWDProduct *product, NSUInteger idx, BOOL *stop) {
+    [_products enumerateObjectsUsingBlock:^(SWDProduct *product, NSUInteger idx, BOOL *stop) {
         [self renderProduct:product];
     }];
 }
@@ -67,17 +64,17 @@
     MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:@""];
     pinAnnotationView.center = CGPointMake(product.coordX, product.coordY);
     // Hack?
-    pinAnnotationView.tag = [_shoppingList.products indexOfObject:product];
+    pinAnnotationView.tag = [_products indexOfObject:product];
     
     [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pinTapped:)]];
-
+    
     [_mapView addSubview:pinAnnotationView];
 }
 
 - (void)pinTapped:(UITapGestureRecognizer *)sender
 {
     MKPinAnnotationView *pin = (MKPinAnnotationView *)sender.view;
-    SWDProduct *product = [_shoppingList.products objectAtIndex:pin.tag];
+    SWDProduct *product = [_products objectAtIndex:pin.tag];
     
     _calloutView.title = product.label;
     _calloutView.subtitle = [product.price stringByAppendingString:@" €"];

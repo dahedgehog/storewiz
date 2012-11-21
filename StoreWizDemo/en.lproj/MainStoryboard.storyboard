@@ -155,12 +155,12 @@
             </objects>
             <point key="canvasLocation" x="1732" y="-265"/>
         </scene>
-        <!--Product View Controller - Tuotetiedot-->
+        <!--Map View Controller - Tuotetiedot-->
         <scene sceneID="kaa-XI-JPu">
             <objects>
-                <viewController id="M31-zX-pW1" customClass="SWDProductViewController" sceneMemberID="viewController">
+                <viewController id="M31-zX-pW1" customClass="SWDMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAR-b5-xVt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-1H-uCV"/>
@@ -181,6 +181,7 @@
                             <constraint firstItem="wxl-1H-uCV" firstAttribute="top" secondItem="iAR-b5-xVt" secondAttribute="top" type="default" id="lUH-cx-FUv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="t15-kC-ItQ"/>
                     <navigationItem key="navigationItem" title="Tuotetiedot" id="Szc-FR-cxs"/>
                     <connections>
                         <outlet property="adView" destination="x3f-1M-Oor" id="931-C1-8a5"/>
@@ -200,24 +201,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListCell" textLabel="HzO-W2-HP3" detailTextLabel="qze-xf-8JN" style="IBUITableViewCellStyleValue1" id="Em7-EY-urv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListCell" id="Em7-EY-urv">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzO-W2-HP3">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qze-xf-8JN">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
@@ -231,7 +220,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ostoslistat" id="ahT-mK-3zZ">
-                        <barButtonItem key="rightBarButtonItem" title="Uusi lista" id="lFF-jJ-2o3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lFF-jJ-2o3">
                             <connections>
                                 <action selector="addShoppingList:" destination="evT-Qn-8Wr" id="t9e-iz-DUa"/>
                             </connections>
@@ -247,7 +236,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Tp4-wz-t3b" customClass="SWDShoppingListTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Ostoslista" id="u0x-fX-oaC">
-                        <barButtonItem key="rightBarButtonItem" title="Lisää tuote" id="87f-FV-JGV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="87f-FV-JGV">
                             <connections>
                                 <action selector="addListItem:" destination="Tp4-wz-t3b" id="IkQ-oy-hOx"/>
                                 <segue destination="MyW-FI-MhN" kind="modal" identifier="ShoppingListProductSearch" id="FHi-v0-9Iq"/>
@@ -263,7 +252,7 @@
                     <connections>
                         <outlet property="addItemButton" destination="87f-FV-JGV" id="YZ0-VP-bsM"/>
                         <segue destination="Cte-Cv-QL0" kind="relationship" relationship="viewControllers" id="R32-1t-uDY"/>
-                        <segue destination="4M2-nG-95l" kind="relationship" relationship="viewControllers" id="v1Z-Mt-Gcg"/>
+                        <segue destination="M31-zX-pW1" kind="relationship" relationship="viewControllers" id="l8f-Y3-XnC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdV-6i-wD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,43 +357,6 @@
             </objects>
             <point key="canvasLocation" x="2109" y="1053"/>
         </scene>
-        <!--Shopping List Map Controller - Kartta-->
-        <scene sceneID="0Ra-gj-5AB">
-            <objects>
-                <viewController id="4M2-nG-95l" customClass="SWDShoppingListMapController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N3Q-uA-zS9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-8f-9C5"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mainos_klementiini.png" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-he-jHU">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="PGn-hd-DgG"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aM0-he-jHU" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="7e0-qi-dsM"/>
-                            <constraint firstItem="aM0-he-jHU" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="9l4-T6-Ky6"/>
-                            <constraint firstItem="aM0-he-jHU" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="PyL-95-FwL"/>
-                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="leading" secondItem="N3Q-uA-zS9" secondAttribute="leading" type="default" id="VWP-tE-9HJ"/>
-                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="top" secondItem="N3Q-uA-zS9" secondAttribute="top" type="default" id="eqN-q8-p78"/>
-                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="bottom" secondItem="N3Q-uA-zS9" secondAttribute="bottom" type="default" id="mgJ-SL-eKg"/>
-                            <constraint firstItem="0Jc-8f-9C5" firstAttribute="trailing" secondItem="N3Q-uA-zS9" secondAttribute="trailing" type="default" id="pOE-VC-nWj"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Kartta" id="i6w-CT-Vu1"/>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="adView" destination="aM0-he-jHU" id="zgI-Id-lCT"/>
-                        <outlet property="scrollView" destination="0Jc-8f-9C5" id="lPE-gb-ihh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XmT-pX-yDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2625" y="737"/>
-        </scene>
         <!--Shopping List Products Controller - Tuotteet-->
         <scene sceneID="qJ1-PU-q03">
             <objects>
@@ -465,11 +417,17 @@
     </scenes>
     <resources>
         <image name="mainos_carlsberg.png" width="640" height="135"/>
-        <image name="mainos_klementiini.png" width="640" height="133"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SWDMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="SWDMasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
@@ -480,6 +438,9 @@
         </class>
         <class className="SWDProductPickerController" superclassName="SWDProductSearchController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductPickerController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPressed:"/>
+            </relationships>
         </class>
         <class className="SWDProductSearchController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
@@ -488,24 +449,10 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="SWDProductViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
         <class className="SWDShoppingListController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
             <relationships>
                 <relationship kind="action" name="addShoppingList:"/>
-            </relationships>
-        </class>
-        <class className="SWDShoppingListMapController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListMapController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
@@ -526,6 +473,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="yFV-Am-nAN"/>
+        <segue reference="l8f-Y3-XnC"/>
     </inferredMetricsTieBreakers>
 </document>

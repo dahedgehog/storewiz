@@ -1,17 +1,19 @@
 //
-//  SWDShoppingListMapController.h
+//  SWDMapViewController.h
 //  StoreWizDemo
 //
-//  Created by Ilari Kontinen on 6.11.2012.
+//  Created by Sami Kukkonen on 21.11.2012.
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <SMCalloutView.h>
 
-@interface SWDShoppingListMapController : UIViewController <SMCalloutViewDelegate>
+@interface SWDMapViewController : UIViewController <SMCalloutViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *adView;
+
+@property (nonatomic) NSArray *products;
 
 @end

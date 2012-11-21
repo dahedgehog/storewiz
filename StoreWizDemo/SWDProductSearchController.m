@@ -7,7 +7,6 @@
 //
 
 #import "SWDProductSearchController.h"
-#import "SWDProductViewController.h"
 #import "SWDProductDataController.h"
 #import "SWDProduct.h"
 
@@ -88,7 +87,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         SWDProduct* product = [self.searched objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setProduct:product];
+        [[segue destinationViewController] setProducts:[NSArray arrayWithObject:product]];
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
         [self searchBarCancelButtonClicked:self.searchBar];

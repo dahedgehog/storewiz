@@ -7,7 +7,6 @@
 //
 
 #import "SWDShoppingListProductsController.h"
-#import "SWDProductViewController.h"
 #import "SWDShoppingListTabBarController.h"
 #import "SWDProduct.h"
 
@@ -54,7 +53,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         SWDProduct* product = [products objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setProduct:product];
+        [[segue destinationViewController] setProducts:[NSArray arrayWithObject:product]];
     }
 }
 

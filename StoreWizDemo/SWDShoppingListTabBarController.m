@@ -9,6 +9,7 @@
 #import "SWDShoppingListTabBarController.h"
 #import "SWDProductPickerController.h"
 #import "SWDShoppingListProductsController.h"
+#import "SWDMapViewController.h"
 
 @implementation SWDShoppingListTabBarController
 
@@ -31,11 +32,14 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
     if (item.tag == 1) {
+        NSLog(@"Showing product listing view");
         [self.navigationItem setRightBarButtonItem:self.addItemButton animated:NO];
 
     } else if (item.tag == 2) {
+        NSLog(@"Showing map");
         [self.navigationItem setRightBarButtonItem:self.locateButton animated:NO];
-        
+        SWDMapViewController *mapViewController = self.viewControllers[1];
+        mapViewController.products = _shoppingList.products;
     } else {
         [self.navigationItem setRightBarButtonItem:nil animated:NO];
     }
