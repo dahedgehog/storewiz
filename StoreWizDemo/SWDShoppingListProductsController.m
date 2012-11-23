@@ -28,6 +28,11 @@
     collectedProducts = shoppingList.collectedProducts;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -60,6 +65,7 @@
     } else {
         product = [collectedProducts objectAtIndex:indexPath.row];
         cell.textLabel.textColor = [UIColor grayColor];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     cell.textLabel.text = product.label;
     return cell;

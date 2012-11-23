@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *adView;
 
-@property (nonatomic) NSArray *products;
+@property (strong, nonatomic) NSMutableArray *products;
+@property (strong, nonatomic) NSMutableArray *collectedProducts;
 
 @end

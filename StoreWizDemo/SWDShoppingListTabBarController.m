@@ -39,7 +39,8 @@
         NSLog(@"Showing map");
         [self.navigationItem setRightBarButtonItem:self.locateButton animated:NO];
         SWDMapViewController *mapViewController = self.viewControllers[1];
-        mapViewController.products = _shoppingList.products;
+        [mapViewController setProducts:_shoppingList.products];
+        [mapViewController setCollectedProducts:_shoppingList.collectedProducts];
     } else {
         [self.navigationItem setRightBarButtonItem:nil animated:NO];
     }
