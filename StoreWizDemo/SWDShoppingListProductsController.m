@@ -14,6 +14,7 @@
 {
     NSMutableArray *products;
     NSMutableArray *collectedProducts;
+    BOOL _productPickerInitiallyShown;
 }
 
 @synthesize shoppingList;
@@ -21,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _productPickerInitiallyShown = NO;
     
     SWDShoppingListTabBarController *tabBarController = (SWDShoppingListTabBarController *) self.tabBarController;
     self.shoppingList = tabBarController.shoppingList;
@@ -32,7 +35,8 @@
 {
     [self.tableView reloadData];
     
-    if(products.count == 0) {
+    if(products.count == 0 && !_productPickerInitiallyShown) {
+        _productPickerInitiallyShown = YES;
         [self.tabBarController performSegueWithIdentifier:@"ShoppingListProductSearch" sender:nil];
     }
 }
