@@ -38,15 +38,19 @@
     
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
     
-    UIImage *checkbox = [UIImage imageNamed:@"117-todo-white.png"];
+    UIImage *checkbox = [UIImage imageNamed:@"19-circle-check.png"];
     UIImage *highlightedCheckbox = [UIImage imageNamed:@"117-todo-white-highlight.png"];
+    
     UIImageView *checkboxView = [[UIImageView alloc] initWithImage:checkbox highlightedImage:highlightedCheckbox];
     checkboxView.userInteractionEnabled = YES;
     [checkboxView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(accessoryViewTapped:)]];
     
     _calloutView = [SMCalloutView new];
     _calloutView.delegate = self;
-    _calloutView.rightAccessoryView = checkboxView;
+    
+    if(!_scrollsToCenterPointAfterAppear) {
+        _calloutView.rightAccessoryView = checkboxView;
+    }
     
     _mapView = [[UIImageView alloc] initWithImage:map];
     _mapView.userInteractionEnabled = YES;
