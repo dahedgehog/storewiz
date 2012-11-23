@@ -17,4 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) NSMutableArray *collectedProducts;
 
+@property (nonatomic) CGPoint centerPoint;
+@property (nonatomic) BOOL scrollsToCenterPointAfterAppear;
+
 @end

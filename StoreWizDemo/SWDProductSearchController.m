@@ -9,6 +9,7 @@
 #import "SWDProductSearchController.h"
 #import "SWDProductDataController.h"
 #import "SWDProduct.h"
+#import "SWDMapViewController.h"
 
 @implementation SWDProductSearchController
 
@@ -88,6 +89,9 @@
         
         SWDProduct* product = [self.searched objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProducts:[NSArray arrayWithObject:product]];
+    
+        [[segue destinationViewController] setScrollsToCenterPointAfterAppear:YES];
+        [[segue destinationViewController] setCenterPoint:CGPointMake(product.coordX, product.coordY)];
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
         [self searchBarCancelButtonClicked:self.searchBar];

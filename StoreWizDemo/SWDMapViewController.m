@@ -24,7 +24,7 @@
     SWDProduct *_selectedProduct;
 }
 
-@synthesize products = _products, collectedProducts = _collectedProducts;
+@synthesize products = _products, collectedProducts = _collectedProducts, centerPoint = _centerPoint, scrollsToCenterPointAfterAppear = _scrollsToCenterPointAfterAppear;
 
 - (void)viewDidLoad
 {
@@ -63,6 +63,12 @@
     [super viewDidAppear:animated];
     
     [self renderProducts:_products];
+    
+    if(_scrollsToCenterPointAfterAppear) {
+        CGRect origin = self.scrollView.frame;
+        CGRect frame = CGRectMake(_centerPoint.x, _centerPoint.y, origin.size.width / 2, origin.size.height / 2);
+        [self.scrollView scrollRectToVisible:frame animated:animated];
+    }
 }
 
 - (void)renderProducts:(NSArray *)products {
