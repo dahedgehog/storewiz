@@ -31,6 +31,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.tableView reloadData];
+    
+    if(products.count == 0) {
+        [self.tabBarController performSegueWithIdentifier:@"ShoppingListProductSearch" sender:nil];
+    }
 }
 
 #pragma mark - Table view data source
