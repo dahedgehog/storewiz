@@ -33,6 +33,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.tableView reloadData];
     
     if(products.count == 0 && !_productPickerInitiallyShown) {

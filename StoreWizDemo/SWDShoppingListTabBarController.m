@@ -34,9 +34,9 @@
     if (item.tag == 1) {
         NSLog(@"Showing product listing view");
         [self.navigationItem setRightBarButtonItem:self.addItemButton animated:NO];
-
     } else if (item.tag == 2) {
         NSLog(@"Showing map");
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
         [self.navigationItem setRightBarButtonItem:self.locateButton animated:NO];
         SWDMapViewController *mapViewController = self.viewControllers[1];
         [mapViewController setProducts:_shoppingList.products];
