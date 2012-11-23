@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SWDShoppingList.h"
+#import "ShoppingList.h"
 
 @interface SWDShoppingListTabBarController : UITabBarController <UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *locateButton;
-@property (strong, nonatomic) SWDShoppingList *shoppingList;
+@property (strong, nonatomic) ShoppingList *shoppingList;
 
 - (IBAction)addListItem:(id)sender;
 

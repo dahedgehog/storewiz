@@ -27,8 +27,8 @@
     
     SWDShoppingListTabBarController *tabBarController = (SWDShoppingListTabBarController *) self.tabBarController;
     self.shoppingList = tabBarController.shoppingList;
-    products = shoppingList.products;
-    collectedProducts = shoppingList.collectedProducts;
+    products = [NSMutableArray array];
+    collectedProducts = [NSMutableArray array];
 }
 
 - (void)viewDidAppear:(BOOL)animated

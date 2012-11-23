@@ -39,8 +39,8 @@
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [self.navigationItem setRightBarButtonItem:self.locateButton animated:NO];
         SWDMapViewController *mapViewController = self.viewControllers[1];
-        [mapViewController setProducts:_shoppingList.products];
-        [mapViewController setCollectedProducts:_shoppingList.collectedProducts];
+        [mapViewController setProducts:@[]];
+        [mapViewController setCollectedProducts:@[]];
     } else {
         [self.navigationItem setRightBarButtonItem:nil animated:NO];
     }

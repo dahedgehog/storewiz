@@ -21,6 +21,8 @@
 
 @implementation SWDMasterViewController
 
+@synthesize managedObjectContext = _managedObjectContext;
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];

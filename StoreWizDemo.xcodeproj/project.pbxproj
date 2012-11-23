@@ -51,6 +51,11 @@
 		621F5089165FFF460089534A /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5083165FFF460089534A /* 103-map@2x.png */; };
 		621F508A165FFF460089534A /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5084165FFF460089534A /* 193-location-arrow.png */; };
 		621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5085165FFF460089534A /* 193-location-arrow@2x.png */; };
+		621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */; };
+		621F509E166010B20089534A /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F509D166010B20089534A /* ShoppingList.m */; };
+		621F50A1166010B30089534A /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F50A0166010B30089534A /* Category.m */; };
+		621F50A4166010B30089534A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F50A3166010B30089534A /* Product.m */; };
+		621F50A91660199A0089534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F50A81660199A0089534A /* CoreData.framework */; };
 		703D65B2CDA44F02BF01BFCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE891A4162D442ACBD374453 /* libPods.a */; };
 		FF80A227165D271D00159775 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
 		FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF80A229165D2FE200159775 /* SWDMapViewController.m */; };
@@ -117,6 +122,14 @@
 		621F5083165FFF460089534A /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
 		621F5084165FFF460089534A /* 193-location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow.png"; sourceTree = "<group>"; };
 		621F5085165FFF460089534A /* 193-location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow@2x.png"; sourceTree = "<group>"; };
+		621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreWizDemo.xcdatamodel; sourceTree = "<group>"; };
+		621F509C166010B20089534A /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingList.h; path = ../ShoppingList.h; sourceTree = "<group>"; };
+		621F509D166010B20089534A /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingList.m; path = ../ShoppingList.m; sourceTree = "<group>"; };
+		621F509F166010B30089534A /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Category.h; path = ../Category.h; sourceTree = "<group>"; };
+		621F50A0166010B30089534A /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Category.m; path = ../Category.m; sourceTree = "<group>"; };
+		621F50A2166010B30089534A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../Product.h; sourceTree = "<group>"; };
+		621F50A3166010B30089534A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = ../Product.m; sourceTree = "<group>"; };
+		621F50A81660199A0089534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AE891A4162D442ACBD374453 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF80A228165D2FE200159775 /* SWDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDMapViewController.h; sourceTree = "<group>"; };
 		FF80A229165D2FE200159775 /* SWDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDMapViewController.m; sourceTree = "<group>"; };
@@ -132,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621F50A91660199A0089534A /* CoreData.framework in Frameworks */,
 				FFE125E7165BD00300F72A59 /* MapKit.framework in Frameworks */,
 				614005171648FC920035A21D /* UIKit.framework in Frameworks */,
 				614005191648FC920035A21D /* Foundation.framework in Frameworks */,
@@ -164,6 +178,7 @@
 		614005151648FC920035A21D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				621F50A81660199A0089534A /* CoreData.framework */,
 				FFE125E6165BD00300F72A59 /* MapKit.framework */,
 				614005161648FC920035A21D /* UIKit.framework */,
 				614005181648FC920035A21D /* Foundation.framework */,
@@ -176,9 +191,16 @@
 		6140051C1648FC920035A21D /* StoreWizDemo */ = {
 			isa = PBXGroup;
 			children = (
+				621F50A2166010B30089534A /* Product.h */,
+				621F50A3166010B30089534A /* Product.m */,
+				621F509F166010B30089534A /* Category.h */,
+				621F50A0166010B30089534A /* Category.m */,
+				621F509C166010B20089534A /* ShoppingList.h */,
+				621F509D166010B20089534A /* ShoppingList.m */,
 				621F507B165FFE920089534A /* Icons */,
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
 				611418DD1657B68900112294 /* SWDProduct.m */,
+				621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */,
 				61882D291659183300D77E9E /* SWDAdsDataController.h */,
 				61882D2A1659183400D77E9E /* SWDAdsDataController.m */,
 				61882D181658F24800D77E9E /* SWDProductDataController.h */,
@@ -379,6 +401,10 @@
 				FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */,
 				61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */,
 				FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */,
+				621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */,
+				621F509E166010B20089534A /* ShoppingList.m in Sources */,
+				621F50A1166010B30089534A /* Category.m in Sources */,
+				621F50A4166010B30089534A /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +526,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */,
+			);
+			currentVersion = 621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */;
+			name = StoreWizDemo.xcdatamodeld;
+			path = ../StoreWizDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 614005091648FC910035A21D /* Project object */;
 }

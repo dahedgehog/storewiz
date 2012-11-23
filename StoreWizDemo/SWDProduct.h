@@ -10,8 +10,8 @@
 
 @interface SWDProduct : NSObject <NSCopying>
 
-@property (copy, nonatomic) NSString *label;
-@property (copy, nonatomic) NSString *price;
+@property (nonatomic) NSString *label;
+@property (nonatomic) NSString *price;
 
 @property (nonatomic) NSUInteger coordX;
 @property (nonatomic) NSUInteger coordY;
