@@ -31,9 +31,9 @@
     [super viewDidLoad];
     
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
-    SWDProduct *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
+    NSDictionary *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
-    UIImage *img  = [UIImage imageNamed:ad.label];
+    UIImage *img  = [UIImage imageNamed:[ad valueForKey:@"name"]];
     self.adView.image = img;
     
     UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
@@ -82,15 +82,12 @@
     for(SWDProduct *product in products) {
         [self renderProduct:product color:MKPinAnnotationColorGreen tag:[products indexOfObject:product]];
     }
-    //    for(SWDProduct *collectedProduct in _collectedProducts) {
-    //        [self renderProduct:collectedProduct color:MKPinAnnotationColorPurple tag:[_collectedProducts indexOfObject:collectedProduct]];
-    //    }
 }
 
 - (void)renderProduct:(SWDProduct *)product color:(MKPinAnnotationColor)color tag:(NSUInteger)tag
 {
     MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:@""];
-    pinAnnotationView.center = CGPointMake(product.coordX, product.coordY);
+    pinAnnotationView.center = CGPointMake(product.x.floatValue, product.y.floatValue);
     pinAnnotationView.pinColor = color;
     // Hack?
     pinAnnotationView.tag = tag;
@@ -107,19 +104,20 @@
     
     _selectedProduct = product;
     
-    _calloutView.title = product.label;
-    _calloutView.subtitle = [product.price stringByAppendingString:@" €"];
+    _calloutView.title = product.name;
+    _calloutView.subtitle = [product.price.stringValue stringByAppendingString:@" €"];
     _calloutView.calloutOffset = pin.calloutOffset;
     [_calloutView presentCalloutFromRect:pin.frame inView:_mapView constrainedToView:self.scrollView permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
 }
 
 - (void)accessoryViewTapped:(UIGestureRecognizer *)gestureRecognizer
 {
-    [SVProgressHUD showSuccessWithStatus:_selectedProduct.label];
+    [SVProgressHUD showSuccessWithStatus:_selectedProduct.name];
+    _selectedProduct.collected = [NSNumber numberWithBool:YES];
     [_products removeObject:_selectedProduct];
-    [_collectedProducts addObject:_selectedProduct];
     [self mapTapped];
     [self renderProducts:_products];
+    [[NSManagedObjectContext defaultContext] saveNestedContexts];
 }
 
 - (void)mapTapped

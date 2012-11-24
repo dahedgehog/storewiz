@@ -17,4 +17,6 @@
 @property (copy, nonatomic) NSArray *allItems;
 @property (copy, nonatomic) NSArray *searched;
 
+@property (nonatomic) NSArray *sections;
+
 @end

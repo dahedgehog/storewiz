@@ -6,27 +6,20 @@
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
+#define MR_SHORTHAND
 #import "SWDShoppingListController.h"
-#import "SWDShoppingListDataController.h"
 #import "SWDShoppingListTabBarController.h"
 #import "SWDShoppingList.h"
 #import "SWDMasterViewController.h"
-#import "ShoppingList.h"
-#import <CoreData/CoreData.h>
 
 @implementation SWDShoppingListController
 {
     NSFetchedResultsController *_fetchedResultsController;
 }
 
-@synthesize fetchedResultsController = _fetchedResultsController, managedObjectContext = _managedObjectContext;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UINavigationController *navigationController = (UINavigationController *)self.parentViewController;
-    SWDMasterViewController *masterViewController = [navigationController.viewControllers objectAtIndex:0];
-    _managedObjectContext = [masterViewController managedObjectContext];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -35,33 +28,7 @@
         return _fetchedResultsController;
     }
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ShoppingList" inManagedObjectContext:_managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:@"ShoppingList"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
+    _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
     
     return _fetchedResultsController;
 }
@@ -100,16 +67,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+        SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+        [shoppingList deleteEntity];
     }
 }
 
@@ -118,33 +78,20 @@
     if(buttonIndex == 1) {
         NSString *shoppingListName = [alertView textFieldAtIndex:0].text;
         if(![shoppingListName isEqualToString:@""]) {
-            ShoppingList *shoppingList = [self insertNewObject:self name:shoppingListName];
-            [self.tableView selectRowAtIndexPath:[self.fetchedResultsController indexPathForObject:shoppingList] animated:NO scrollPosition:UITableViewScrollPositionNone];
-            [self performSegueWithIdentifier:@"ShowListView" sender:self];
+            [self insertNewObject:self name:shoppingListName];
         }
     }
 }
 
-- (ShoppingList *)insertNewObject:(id)sender name:(NSString *)name
+- (SWDShoppingList *)insertNewObject:(id)sender name:(NSString *)name
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    ShoppingList *shoppingList = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    SWDShoppingList *shoppingList = [SWDShoppingList createEntity];
     
     shoppingList.name = name;
     shoppingList.creationDate = [NSDate date];
     
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template
+    [[NSManagedObjectContext defaultContext] saveNestedContexts];
     
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
     return shoppingList;
 }
 
@@ -154,8 +101,6 @@
         
         SWDShoppingList *shoppingList = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setShoppingList:shoppingList];
-        
-        //[self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
 }
 
@@ -188,6 +133,8 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView selectRowAtIndexPath:newIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+            [self performSegueWithIdentifier:@"ShowListView" sender:self];
             break;
             
         case NSFetchedResultsChangeDelete:
@@ -213,7 +160,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    ShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = shoppingList.name;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

@@ -6,14 +6,13 @@
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
+#define MR_SHORTHAND
+
 #import <UIKit/UIKit.h>
+#import <CoreData+MagicalRecord.h>
 
 @interface SWDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @end

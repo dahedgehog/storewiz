@@ -10,7 +10,7 @@
 #import "SWDShoppingList.h"
 #import "SWDProductPickerController.h"
  
-@interface SWDShoppingListProductsController : UITableViewController <SWDProductPickerControllerDelegate>
+@interface SWDShoppingListProductsController : UITableViewController <SWDProductPickerControllerDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) SWDShoppingList *shoppingList;
 

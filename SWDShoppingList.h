@@ -1,5 +1,5 @@
 //
-//  Product.h
+//  ShoppingList.h
 //  StoreWizDemo
 //
 //  Created by Tuomas Vuori on 11/23/12.
@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Category;
+@class Product;
 
-@interface Product : NSManagedObject
+@interface SWDShoppingList : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * price;
-@property (nonatomic, retain) Category *category;
+@property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) Product *products;
 
 @end

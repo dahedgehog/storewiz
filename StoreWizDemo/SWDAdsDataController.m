@@ -27,10 +27,13 @@
         NSArray *lines = [contents componentsSeparatedByString:@"\n"];
         for (NSString *line in lines) {
             NSArray *comps = [line componentsSeparatedByString:@","];
-            SWDProduct *item = [[SWDProduct alloc] initWithLabel:comps[0] price:comps[1]
-                                                                  coordX:[comps[2] integerValue]
-                                                                  coordY:[comps[3] integerValue]];
-            [ads addObject:item];
+            NSDictionary *product = @{
+            @"name": comps[0],
+            @"price": comps[1],
+            @"x": [NSNumber numberWithInteger:[comps[2] integerValue]],
+            @"y": [NSNumber numberWithInteger:[comps[3] integerValue]]
+            };
+            [ads addObject:product];
         }
         self.ads = [NSArray arrayWithArray:ads];
         return self;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		611418DB1657B59300112294 /* new_grocery_store.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 611418DA1657B59300112294 /* new_grocery_store.jpeg */; };
-		611418DE1657B68900112294 /* SWDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 611418DD1657B68900112294 /* SWDProduct.m */; };
 		614005171648FC920035A21D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614005161648FC920035A21D /* UIKit.framework */; };
 		614005191648FC920035A21D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614005181648FC920035A21D /* Foundation.framework */; };
 		6140051B1648FC920035A21D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6140051A1648FC920035A21D /* CoreGraphics.framework */; };
@@ -42,7 +41,8 @@
 		61A24A3F16598F6500DF0754 /* mainos_pikkuprinssi.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */; };
 		61A24A4016598F6500DF0754 /* mainos_vihrkuulat.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */; };
 		61A24A421659929D00DF0754 /* mainokset.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A411659929D00DF0754 /* mainokset.csv */; };
-		61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */; };
+		6218D0AE16615D80008FBD81 /* SWDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 6218D0AD16615D7F008FBD81 /* SWDProduct.m */; };
+		6218D0B116615E7E008FBD81 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6218D0B016615E7E008FBD81 /* SWDShoppingList.m */; };
 		621F507E165FFEC10089534A /* 19-circle-check.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F507C165FFEC10089534A /* 19-circle-check.png */; };
 		621F507F165FFEC10089534A /* 19-circle-check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F507D165FFEC10089534A /* 19-circle-check@2x.png */; };
 		621F5086165FFF460089534A /* 80-shopping-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5080165FFF460089534A /* 80-shopping-cart.png */; };
@@ -52,12 +52,8 @@
 		621F508A165FFF460089534A /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5084165FFF460089534A /* 193-location-arrow.png */; };
 		621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5085165FFF460089534A /* 193-location-arrow@2x.png */; };
 		621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */; };
-		621F509E166010B20089534A /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F509D166010B20089534A /* ShoppingList.m */; };
-		621F50A1166010B30089534A /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F50A0166010B30089534A /* Category.m */; };
-		621F50A4166010B30089534A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F50A3166010B30089534A /* Product.m */; };
 		621F50A91660199A0089534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F50A81660199A0089534A /* CoreData.framework */; };
 		703D65B2CDA44F02BF01BFCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE891A4162D442ACBD374453 /* libPods.a */; };
-		FF80A227165D271D00159775 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD9CB5816590887008A4F44 /* SWDShoppingList.m */; };
 		FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF80A229165D2FE200159775 /* SWDMapViewController.m */; };
 		FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */; };
 		FFE125E7165BD00300F72A59 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE125E6165BD00300F72A59 /* MapKit.framework */; };
@@ -66,8 +62,6 @@
 /* Begin PBXFileReference section */
 		03F731AF34EA45B0B57396CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		611418DA1657B59300112294 /* new_grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_grocery_store.jpeg; sourceTree = "<group>"; };
-		611418DC1657B68900112294 /* SWDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProduct.h; sourceTree = "<group>"; };
-		611418DD1657B68900112294 /* SWDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProduct.m; sourceTree = "<group>"; };
 		614005121648FC920035A21D /* StoreWizDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreWizDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614005161648FC920035A21D /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		614005181648FC920035A21D /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,8 +106,10 @@
 		61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_pikkuprinssi.png; sourceTree = "<group>"; };
 		61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_vihrkuulat.png; sourceTree = "<group>"; };
 		61A24A411659929D00DF0754 /* mainokset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainokset.csv; sourceTree = "<group>"; };
-		61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingListDataController.h; sourceTree = "<group>"; };
-		61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingListDataController.m; sourceTree = "<group>"; };
+		6218D0AC16615D7F008FBD81 /* SWDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProduct.h; sourceTree = "<group>"; };
+		6218D0AD16615D7F008FBD81 /* SWDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProduct.m; sourceTree = "<group>"; };
+		6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
+		6218D0B016615E7E008FBD81 /* SWDShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingList.m; sourceTree = "<group>"; };
 		621F507C165FFEC10089534A /* 19-circle-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-circle-check.png"; sourceTree = "<group>"; };
 		621F507D165FFEC10089534A /* 19-circle-check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-circle-check@2x.png"; sourceTree = "<group>"; };
 		621F5080165FFF460089534A /* 80-shopping-cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "80-shopping-cart.png"; sourceTree = "<group>"; };
@@ -123,20 +119,12 @@
 		621F5084165FFF460089534A /* 193-location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow.png"; sourceTree = "<group>"; };
 		621F5085165FFF460089534A /* 193-location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow@2x.png"; sourceTree = "<group>"; };
 		621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreWizDemo.xcdatamodel; sourceTree = "<group>"; };
-		621F509C166010B20089534A /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingList.h; path = ../ShoppingList.h; sourceTree = "<group>"; };
-		621F509D166010B20089534A /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingList.m; path = ../ShoppingList.m; sourceTree = "<group>"; };
-		621F509F166010B30089534A /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Category.h; path = ../Category.h; sourceTree = "<group>"; };
-		621F50A0166010B30089534A /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Category.m; path = ../Category.m; sourceTree = "<group>"; };
-		621F50A2166010B30089534A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../Product.h; sourceTree = "<group>"; };
-		621F50A3166010B30089534A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = ../Product.m; sourceTree = "<group>"; };
 		621F50A81660199A0089534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AE891A4162D442ACBD374453 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF80A228165D2FE200159775 /* SWDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDMapViewController.h; sourceTree = "<group>"; };
 		FF80A229165D2FE200159775 /* SWDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDMapViewController.m; sourceTree = "<group>"; };
 		FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductPickerController.h; sourceTree = "<group>"; };
 		FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductPickerController.m; sourceTree = "<group>"; };
-		FFD9CB5716590887008A4F44 /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
-		FFD9CB5816590887008A4F44 /* SWDShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDShoppingList.m; sourceTree = "<group>"; };
 		FFE125E6165BD00300F72A59 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -191,22 +179,17 @@
 		6140051C1648FC920035A21D /* StoreWizDemo */ = {
 			isa = PBXGroup;
 			children = (
-				621F50A2166010B30089534A /* Product.h */,
-				621F50A3166010B30089534A /* Product.m */,
-				621F509F166010B30089534A /* Category.h */,
-				621F50A0166010B30089534A /* Category.m */,
-				621F509C166010B20089534A /* ShoppingList.h */,
-				621F509D166010B20089534A /* ShoppingList.m */,
 				621F507B165FFE920089534A /* Icons */,
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
-				611418DD1657B68900112294 /* SWDProduct.m */,
 				621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */,
+				6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */,
+				6218D0B016615E7E008FBD81 /* SWDShoppingList.m */,
+				6218D0AC16615D7F008FBD81 /* SWDProduct.h */,
+				6218D0AD16615D7F008FBD81 /* SWDProduct.m */,
 				61882D291659183300D77E9E /* SWDAdsDataController.h */,
 				61882D2A1659183400D77E9E /* SWDAdsDataController.m */,
 				61882D181658F24800D77E9E /* SWDProductDataController.h */,
 				61882D191658F24800D77E9E /* SWDProductDataController.m */,
-				61DE915A164EA7A90099FCD7 /* SWDShoppingListDataController.h */,
-				61DE915B164EA7A90099FCD7 /* SWDShoppingListDataController.m */,
 				614005311648FC920035A21D /* SWDMasterViewController.h */,
 				614005321648FC920035A21D /* SWDMasterViewController.m */,
 				6140055516490DBA0035A21D /* SWDProductSearchController.h */,
@@ -217,11 +200,8 @@
 				618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */,
 				6140056E16491F020035A21D /* SWDShoppingListProductsController.h */,
 				6140056F16491F020035A21D /* SWDShoppingListProductsController.m */,
-				FFD9CB5716590887008A4F44 /* SWDShoppingList.h */,
-				FFD9CB5816590887008A4F44 /* SWDShoppingList.m */,
 				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
 				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
-				611418DC1657B68900112294 /* SWDProduct.h */,
 				6140051D1648FC920035A21D /* Supporting Files */,
 				FF80A228165D2FE200159775 /* SWDMapViewController.h */,
 				FF80A229165D2FE200159775 /* SWDMapViewController.m */,
@@ -387,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF80A227165D271D00159775 /* SWDShoppingList.m in Sources */,
 				614005231648FC920035A21D /* main.m in Sources */,
 				614005271648FC920035A21D /* SWDAppDelegate.m in Sources */,
 				614005331648FC920035A21D /* SWDMasterViewController.m in Sources */,
@@ -395,16 +374,13 @@
 				6140055716490DBA0035A21D /* SWDProductSearchController.m in Sources */,
 				6140057016491F030035A21D /* SWDShoppingListProductsController.m in Sources */,
 				618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */,
-				61DE915C164EA7A90099FCD7 /* SWDShoppingListDataController.m in Sources */,
-				611418DE1657B68900112294 /* SWDProduct.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
 				FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */,
 				61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */,
 				FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */,
 				621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */,
-				621F509E166010B20089534A /* ShoppingList.m in Sources */,
-				621F50A1166010B30089534A /* Category.m in Sources */,
-				621F50A4166010B30089534A /* Product.m in Sources */,
+				6218D0AE16615D80008FBD81 /* SWDProduct.m in Sources */,
+				6218D0B116615E7E008FBD81 /* SWDShoppingList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +421,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -454,6 +430,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

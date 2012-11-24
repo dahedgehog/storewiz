@@ -320,9 +320,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="M31-zX-pW1" kind="push" identifier="ShowProductView" id="yFV-Am-nAN"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -475,9 +472,7 @@
         <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
             <relationships>
-                <relationship kind="action" name="addListItem:"/>
                 <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="locateButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>
@@ -487,6 +482,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aNy-ZN-P3d"/>
+        <segue reference="l8f-Y3-XnC"/>
     </inferredMetricsTieBreakers>
 </document>

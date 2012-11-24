@@ -2,21 +2,27 @@
 //  SWDShoppingList.h
 //  StoreWizDemo
 //
-//  Created by Sami Kukkonen on 18.11.2012.
+//  Created by Tuomas Vuori on 11/24/12.
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface SWDShoppingList : NSObject<NSCopying>
+@class SWDProduct;
 
-@property (strong, nonatomic) NSString *name;
+@interface SWDShoppingList : NSManagedObject
 
-@property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSMutableArray *collectedProducts;
+@property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSSet *products;
+@end
 
-@property (strong, nonatomic) NSDate *creationDate;
+@interface SWDShoppingList (CoreDataGeneratedAccessors)
 
-- (id)initWithName:(NSString *)name;
+- (void)addProductsObject:(SWDProduct *)value;
+- (void)removeProductsObject:(SWDProduct *)value;
+- (void)addProducts:(NSSet *)values;
+- (void)removeProducts:(NSSet *)values;
 
 @end

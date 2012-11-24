@@ -1,22 +1,24 @@
 //
-//  SWDProductItem.h
+//  SWDProduct.h
 //  StoreWizDemo
 //
-//  Created by Ilari Kontinen on 11/17/12.
+//  Created by Tuomas Vuori on 11/24/12.
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface SWDProduct : NSObject <NSCopying>
+@class SWDShoppingList;
 
-@property (nonatomic) NSString *label;
-@property (nonatomic) NSString *price;
+@interface SWDProduct : NSManagedObject
 
-@property (nonatomic) NSUInteger coordX;
-@property (nonatomic) NSUInteger coordY;
-
-- (id)initWithLabel:(NSString *)label price:(NSString *)price
-             coordX:(NSUInteger)x coordY:(NSUInteger)y;
+@property (nonatomic, retain) NSString * category;
+@property (nonatomic, retain) NSNumber * collected;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * price;
+@property (nonatomic, retain) NSNumber * x;
+@property (nonatomic, retain) NSNumber * y;
+@property (nonatomic, retain) SWDShoppingList *shoppingList;
 
 @end

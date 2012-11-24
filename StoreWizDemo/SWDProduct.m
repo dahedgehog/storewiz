@@ -1,42 +1,23 @@
 //
-//  SWDProductItem.m
+//  SWDProduct.m
 //  StoreWizDemo
 //
-//  Created by Ilari Kontinen on 11/17/12.
+//  Created by Tuomas Vuori on 11/24/12.
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
 #import "SWDProduct.h"
+#import "SWDShoppingList.h"
+
 
 @implementation SWDProduct
 
-- (id)initWithLabel:(NSString *)label price:(NSString *)price
-             coordX:(NSUInteger)x coordY:(NSUInteger)y
-{
-    self = [super init];
-    if (self) {
-        self.label = label;
-        self.price = price;
-        self.coordX = x;
-        self.coordY = y;
-        
-        return self;
-    }
-    return nil;
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    SWDProduct *copy = [[[self class] alloc] init];
-    if (copy) {
-        copy.label = self.label;
-        copy.price = self.price;
-        copy.coordX = self.coordX;
-        copy.coordY = self.coordY;
-        
-        return copy;
-    }
-    return nil;
-}
+@dynamic category;
+@dynamic collected;
+@dynamic name;
+@dynamic price;
+@dynamic x;
+@dynamic y;
+@dynamic shoppingList;
 
 @end

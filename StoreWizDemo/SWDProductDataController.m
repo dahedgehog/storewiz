@@ -27,10 +27,13 @@
         NSMutableArray *products = [[NSMutableArray alloc] init];
         for (NSString *line in lines) {
             NSArray *comps = [line componentsSeparatedByString:@","];
-            SWDProduct *item = [[SWDProduct alloc] initWithLabel:comps[0] price:comps[1]
-                                                                  coordX:[comps[2] integerValue]
-                                                                  coordY:[comps[3] integerValue]];
-            [products addObject:item];
+            SWDProduct *product = [SWDProduct createEntity];
+            product.name = comps[0];
+            product.price = [NSNumber numberWithFloat:[comps[1] floatValue]];
+            product.x = [NSNumber numberWithInteger:[comps[2] integerValue]];
+            product.y = [NSNumber numberWithInteger:[comps[3] integerValue]];
+            product.category = comps[4];
+            [products addObject:product];
         }
         self.products = [NSArray arrayWithArray:products];
         return self;

@@ -31,16 +31,16 @@
         [cell addSubview:button];
     }
     
-    SWDProduct *product = [self.searched objectAtIndex:indexPath.row];
-    cell.textLabel.text = product.label;
-    cell.detailTextLabel.text = [product.price stringByAppendingString:@" €"];
+    SWDProduct *product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = product.name;
+    cell.detailTextLabel.text = [[product.price stringValue] stringByAppendingFormat:@" €"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SWDProduct *product = [self.searched objectAtIndex:indexPath.row];
+    SWDProduct *product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
         [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }

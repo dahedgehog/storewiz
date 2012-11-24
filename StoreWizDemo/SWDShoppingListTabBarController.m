@@ -13,20 +13,12 @@
 
 @implementation SWDShoppingListTabBarController
 
+@synthesize shoppingList = _shoppingList;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.title = self.shoppingList.name;
-    
-    UIImage *image = [UIImage imageNamed:@"locate.png"];
-    
-    self.locateButton = [[UIBarButtonItem alloc] initWithImage:image
-                                                         style:UIBarButtonItemStylePlain
-                                                        target:self
-                                                        action:@selector(locateMe)];
-    
-    self.locateButton.imageInsets = UIEdgeInsetsMake(5, 6, 5, 6);
-    
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
@@ -34,32 +26,21 @@
     if (item.tag == 1) {
         NSLog(@"Showing product listing view");
         [self.navigationItem setRightBarButtonItem:self.addItemButton animated:NO];
+        SWDShoppingListProductsController *productsController = (SWDShoppingListProductsController *)self.viewControllers[0];
+        productsController.shoppingList = _shoppingList;
     } else if (item.tag == 2) {
+        [self.navigationItem setRightBarButtonItem:nil animated:NO];
         NSLog(@"Showing map");
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [self.navigationItem setRightBarButtonItem:self.locateButton animated:NO];
-        SWDMapViewController *mapViewController = self.viewControllers[1];
-        [mapViewController setProducts:@[]];
-        [mapViewController setCollectedProducts:@[]];
-    } else {
-        [self.navigationItem setRightBarButtonItem:nil animated:NO];
+        SWDMapViewController *mapViewController = (SWDMapViewController *)self.viewControllers[1];
+        NSSet *products = [_shoppingList.products filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"collected == NO"]];
+        [mapViewController setProducts:[NSMutableArray arrayWithArray:[products allObjects]]];
     }
-}
-
-- (void)addListItem:(id)sender
-{
-    //Here the addition of new shopping list...
-}
-
-- (void)locateMe
-{
-    //Here the location code for the controller...
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"ShoppingListProductSearch"]) {
-        NSLog(@"Triggered product search dialog");
         UINavigationController *navigationController = [segue destinationViewController];
         SWDProductPickerController *productPickerController = navigationController.viewControllers[0];
         productPickerController.delegate = (SWDShoppingListProductsController *)self.selectedViewController;
