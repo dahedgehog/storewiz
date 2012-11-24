@@ -36,7 +36,7 @@
     UIImage *img  = [UIImage imageNamed:[ad valueForKey:@"name"]];
     self.adView.image = img;
     
-    UIImage *map = [UIImage imageNamed:@"new_grocery_store.jpeg"];
+    UIImage *map = [UIImage imageNamed:@"kartta-actual-himmee.png"];
     
     UIImage *checkbox = [UIImage imageNamed:@"19-circle-check.png"];
     UIImage *highlightedCheckbox = [UIImage imageNamed:@"117-todo-white-highlight.png"];
@@ -57,9 +57,18 @@
     
     [_mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
     
+    self.scrollView.delegate = self;
     self.scrollView.contentSize = _mapView.frame.size;
+    self.scrollView.contentMode = UIViewContentModeCenter;
+    self.scrollView.minimumZoomScale = 0.2;
+    self.scrollView.maximumZoomScale = 1.0;
     
     [self.scrollView addSubview:_mapView];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return _mapView;
 }
 
 - (void)viewDidAppear:(BOOL)animated
