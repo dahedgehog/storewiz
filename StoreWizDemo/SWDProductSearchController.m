@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
     
-    SWDProductDataController *ctrl = [[SWDProductDataController alloc] initWithResource:@"katalogi"];
+    SWDProductDataController *ctrl = [[SWDProductDataController alloc] initWithResource:@"katalogi-3"];
     
     self.allItems = ctrl.products;
     self.searched = self.allItems;

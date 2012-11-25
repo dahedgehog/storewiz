@@ -41,6 +41,7 @@
 		61A24A3F16598F6500DF0754 /* mainos_pikkuprinssi.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */; };
 		61A24A4016598F6500DF0754 /* mainos_vihrkuulat.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */; };
 		61A24A421659929D00DF0754 /* mainokset.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A411659929D00DF0754 /* mainokset.csv */; };
+		61C3A8FC1662C935009325E6 /* katalogi-3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61C3A8FB1662C935009325E6 /* katalogi-3.csv */; };
 		6218D0AE16615D80008FBD81 /* SWDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 6218D0AD16615D7F008FBD81 /* SWDProduct.m */; };
 		6218D0B116615E7E008FBD81 /* SWDShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6218D0B016615E7E008FBD81 /* SWDShoppingList.m */; };
 		6218D0C1166172CC008FBD81 /* kartta-actual-himmee.png in Resources */ = {isa = PBXBuildFile; fileRef = 6218D0C0166172CC008FBD81 /* kartta-actual-himmee.png */; };
@@ -107,6 +108,7 @@
 		61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_pikkuprinssi.png; sourceTree = "<group>"; };
 		61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_vihrkuulat.png; sourceTree = "<group>"; };
 		61A24A411659929D00DF0754 /* mainokset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainokset.csv; sourceTree = "<group>"; };
+		61C3A8FB1662C935009325E6 /* katalogi-3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "katalogi-3.csv"; sourceTree = "<group>"; };
 		6218D0AC16615D7F008FBD81 /* SWDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProduct.h; sourceTree = "<group>"; };
 		6218D0AD16615D7F008FBD81 /* SWDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProduct.m; sourceTree = "<group>"; };
 		6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDShoppingList.h; sourceTree = "<group>"; };
@@ -181,33 +183,32 @@
 		6140051C1648FC920035A21D /* StoreWizDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6218D0C0166172CC008FBD81 /* kartta-actual-himmee.png */,
-				621F507B165FFE920089534A /* Icons */,
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
 				621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */,
-				6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */,
-				6218D0B016615E7E008FBD81 /* SWDShoppingList.m */,
-				6218D0AC16615D7F008FBD81 /* SWDProduct.h */,
-				6218D0AD16615D7F008FBD81 /* SWDProduct.m */,
 				61882D291659183300D77E9E /* SWDAdsDataController.h */,
 				61882D2A1659183400D77E9E /* SWDAdsDataController.m */,
-				61882D181658F24800D77E9E /* SWDProductDataController.h */,
-				61882D191658F24800D77E9E /* SWDProductDataController.m */,
-				614005311648FC920035A21D /* SWDMasterViewController.h */,
-				614005321648FC920035A21D /* SWDMasterViewController.m */,
-				6140055516490DBA0035A21D /* SWDProductSearchController.h */,
-				6140055616490DBA0035A21D /* SWDProductSearchController.m */,
-				61400540164908420035A21D /* SWDShoppingListController.h */,
-				61400541164908420035A21D /* SWDShoppingListController.m */,
-				618DC66216498D9600D68861 /* SWDShoppingListTabBarController.h */,
-				618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */,
-				6140056E16491F020035A21D /* SWDShoppingListProductsController.h */,
-				6140056F16491F020035A21D /* SWDShoppingListProductsController.m */,
-				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
-				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
-				6140051D1648FC920035A21D /* Supporting Files */,
 				FF80A228165D2FE200159775 /* SWDMapViewController.h */,
 				FF80A229165D2FE200159775 /* SWDMapViewController.m */,
+				614005311648FC920035A21D /* SWDMasterViewController.h */,
+				614005321648FC920035A21D /* SWDMasterViewController.m */,
+				6218D0AC16615D7F008FBD81 /* SWDProduct.h */,
+				6218D0AD16615D7F008FBD81 /* SWDProduct.m */,
+				61882D181658F24800D77E9E /* SWDProductDataController.h */,
+				61882D191658F24800D77E9E /* SWDProductDataController.m */,
+				FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */,
+				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
+				6140055516490DBA0035A21D /* SWDProductSearchController.h */,
+				6140055616490DBA0035A21D /* SWDProductSearchController.m */,
+				6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */,
+				6218D0B016615E7E008FBD81 /* SWDShoppingList.m */,
+				61400540164908420035A21D /* SWDShoppingListController.h */,
+				61400541164908420035A21D /* SWDShoppingListController.m */,
+				6140056E16491F020035A21D /* SWDShoppingListProductsController.h */,
+				6140056F16491F020035A21D /* SWDShoppingListProductsController.m */,
+				618DC66216498D9600D68861 /* SWDShoppingListTabBarController.h */,
+				618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */,
+				621F507B165FFE920089534A /* Icons */,
+				6140051D1648FC920035A21D /* Supporting Files */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -224,6 +225,8 @@
 				6140052A1648FC920035A21D /* Default@2x.png */,
 				6140057716494B9F0035A21D /* grocery_store.jpeg */,
 				6140051F1648FC920035A21D /* InfoPlist.strings */,
+				6218D0C0166172CC008FBD81 /* kartta-actual-himmee.png */,
+				61C3A8FB1662C935009325E6 /* katalogi-3.csv */,
 				61882D1E165902CC00D77E9E /* katalogi.csv */,
 				618DC6591649888400D68861 /* locate-icon.png */,
 				618DC65B16498B3200D68861 /* locate-me.png */,
@@ -248,14 +251,14 @@
 		621F507B165FFE920089534A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				621F5080165FFF460089534A /* 80-shopping-cart.png */,
-				621F5081165FFF460089534A /* 80-shopping-cart@2x.png */,
-				621F5082165FFF460089534A /* 103-map.png */,
-				621F5083165FFF460089534A /* 103-map@2x.png */,
-				621F5084165FFF460089534A /* 193-location-arrow.png */,
-				621F5085165FFF460089534A /* 193-location-arrow@2x.png */,
 				621F507C165FFEC10089534A /* 19-circle-check.png */,
 				621F507D165FFEC10089534A /* 19-circle-check@2x.png */,
+				621F5080165FFF460089534A /* 80-shopping-cart.png */,
+				621F5081165FFF460089534A /* 80-shopping-cart@2x.png */,
+				621F5084165FFF460089534A /* 193-location-arrow.png */,
+				621F5085165FFF460089534A /* 193-location-arrow@2x.png */,
+				621F5082165FFF460089534A /* 103-map.png */,
+				621F5083165FFF460089534A /* 103-map@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				621F508A165FFF460089534A /* 193-location-arrow.png in Resources */,
 				621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */,
 				6218D0C1166172CC008FBD81 /* kartta-actual-himmee.png in Resources */,
+				61C3A8FC1662C935009325E6 /* katalogi-3.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,12 @@
 
 @interface SWDProduct : NSManagedObject
 
-@property (nonatomic, retain) NSString * category;
-@property (nonatomic, retain) NSNumber * collected;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * price;
-@property (nonatomic, retain) NSNumber * x;
-@property (nonatomic, retain) NSNumber * y;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSNumber *collected;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *price;
+@property (nonatomic, retain) NSNumber *x;
+@property (nonatomic, retain) NSNumber *y;
 @property (nonatomic, retain) SWDShoppingList *shoppingList;
 
 @end

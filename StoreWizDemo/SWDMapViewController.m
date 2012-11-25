@@ -55,6 +55,10 @@
     _mapView = [[UIImageView alloc] initWithImage:map];
     _mapView.userInteractionEnabled = YES;
     
+    
+    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
+    _mapView.frame = CGRectMake(0, 0, map.size.width/2, map.size.height/2);
+    
     [_mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
     
     self.scrollView.delegate = self;
@@ -78,8 +82,11 @@
     [self renderProducts:_products];
     
     if(_scrollsToCenterPointAfterAppear) {
-        CGRect origin = self.scrollView.frame;
-        CGRect frame = CGRectMake(_centerPoint.x, _centerPoint.y, origin.size.width / 2, origin.size.height / 2);
+        CGSize sizer = self.scrollView.frame.size;
+        
+        //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
+        CGRect frame = CGRectMake(_centerPoint.x/2, _centerPoint.y/2,
+                                  sizer.width/2, sizer.height/2);
         [self.scrollView scrollRectToVisible:frame animated:animated];
     }
 }
@@ -95,14 +102,18 @@
 
 - (void)renderProduct:(SWDProduct *)product color:(MKPinAnnotationColor)color tag:(NSUInteger)tag
 {
-    MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:@""];
-    pinAnnotationView.center = CGPointMake(product.x.floatValue, product.y.floatValue);
+    MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil
+                                                                             reuseIdentifier:@""];
+    
+    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
+    pinAnnotationView.center = CGPointMake(product.x.floatValue/2, product.y.floatValue/2);
     pinAnnotationView.pinColor = color;
+    
     // Hack?
     pinAnnotationView.tag = tag;
     
-    [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pinTapped:)]];
-    
+    [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(pinTapped:)]];
     [_mapView addSubview:pinAnnotationView];
 }
 
@@ -116,7 +127,11 @@
     _calloutView.title = product.name;
     _calloutView.subtitle = [product.price.stringValue stringByAppendingString:@" €"];
     _calloutView.calloutOffset = pin.calloutOffset;
-    [_calloutView presentCalloutFromRect:pin.frame inView:_mapView constrainedToView:self.scrollView permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
+    [_calloutView presentCalloutFromRect:pin.frame
+                                  inView:_mapView
+                       constrainedToView:self.scrollView
+                permittedArrowDirections:SMCalloutArrowDirectionAny
+                                animated:YES];
 }
 
 - (void)accessoryViewTapped:(UIGestureRecognizer *)gestureRecognizer
