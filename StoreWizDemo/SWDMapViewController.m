@@ -13,12 +13,16 @@
 
 @interface SWDMapViewController ()
 
+@property (strong, nonatomic) NSNumber *scale;
+
+- (void)renderProducts:(NSArray *)products;
 - (void)renderProduct:(SWDProduct *)product;
 
 @end
 
 @implementation SWDMapViewController
 {
+
     SMCalloutView *_calloutView;
     UIImageView *_mapView;
     SWDProduct *_selectedProduct;
@@ -29,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
+    self.scale = [NSNumber numberWithFloat:0.4];
     
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
     NSDictionary *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
@@ -48,21 +55,21 @@
     _calloutView = [SMCalloutView new];
     _calloutView.delegate = self;
     
-    if(!_scrollsToCenterPointAfterAppear) {
+    if(_scrollsToCenterPointAfterAppear) {
+        self.navigationItem.title = [[self.products objectAtIndex:0] valueForKey:@"name"];
+    } else {
         _calloutView.rightAccessoryView = checkboxView;
     }
     
     _mapView = [[UIImageView alloc] initWithImage:map];
     _mapView.userInteractionEnabled = YES;
-    
-    
-    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
-    _mapView.frame = CGRectMake(0, 0, map.size.width/2, map.size.height/2);
+    _mapView.frame = CGRectMake(5, 65, map.size.width*self.scale.floatValue, map.size.height*self.scale.floatValue);
     
     [_mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
     
     self.scrollView.delegate = self;
-    self.scrollView.contentSize = _mapView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(_mapView.frame.size.width+10,
+                                             _mapView.frame.size.height+70);
     self.scrollView.contentMode = UIViewContentModeCenter;
     self.scrollView.minimumZoomScale = 0.2;
     self.scrollView.maximumZoomScale = 1.0;
@@ -82,11 +89,10 @@
     [self renderProducts:_products];
     
     if(_scrollsToCenterPointAfterAppear) {
-        CGSize sizer = self.scrollView.frame.size;
-        
-        //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
+        CGSize fsize = self.scrollView.frame.size;
         CGRect frame = CGRectMake(_centerPoint.x/2, _centerPoint.y/2,
-                                  sizer.width/2, sizer.height/2);
+                                  fsize.width*self.scale.floatValue, fsize.height*self.scale.floatValue);
+        
         [self.scrollView scrollRectToVisible:frame animated:animated];
     }
 }
@@ -105,8 +111,8 @@
     MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil
                                                                              reuseIdentifier:@""];
     
-    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
-    pinAnnotationView.center = CGPointMake(product.x.floatValue/2, product.y.floatValue/2);
+    pinAnnotationView.center = CGPointMake(product.x.floatValue*self.scale.floatValue,
+                                           product.y.floatValue*self.scale.floatValue);
     pinAnnotationView.pinColor = color;
     
     // Hack?
