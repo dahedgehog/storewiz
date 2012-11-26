@@ -6,154 +6,156 @@
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
-#import "SWDMapViewController.h"
-#import "SWDProduct.h"
-#import "SWDAdsDataController.h"
 #import <MapKit/MapKit.h>
+#import "SWDMapViewController.h"
+#import "SWDAdsDataController.h"
+#import "SWDProduct.h"
 
 @interface SWDMapViewController ()
 
-@property (strong, nonatomic) NSNumber *scale;
+@property (strong, nonatomic) UIImageView *mapView;
+@property (strong, nonatomic) SMCalloutView *calloutView;
+@property (strong, nonatomic) SWDProduct *selectedProduct;
+
+@property (nonatomic) CGFloat scale;
 
 - (void)renderProducts:(NSArray *)products;
-- (void)renderProduct:(SWDProduct *)product;
+- (void)renderProduct:(SWDProduct *)product tag:(NSUInteger)tag;
 
 @end
 
 @implementation SWDMapViewController
-{
-
-    SMCalloutView *_calloutView;
-    UIImageView *_mapView;
-    SWDProduct *_selectedProduct;
-}
-
-@synthesize products = _products, collectedProducts = _collectedProducts, centerPoint = _centerPoint, scrollsToCenterPointAfterAppear = _scrollsToCenterPointAfterAppear;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //NOTE: the map scale factor is now hard coded to 0.5, make this according to the zoom-level!!!
-    self.scale = [NSNumber numberWithFloat:0.4];
+    //NOTE: the map scale factor is now hard coded to 0.4, make this according to the zoom-level!!!
+    self.scale = 0.4;
     
     SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
     NSDictionary *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
     
-    UIImage *img  = [UIImage imageNamed:[ad valueForKey:@"name"]];
-    self.adView.image = img;
+    UIImage *adi  = [UIImage imageNamed:[ad valueForKey:@"name"]];
+    self.adView.image = adi;
     
     UIImage *map = [UIImage imageNamed:@"kartta-actual-himmee.png"];
-    
     UIImage *checkbox = [UIImage imageNamed:@"19-circle-check.png"];
     UIImage *highlightedCheckbox = [UIImage imageNamed:@"117-todo-white-highlight.png"];
     
-    UIImageView *checkboxView = [[UIImageView alloc] initWithImage:checkbox highlightedImage:highlightedCheckbox];
-    checkboxView.userInteractionEnabled = YES;
-    [checkboxView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(accessoryViewTapped:)]];
+    self.calloutView = [[SMCalloutView alloc] init];
     
-    _calloutView = [SMCalloutView new];
-    _calloutView.delegate = self;
-    
-    if(_scrollsToCenterPointAfterAppear) {
+    if (self.scrollsToCenterPointAfterAppear) {
         self.navigationItem.title = [[self.products objectAtIndex:0] valueForKey:@"name"];
     } else {
-        _calloutView.rightAccessoryView = checkboxView;
+        UIImageView *checkboxView = [[UIImageView alloc] initWithImage:checkbox highlightedImage:highlightedCheckbox];
+        checkboxView.userInteractionEnabled = YES;
+        [checkboxView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(accessoryViewTapped:)]];
+        self.calloutView.rightAccessoryView = checkboxView;
     }
     
-    _mapView = [[UIImageView alloc] initWithImage:map];
-    _mapView.userInteractionEnabled = YES;
-    _mapView.frame = CGRectMake(5, 65, map.size.width*self.scale.floatValue, map.size.height*self.scale.floatValue);
+    self.mapView = [[UIImageView alloc] initWithImage:map];
+    self.mapView.userInteractionEnabled = YES;
     
-    [_mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
+    // add some padding to the left and top sides of the map
+    self.mapView.frame = CGRectMake(0, 65, map.size.width*self.scale, map.size.height*self.scale);
     
-    self.scrollView.delegate = self;
-    self.scrollView.contentSize = CGSizeMake(_mapView.frame.size.width+10,
-                                             _mapView.frame.size.height+70);
+    [self.mapView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped)]];
+    
+    CGFloat scWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat mpWidth = self.mapView.frame.size.width;
+    CGFloat zScale = scWidth / mpWidth;
+    
+    // add some padding to the right and bottom as well
+    self.scrollView.contentSize = CGSizeMake(self.mapView.frame.size.width,
+                                             self.mapView.frame.size.height+70);
     self.scrollView.contentMode = UIViewContentModeCenter;
-    self.scrollView.minimumZoomScale = 0.2;
+    self.scrollView.minimumZoomScale = zScale;
     self.scrollView.maximumZoomScale = 1.0;
+    self.scrollView.delegate = self;
     
-    [self.scrollView addSubview:_mapView];
+    [self.scrollView addSubview:self.mapView];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return _mapView;
+    return self.mapView;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self renderProducts:self.products];
     
-    [self renderProducts:_products];
-    
-    if(_scrollsToCenterPointAfterAppear) {
+    if (self.scrollsToCenterPointAfterAppear) {
+        SWDProduct *product = [self.products objectAtIndex:0];
         CGSize fsize = self.scrollView.frame.size;
-        CGRect frame = CGRectMake(_centerPoint.x/2, _centerPoint.y/2,
-                                  fsize.width*self.scale.floatValue, fsize.height*self.scale.floatValue);
         
-        [self.scrollView scrollRectToVisible:frame animated:animated];
+        CGRect scrollToFrame = CGRectMake(product.x.floatValue*self.scale+5,
+                                          product.y.floatValue*self.scale,
+                                          fsize.width/2, fsize.height/2);
+        
+        [self.scrollView scrollRectToVisible:scrollToFrame animated:YES];
     }
 }
 
 - (void)renderProducts:(NSArray *)products {
     // Remove existing pins from the map and redraw them
-    [[_mapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [[self.mapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    for(SWDProduct *product in products) {
-        [self renderProduct:product color:MKPinAnnotationColorGreen tag:[products indexOfObject:product]];
+    for (SWDProduct *product in products) {
+        [self renderProduct:product tag:[products indexOfObject:product]];
     }
 }
 
-- (void)renderProduct:(SWDProduct *)product color:(MKPinAnnotationColor)color tag:(NSUInteger)tag
+- (void)renderProduct:(SWDProduct *)product tag:(NSUInteger)tag
 {
     MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:nil
-                                                                             reuseIdentifier:@""];
+                                                                             reuseIdentifier:@"productPin"];
     
-    pinAnnotationView.center = CGPointMake(product.x.floatValue*self.scale.floatValue,
-                                           product.y.floatValue*self.scale.floatValue);
-    pinAnnotationView.pinColor = color;
+    pinAnnotationView.center = CGPointMake(product.x.floatValue*self.scale, product.y.floatValue*self.scale);
+    pinAnnotationView.pinColor = MKPinAnnotationColorGreen;
     
     // Hack?
     pinAnnotationView.tag = tag;
     
     [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(pinTapped:)]];
-    [_mapView addSubview:pinAnnotationView];
+    [self.mapView addSubview:pinAnnotationView];
 }
 
 - (void)pinTapped:(UITapGestureRecognizer *)sender
 {
     MKPinAnnotationView *pin = (MKPinAnnotationView *)sender.view;
-    SWDProduct *product = [_products objectAtIndex:pin.tag];
+    SWDProduct *product = [self.products objectAtIndex:pin.tag];
     
-    _selectedProduct = product;
+    self.selectedProduct = product;
     
-    _calloutView.title = product.name;
-    _calloutView.subtitle = [product.price.stringValue stringByAppendingString:@" €"];
-    _calloutView.calloutOffset = pin.calloutOffset;
-    [_calloutView presentCalloutFromRect:pin.frame
-                                  inView:_mapView
-                       constrainedToView:self.scrollView
-                permittedArrowDirections:SMCalloutArrowDirectionAny
-                                animated:YES];
+    self.calloutView.title = product.name;
+    self.calloutView.subtitle = [product.price.stringValue stringByAppendingString:@" €"];
+    self.calloutView.calloutOffset = pin.calloutOffset;
+    
+    [self.calloutView presentCalloutFromRect:pin.frame
+                                      inView:self.mapView constrainedToView:self.scrollView
+                    permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
 }
 
 - (void)accessoryViewTapped:(UIGestureRecognizer *)gestureRecognizer
 {
-    [SVProgressHUD showSuccessWithStatus:_selectedProduct.name];
-    _selectedProduct.collected = [NSNumber numberWithBool:YES];
-    [_products removeObject:_selectedProduct];
+    [SVProgressHUD showSuccessWithStatus:self.selectedProduct.name];
+    
+    [self.selectedProduct setCollected: [NSNumber numberWithBool:YES]];
+    [self.products removeObject:self.selectedProduct];
+    
     [self mapTapped];
-    [self renderProducts:_products];
+    [self renderProducts:self.products];
     [[NSManagedObjectContext defaultContext] saveNestedContexts];
 }
 
 - (void)mapTapped
 {
-    _selectedProduct = nil;
-    [_calloutView dismissCalloutAnimated:YES];
+    [self.calloutView dismissCalloutAnimated:YES];
+    self.selectedProduct = nil;
 }
 
 @end

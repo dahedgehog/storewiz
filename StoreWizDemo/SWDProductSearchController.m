@@ -13,8 +13,6 @@
 
 @implementation SWDProductSearchController
 
-@synthesize sections = _sections;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,7 +22,7 @@
     self.allItems = ctrl.products;
     self.searched = self.allItems;
     
-    _sections = [self sectionsGroupedByKeyPath:@"category"];
+    self.sections = [self sectionsGroupedByKeyPath:@"category"];
 }
 
 - (NSArray *)sectionsGroupedByKeyPath:(NSString *)keyPath
@@ -32,16 +30,16 @@
 	NSMutableArray *sections = [NSMutableArray array];
     
 	// If we don't contain any items, return an empty collection of sections.
-	if([_searched count] == 0)
+	if([self.searched count] == 0)
 		return sections;
     
 	// Create the first section and establish the first section's grouping value.
 	NSMutableArray *sectionItems = [NSMutableArray array];
-	id currentGroup = [[_searched objectAtIndex:0] valueForKey:keyPath];
+	id currentGroup = [[self.searched objectAtIndex:0] valueForKey:keyPath];
     
 	// Iterate over our items, placing them in the appropriate section and
 	// creating new sections when necessary.
-	for(id item in _searched)
+	for(id item in self.searched)
 	{
 		// Retrieve the grouping value from the current item.
 		id itemGroup = [item valueForKey:keyPath];
@@ -81,17 +79,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return _sections.count;
+    return self.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_sections objectAtIndex:section] count];
+    return [[self.sections objectAtIndex:section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    SWDProduct *product = [[_sections objectAtIndex:section] firstObject];
+    SWDProduct *product = [[self.sections objectAtIndex:section] firstObject];
     return product.category;
 }
 
@@ -100,8 +98,8 @@
     static NSString *CellIdentifier = @"ProductSearchCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
-    
-    SWDProduct *item = [[_sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+
+    SWDProduct *item = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.name;
     cell.detailTextLabel.text = [item.price.stringValue stringByAppendingString:@" €"];
@@ -134,7 +132,7 @@
         NSLog(@"Showing all products");
         self.searched = self.allItems;
     }
-    _sections = [self sectionsGroupedByKeyPath:@"category"];
+    self.sections = [self sectionsGroupedByKeyPath:@"category"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -142,11 +140,9 @@
         NSLog(@"Showing product view");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        SWDProduct* product = [[_sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        SWDProduct* product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         [[segue destinationViewController] setProducts:[NSArray arrayWithObject:product]];
-    
         [[segue destinationViewController] setScrollsToCenterPointAfterAppear:YES];
-        [[segue destinationViewController] setCenterPoint:CGPointMake(product.x.floatValue, product.y.floatValue)];
         
         [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
         [self searchBarCancelButtonClicked:self.searchBar];

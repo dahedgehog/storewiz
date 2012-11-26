@@ -255,10 +255,10 @@
 				621F507D165FFEC10089534A /* 19-circle-check@2x.png */,
 				621F5080165FFF460089534A /* 80-shopping-cart.png */,
 				621F5081165FFF460089534A /* 80-shopping-cart@2x.png */,
-				621F5084165FFF460089534A /* 193-location-arrow.png */,
-				621F5085165FFF460089534A /* 193-location-arrow@2x.png */,
 				621F5082165FFF460089534A /* 103-map.png */,
 				621F5083165FFF460089534A /* 103-map@2x.png */,
+				621F5084165FFF460089534A /* 193-location-arrow.png */,
+				621F5085165FFF460089534A /* 193-location-arrow@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";

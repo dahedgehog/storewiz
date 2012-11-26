@@ -10,7 +10,7 @@
 
 @class SWDShoppingListDataController;
 
-@interface SWDShoppingListController : UITableViewController<UIAlertViewDelegate, NSFetchedResultsControllerDelegate>
+@interface SWDShoppingListController : UITableViewController <UIAlertViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) SWDShoppingListDataController *dataController;
 

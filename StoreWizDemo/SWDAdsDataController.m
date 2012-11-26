@@ -28,10 +28,10 @@
         for (NSString *line in lines) {
             NSArray *comps = [line componentsSeparatedByString:@","];
             NSDictionary *product = @{
-            @"name": comps[0],
-            @"price": comps[1],
-            @"x": [NSNumber numberWithInteger:[comps[2] integerValue]],
-            @"y": [NSNumber numberWithInteger:[comps[3] integerValue]]
+                @"name": comps[0],
+                @"price": comps[1],
+                @"x": [NSNumber numberWithInteger:[comps[2] integerValue]],
+                @"y": [NSNumber numberWithInteger:[comps[3] integerValue]]
             };
             [ads addObject:product];
         }

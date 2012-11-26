@@ -16,8 +16,6 @@
     NSArray *_products;
 }
 
-@synthesize shoppingList = _shoppingList;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

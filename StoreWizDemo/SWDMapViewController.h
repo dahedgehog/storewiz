@@ -9,15 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <SMCalloutView.h>
 
-@interface SWDMapViewController : UIViewController <SMCalloutViewDelegate, UIScrollViewDelegate>
+@interface SWDMapViewController : UIViewController <UIScrollViewDelegate, SMCalloutViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *adView;
-
 @property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSMutableArray *collectedProducts;
 
-@property (nonatomic) CGPoint centerPoint;
 @property (nonatomic) BOOL scrollsToCenterPointAfterAppear;
 
 @end
