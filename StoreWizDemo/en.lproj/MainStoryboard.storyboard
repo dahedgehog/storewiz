@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller - Valikko-->
+        <!--Master View Controller - Tarjoukset-->
         <scene sceneID="xzX-6H-E8n">
             <objects>
                 <viewController id="Kch-jt-2Fk" customClass="SWDMasterViewController" sceneMemberID="viewController">
@@ -12,70 +12,30 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By3-9P-r4X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQP-YN-JtG">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="rU3-cx-yYz"/>
+                                    <constraint firstAttribute="width" constant="98" id="w21-kk-hGa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Ostoslistat">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="evT-Qn-8Wr" kind="push" id="tJE-50-rXM"/>
+                                    <segue destination="evT-Qn-8Wr" kind="push" id="XlV-On-dtX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYP-rU-B9r">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="5i7-U9-aDu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Tuotehaku">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="bb4-U5-rdJ" kind="push" id="fLl-Pk-TBe"/>
-                                </connections>
-                            </button>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ItD-kL-l9c">
-                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-hZ-HCw">
-                                <connections>
-                                    <outlet property="delegate" destination="Kch-jt-2Fk" id="tNE-P0-GNZ"/>
-                                </connections>
-                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93391262760000004" green="0.93391262760000004" blue="0.93391262760000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tvo-hZ-HCw" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3O8-uR-rSa"/>
-                            <constraint firstItem="By3-9P-r4X" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6bg-5u-YUS"/>
-                            <constraint firstItem="ItD-kL-l9c" firstAttribute="centerX" secondItem="wYP-rU-B9r" secondAttribute="centerX" type="default" id="7Uw-Bm-FKz"/>
-                            <constraint firstAttribute="trailing" secondItem="By3-9P-r4X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7yQ-s4-goV"/>
-                            <constraint firstAttribute="bottom" secondItem="tvo-hZ-HCw" secondAttribute="bottom" constant="216" id="BML-fy-FYQ"/>
-                            <constraint firstItem="ItD-kL-l9c" firstAttribute="centerY" secondItem="Qce-aB-o8e" secondAttribute="centerY" type="default" id="FDF-6P-Ycb"/>
-                            <constraint firstAttribute="bottom" secondItem="By3-9P-r4X" secondAttribute="bottom" constant="37" id="J7s-U9-ltq"/>
-                            <constraint firstAttribute="trailing" secondItem="wYP-rU-B9r" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e3L-Xt-rs7"/>
-                            <constraint firstItem="wYP-rU-B9r" firstAttribute="leading" secondItem="Qce-aB-o8e" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gih-3n-KW0"/>
-                            <constraint firstAttribute="bottom" secondItem="wYP-rU-B9r" secondAttribute="bottom" constant="117" id="vHr-dp-fRC"/>
-                            <constraint firstItem="tvo-hZ-HCw" firstAttribute="top" secondItem="Qce-aB-o8e" secondAttribute="top" constant="20" symbolic="YES" type="default" id="y9k-1Q-b0F"/>
-                            <constraint firstAttribute="trailing" secondItem="tvo-hZ-HCw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="z9O-0f-k19"/>
+                            <constraint firstItem="fQP-YN-JtG" firstAttribute="centerX" secondItem="Qce-aB-o8e" secondAttribute="centerX" type="default" id="sQu-nO-oOI"/>
+                            <constraint firstItem="fQP-YN-JtG" firstAttribute="top" secondItem="Qce-aB-o8e" secondAttribute="top" constant="65" id="zXZ-AW-xKQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Valikko" id="l2A-Wh-6pg"/>
-                    <connections>
-                        <outlet property="imagePager" destination="ItD-kL-l9c" id="Qzk-Jt-KM2"/>
-                        <outlet property="imageScroller" destination="tvo-hZ-HCw" id="hL9-Qr-klO"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Tarjoukset" id="l2A-Wh-6pg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIH-LR-dGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +46,7 @@
             <objects>
                 <viewController id="bb4-U5-rdJ" customClass="SWDProductSearchController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPO-GM-Ccf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-o8-C66">
@@ -123,7 +83,6 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-ye-uKL">
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -160,7 +119,7 @@
             <objects>
                 <viewController id="M31-zX-pW1" customClass="SWDMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAR-b5-xVt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-1H-uCV"/>
@@ -232,7 +191,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ostoslistat" id="ahT-mK-3zZ">
-                        <barButtonItem key="rightBarButtonItem" title="Uusi ostoslista" id="lFF-jJ-2o3">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="lFF-jJ-2o3">
                             <connections>
                                 <action selector="addShoppingList:" destination="evT-Qn-8Wr" id="t9e-iz-DUa"/>
                             </connections>
@@ -328,7 +287,6 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" text="" placeholder="Hae tuotteita" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-c9-Typ">
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -408,7 +366,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Txw-0v-y7s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.23137254901960785" green="0.62352941176470589" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dv3-Hg-i9e">
@@ -429,12 +387,52 @@
         <image name="80-shopping-cart.png" width="26" height="19"/>
         <image name="mainos_carlsberg.png" width="640" height="135"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SWDMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SWDMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDMasterViewController.h"/>
+        </class>
+        <class className="SWDProductPickerController" superclassName="SWDProductSearchController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductPickerController.h"/>
+        </class>
+        <class className="SWDProductSearchController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDProductSearchController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListController.h"/>
+            <relationships>
+                <relationship kind="action" name="addShoppingList:"/>
+            </relationships>
+        </class>
+        <class className="SWDShoppingListProductsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListProductsController.h"/>
+        </class>
+        <class className="SWDShoppingListTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SWDShoppingListTabBarController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addItemButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="l8f-Y3-XnC"/>
+        <segue reference="NnO-Pf-4va"/>
     </inferredMetricsTieBreakers>
 </document>

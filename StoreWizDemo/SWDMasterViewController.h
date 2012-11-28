@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SWDMasterViewController : UIViewController <UIScrollViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UIScrollView *imageScroller;
-@property (weak, nonatomic) IBOutlet UIPageControl *imagePager;
-
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface SWDMasterViewController : UIViewController
 
 @end

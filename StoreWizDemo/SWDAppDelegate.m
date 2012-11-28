@@ -14,7 +14,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStack];
+    
+    [self customizeAppearance];
+    
     return YES;
+}
+
+- (void)customizeAppearance
+{
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation-bar-bg.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:63.0f/255.0f green:167.0f/255.0f blue:200.0f/255.0f alpha:1.0f]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                UITextAttributeTextColor:[UIColor whiteColor],
+                          UITextAttributeTextShadowColor:[UIColor colorWithWhite:0.0 alpha:0.8],
+                         UITextAttributeTextShadowOffset:[NSValue valueWithCGSize:CGSizeMake(0, 1)],
+                                     UITextAttributeFont:[UIFont boldSystemFontOfSize:20.0f]}];
 }
 				
 - (void)applicationWillResignActive:(UIApplication *)application
