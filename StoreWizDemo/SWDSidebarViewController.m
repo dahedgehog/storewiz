@@ -9,8 +9,7 @@
 #import "SWDSidebarViewController.h"
 #import "SWDShoppingList.h"
 #import "SWDShoppingListTabBarController.h"
-#import "UIViewController+JTRevealSidebarV2.h"
-#import "UINavigationItem+JTRevealSidebarV2.h"
+#import <IIViewDeckController.h>
 
 @interface SWDSidebarViewController () <NSFetchedResultsControllerDelegate>
 
@@ -19,13 +18,14 @@
 @implementation SWDSidebarViewController
 {
     NSFetchedResultsController *_fetchedResultsController;
+    UIFont *_interstateFont;
 }
-
-@synthesize sidebarDelegate;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _interstateFont = [UIFont fontWithName:@"Interstate-Regular" size:20.0f];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"low_contrast_linen"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -80,10 +80,10 @@
         label.frame = CGRectMake(8, 8, 250, 25);
         label.text = @"Citymarket Kupittaa";
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont systemFontOfSize:19.0f];
+        label.font = [_interstateFont fontWithSize:19.0f];
         label.textColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.61f alpha:1.0f];
         label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.88f];
-        label.shadowOffset = CGSizeMake(0, 2);
+        label.shadowOffset = CGSizeMake(0, 1);
         label.textAlignment = NSTextAlignmentCenter;
         
         UIImage *underlineImage = [UIImage imageNamed:@"sidebar-location-underline.png"];
@@ -104,8 +104,9 @@
         UITableViewCell *view = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OffersCell"];
         view.textLabel.text = @"Tarjoukset";
         view.textLabel.textColor = [UIColor whiteColor];
-        view.textLabel.shadowColor = [UIColor blackColor];
+        view.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         view.textLabel.shadowOffset = CGSizeMake(0,2);
+        view.textLabel.font = [_interstateFont fontWithSize:19.0];
         view.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
         view.selectionStyle = UITableViewCellSelectionStyleGray;
         return view;
@@ -120,8 +121,8 @@
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont boldSystemFontOfSize:14.0];
         label.textColor = [UIColor colorWithRed:136.0f/255.0f green:136.0f/255.0f blue:136.0f/255.0f alpha:1.0f];
-        label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.75f];
-        label.shadowOffset = CGSizeMake(0, 2);
+        label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
+        label.shadowOffset = CGSizeMake(0, 1);
         
         UIImage *plusImage = [UIImage imageNamed:@"sidebar-plus-sign-blue.png"];
         
@@ -140,9 +141,10 @@
         if(!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
             cell.textLabel.textColor = [UIColor whiteColor];
-            cell.textLabel.shadowColor = [UIColor blackColor];
+            cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
             cell.textLabel.shadowOffset = CGSizeMake(0,1);
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            cell.textLabel.font = [_interstateFont fontWithSize:20.0f];
         }
         
         SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
@@ -274,23 +276,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 3) {
-        if (self.sidebarDelegate) {
-            SWDShoppingListTabBarController *controller = [self.sidebarDelegate.storyboard instantiateViewControllerWithIdentifier:@"ShoppingListView"];
-            SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-            controller.navigationItem.leftBarButtonItem = self.sidebarDelegate.navigationItem.leftBarButtonItem;
-            controller.shoppingList = shoppingList;
-            [self.sidebarDelegate.navigationController toggleRevealState:JTRevealedStateLeft];
-            [self.sidebarDelegate.navigationController pushViewController:controller animated:NO];
-            [self.sidebarDelegate.navigationController setViewControllers:[NSArray arrayWithObject:controller] animated:NO];
-            NSLog(@"Showing shopping list");
-        }
-    } else if(indexPath.section == 1) {
-        UIViewController *master = [self.sidebarDelegate.storyboard instantiateViewControllerWithIdentifier:@"MasterView"];
-        [self.sidebarDelegate.navigationController toggleRevealState:JTRevealedStateLeft];
-        [self.sidebarDelegate.navigationController pushViewController:master animated:NO];
-        [self.sidebarDelegate.navigationController setViewControllers:[NSArray arrayWithObject:master] animated:NO];
+    if(indexPath.section == 1) {
+    } else if(indexPath.section == 3) {
+        SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        UIStoryboard *storyboard = self.viewDeckController.centerController.storyboard;
+        SWDShoppingListTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"ShoppingListView"];
+        [tabBarController setShoppingList:shoppingList];
+        UINavigationController *navigationController = (UINavigationController *)[self.viewDeckController centerController];
+        [navigationController pushViewController:tabBarController animated:NO];
+        [navigationController setViewControllers:@[tabBarController]];
+        [self.viewDeckController toggleLeftViewAnimated:YES];
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)viewDidUnload

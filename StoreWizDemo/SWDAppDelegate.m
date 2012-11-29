@@ -8,6 +8,8 @@
 
 #import "SWDAppDelegate.h"
 #import "SWDMasterViewController.h"
+#import "SWDSidebarViewController.h"
+#import <IIViewDeckController.h>
 
 @implementation SWDAppDelegate
 
@@ -16,6 +18,12 @@
     [MagicalRecord setupCoreDataStack];
     
     [self customizeAppearance];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    IIViewDeckController *deck = [[IIViewDeckController alloc] initWithCenterViewController:[sb instantiateInitialViewController] leftViewController:[[SWDSidebarViewController alloc] init]];
+    deck.navigationControllerBehavior = IIViewDeckNavigationControllerIntegrated;
+    self.window.rootViewController = deck;
     
     return YES;
 }

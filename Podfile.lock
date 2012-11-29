@@ -1,17 +1,20 @@
 
-DEPENDENCIES: 
-- MagicalRecord
-- SMCalloutView
-- SVProgressHUD
-
-SPEC CHECKSUMS: 
-  MagicalRecord: daa15d6c83bd7d30e074c8923e53c64248ae6930
-  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
-  SMCalloutView: 5039079c2bfee3ece8fae29b77aa1c3049b32f0c
-
-PODS: 
+PODS:
 - MagicalRecord (2.0.8)
 - SMCalloutView (1.0.1)
 - SVProgressHUD (0.8)
+- ViewDeck (1.4.2)
 
-COCOAPODS: 0.16.0
+DEPENDENCIES:
+- MagicalRecord
+- SMCalloutView
+- SVProgressHUD
+- ViewDeck
+
+SPEC CHECKSUMS:
+  MagicalRecord: daa15d6c83bd7d30e074c8923e53c64248ae6930
+  SMCalloutView: 5039079c2bfee3ece8fae29b77aa1c3049b32f0c
+  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
+  ViewDeck: a05ad18f6dcd87a95429c0b5bcaf58a450787c87
+
+COCOAPODS: 0.16.0.rc5

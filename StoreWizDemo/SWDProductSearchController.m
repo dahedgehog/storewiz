@@ -11,6 +11,10 @@
 #import "SWDProduct.h"
 #import "SWDMapViewController.h"
 
+@interface SWDProductSearchController ()
+
+@end
+
 @implementation SWDProductSearchController
 
 - (void)viewDidLoad
@@ -23,6 +27,8 @@
     self.searched = self.allItems;
     
     self.sections = [self sectionsGroupedByKeyPath:@"category"];
+    
+    self.navigationController.navigationBar.shadowImage = nil;
 }
 
 - (NSArray *)sectionsGroupedByKeyPath:(NSString *)keyPath
@@ -75,6 +81,11 @@
     [self.searchBar becomeFirstResponder];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -112,9 +123,10 @@
     SWDProduct *item = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.name;
-    cell.textLabel.font = [UIFont fontWithName:@"OpenSans-Semibold" size:15.0f];
+    cell.textLabel.font = [UIFont fontWithName:@"Interstate-Regular" size:15.0f];
+    cell.textLabel.frame = CGRectOffset(cell.textLabel.frame, 0, 6);
     cell.detailTextLabel.text = [item.price.stringValue stringByAppendingString:@" €"];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"OpenSans" size:14.0f];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Interstate-Regular" size:14.0f];
     
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "SWDMasterViewController.h"
 #import "SWDSidebarViewController.h"
+#import <IIViewDeckController.h>
 
 @interface SWDMasterViewController ()
 
@@ -31,8 +32,6 @@
     UIColor *pattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"billie_holiday.png"]];
     self.view.backgroundColor = pattern;
     
-    [self.navigationItem setRevealSidebarDelegate:self];
-    
     UIImage *searchImage = [UIImage imageNamed:@"06-magnify-white-shadow.png"];
     UIImageView *searchImageView = [[UIImageView alloc] initWithImage:searchImage];
     searchImageView.userInteractionEnabled = YES;
@@ -45,6 +44,15 @@
     [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
     self.navigationController.navigationItem.leftBarButtonItem.customView = menuImageView;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuImageView];
+    [self.navigationItem.leftBarButtonItem setAction:@selector(menuButtonTapped:)];
+    
+    self.viewDeckController.leftController = [[SWDSidebarViewController alloc] init];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
+    [super viewWillAppear:animated];
 }
 
 - (void)searchButtonTapped:(id)sender
@@ -54,27 +62,7 @@
 
 - (void)menuButtonTapped:(id)sender
 {
-    [self.navigationController toggleRevealState:JTRevealedStateLeft];
-}
-
-- (UIView *)viewForLeftSidebar {
-    // Use applicationViewFrame to get the correctly calculated view's frame
-    // for use as a reference to our sidebar's view
-    CGRect viewFrame = self.navigationController.applicationViewFrame;
-    SWDSidebarViewController *controller = self.leftSidebarViewController;
-    if ( ! controller) {
-        self.leftSidebarViewController = [[SWDSidebarViewController alloc] init];
-        controller = self.leftSidebarViewController;
-        controller.title = @"LeftSidebarViewController";
-        controller.sidebarDelegate = self;
-    }
-    controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
-    controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
-    return controller.view;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 @end

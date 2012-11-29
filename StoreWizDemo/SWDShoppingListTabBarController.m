@@ -10,8 +10,6 @@
 #import "SWDProductPickerController.h"
 #import "SWDShoppingListProductsController.h"
 #import "SWDMapViewController.h"
-#import "UINavigationItem+JTRevealSidebarV2.h"
-#import "UIViewController+JTRevealSidebarV2.h"
 
 @interface SWDShoppingListTabBarController ()
 
@@ -27,7 +25,6 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.shoppingList.name;
-    self.navigationItem.revealSidebarDelegate = self;
     
     UIBarButtonItem *leftBarButtonItem = self.navigationItem.leftBarButtonItem;
     
@@ -36,9 +33,6 @@
 
 - (void)toggleSidebar:(id)sender
 {
-    NSLog(@"Toggling sidebar");
-    [self.navigationController toggleRevealState:JTRevealedStateLeft];
-    NSLog(@"%u", self.navigationController.revealedState);
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
@@ -56,22 +50,6 @@
         NSSet *products = [_shoppingList.products filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"collected == NO"]];
         [mapViewController setProducts:[NSMutableArray arrayWithArray:[products allObjects]]];
     }
-}
-
-- (UIView *)viewForLeftSidebar {
-    // Use applicationViewFrame to get the correctly calculated view's frame
-    // for use as a reference to our sidebar's view
-    CGRect viewFrame = self.navigationController.applicationViewFrame;
-    SWDSidebarViewController *controller = self.leftSidebarViewController;
-    if ( ! controller) {
-        self.leftSidebarViewController = [[SWDSidebarViewController alloc] init];
-        controller = self.leftSidebarViewController;
-        controller.title = @"LeftSidebarViewController";
-        controller.sidebarDelegate = self;
-    }
-    controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
-    controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
-    return controller.view;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JTRevealSidebarV2Delegate.h"
 
 @interface SWDSidebarViewController : UITableViewController
-
-@property (nonatomic) UIViewController <JTRevealSidebarV2Delegate> *sidebarDelegate;
 
 @end
