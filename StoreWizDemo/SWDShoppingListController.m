@@ -83,6 +83,11 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
+}
+
 - (SWDShoppingList *)insertNewObject:(id)sender name:(NSString *)name
 {
     SWDShoppingList *shoppingList = [SWDShoppingList createEntity];
@@ -162,10 +167,17 @@
 {
     SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = shoppingList.name;
+    cell.contentMode = UIViewContentModeTopLeft;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    UILabel *priceLabel = [[UILabel alloc] init];
+    priceLabel.text = [[shoppingList valueForKeyPath:@"products.@sum.price"] stringValue];
+    priceLabel.frame = CGRectMake(30, 30, 150, 20);
+    NSLog(@"%@ total: %@", shoppingList.name, priceLabel.text);
+    [cell addSubview:priceLabel];
     
     cell.detailTextLabel.text = [formatter stringFromDate:shoppingList.creationDate];
 }

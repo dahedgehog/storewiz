@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SWDShoppingList.h"
+#import "SWDSidebarViewController.h"
+#import "JTRevealSidebarV2Delegate.h"
 
-@interface SWDShoppingListTabBarController : UITabBarController <UITabBarDelegate>
+@interface SWDShoppingListTabBarController : UITabBarController <UITabBarDelegate, JTRevealSidebarV2Delegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
 @property (strong, nonatomic) SWDShoppingList *shoppingList;

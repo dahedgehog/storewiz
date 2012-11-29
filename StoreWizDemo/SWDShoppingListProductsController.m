@@ -9,6 +9,7 @@
 #import "SWDShoppingListProductsController.h"
 #import "SWDShoppingListTabBarController.h"
 #import "SWDProduct.h"
+#import "SWDShoppingListCell.h"
 
 @implementation SWDShoppingListProductsController
 {
@@ -22,12 +23,13 @@
     
     _shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
     _productPickerInitiallyShown = NO;
+    
+    [self reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self reloadData];
     
     if(_products.count == 0 && !_productPickerInitiallyShown) {
         _productPickerInitiallyShown = YES;
@@ -54,7 +56,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[SWDShoppingListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     [self configureCell:cell indexPath:(NSIndexPath *)indexPath];

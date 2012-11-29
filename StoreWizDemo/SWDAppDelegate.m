@@ -23,7 +23,9 @@
 - (void)customizeAppearance
 {
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation-bar-bg.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-bg-glare.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
     
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:63.0f/255.0f green:167.0f/255.0f blue:200.0f/255.0f alpha:1.0f]];
     

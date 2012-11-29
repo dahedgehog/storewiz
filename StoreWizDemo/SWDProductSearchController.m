@@ -93,6 +93,16 @@
     return product.category;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 34.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.0f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ProductSearchCell";
@@ -102,7 +112,9 @@
     SWDProduct *item = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.name;
+    cell.textLabel.font = [UIFont fontWithName:@"OpenSans-Semibold" size:15.0f];
     cell.detailTextLabel.text = [item.price.stringValue stringByAppendingString:@" €"];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"OpenSans" size:14.0f];
     
     return cell;
 }

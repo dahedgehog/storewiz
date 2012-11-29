@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SWDProduct.h"
 
-@interface SWDProductSearchController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface SWDProductSearchController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

@@ -18,24 +18,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ProductPickerCell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        cell.indentationLevel = 3;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-        [button addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchDown];
-        button.frame = CGRectMake(10.0, 10.0, 25.0, 25.0);
-        [cell addSubview:button];
-    }
-    
-    SWDProduct *product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = product.name;
-    cell.detailTextLabel.text = [[product.price stringValue] stringByAppendingFormat:@" €"];
-    
-    return cell;
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,15 +27,12 @@
     if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
         [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }
-    self.searchBar.text = @"";
-    [self searchBar:self.searchBar textDidChange:@""];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)addButtonPressed:(id)sender
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    UIButton *button = (UIButton *)sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)button.superview];
-    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+    return 20.0f;
 }
 
 - (IBAction)closeButtonPressed:(id)sender
