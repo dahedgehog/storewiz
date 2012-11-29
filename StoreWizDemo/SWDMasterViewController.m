@@ -32,27 +32,28 @@
     UIColor *pattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"billie_holiday.png"]];
     self.view.backgroundColor = pattern;
     
+    //Set the left navigation item
+    UIImage *menuImage = [UIImage imageNamed:@"nav_menu_icon.png"];
+    UIImageView *menuImageView = [[UIImageView alloc] initWithImage:menuImage];
+    menuImageView.userInteractionEnabled = YES;
+    [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuImageView];
+    
+    // Set the right navigation item
     UIImage *searchImage = [UIImage imageNamed:@"06-magnify-white-shadow.png"];
     UIImageView *searchImageView = [[UIImageView alloc] initWithImage:searchImage];
     searchImageView.userInteractionEnabled = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchImageView];
     [searchImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchButtonTapped:)]];
     
-    UIImage *menuImage = [UIImage imageNamed:@"nav_menu_icon.png"];
-    UIImageView *menuImageView = [[UIImageView alloc] initWithImage:menuImage];
-    menuImageView.userInteractionEnabled = YES;
-    [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
-    self.navigationController.navigationItem.leftBarButtonItem.customView = menuImageView;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuImageView];
-    [self.navigationItem.leftBarButtonItem setAction:@selector(menuButtonTapped:)];
-    
+    //Set the left sidebar of view deck
     self.viewDeckController.leftController = [[SWDSidebarViewController alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
 }
 
 - (void)searchButtonTapped:(id)sender
