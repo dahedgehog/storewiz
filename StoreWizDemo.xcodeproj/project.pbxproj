@@ -30,7 +30,6 @@
 		614E82E6165AD7440042837C /* mainos_klementiini.png in Resources */ = {isa = PBXBuildFile; fileRef = 614E82E5165AD7440042837C /* mainos_klementiini.png */; };
 		61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D191658F24800D77E9E /* SWDProductDataController.m */; };
 		61882D1F165902CC00D77E9E /* katalogi.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61882D1E165902CC00D77E9E /* katalogi.csv */; };
-		61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61882D2A1659183400D77E9E /* SWDAdsDataController.m */; };
 		61882D2D16592A9000D77E9E /* product_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 61882D2C16592A9000D77E9E /* product_pin.png */; };
 		618DC65A1649888400D68861 /* locate-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC6591649888400D68861 /* locate-icon.png */; };
 		618DC65C16498B3200D68861 /* locate-me.png in Resources */ = {isa = PBXBuildFile; fileRef = 618DC65B16498B3200D68861 /* locate-me.png */; };
@@ -56,6 +55,30 @@
 		621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */; };
 		621F50A91660199A0089534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F50A81660199A0089534A /* CoreData.framework */; };
 		6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291DA67166CE00800B6605C /* SWDRootViewController.m */; };
+		6291DA81166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */; };
+		6291DA82166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6B166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg */; };
+		6291DA83166D09A700B6605C /* atria_lasagnette_700_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6C166D09A700B6605C /* atria_lasagnette_700_g_150px.jpg */; };
+		6291DA84166D09A700B6605C /* fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6D166D09A700B6605C /* fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg */; };
+		6291DA85166D09A700B6605C /* fazer_marjapiirakat_140_g_2_kpl_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6E166D09A700B6605C /* fazer_marjapiirakat_140_g_2_kpl_150px.jpg */; };
+		6291DA86166D09A700B6605C /* heineken_olut_0_33_l_tlk_8_pack_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6F166D09A700B6605C /* heineken_olut_0_33_l_tlk_8_pack_150px.jpg */; };
+		6291DA87166D09A700B6605C /* hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA70166D09A700B6605C /* hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg */; };
+		6291DA88166D09A700B6605C /* hk_herkkumaksamakkarat_150_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA71166D09A700B6605C /* hk_herkkumaksamakkarat_150_g_150px.jpg */; };
+		6291DA89166D09A700B6605C /* hk_naudan_palapaisti_500_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA72166D09A700B6605C /* hk_naudan_palapaisti_500_g_150px.jpg */; };
+		6291DA8A166D09A700B6605C /* kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA73166D09A700B6605C /* kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg */; };
+		6291DA8B166D09A700B6605C /* laitilan_kukko_oluet_0_5_l_tlk_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA74166D09A700B6605C /* laitilan_kukko_oluet_0_5_l_tlk_150px.jpg */; };
+		6291DA8C166D09A700B6605C /* oululainen_reilu_viipaleet_500_550_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA75166D09A700B6605C /* oululainen_reilu_viipaleet_500_550_g_150px.jpg */; };
+		6291DA8D166D09A700B6605C /* PageFiles-10768-Fileesuikale914_80495.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA76166D09A700B6605C /* PageFiles-10768-Fileesuikale914_80495.jpg */; };
+		6291DA8E166D09A700B6605C /* PageFiles-10774-Nakki633_70971.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA77166D09A700B6605C /* PageFiles-10774-Nakki633_70971.jpg */; };
+		6291DA8F166D09A700B6605C /* PageFiles-10784-Hiillos922_80496.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA78166D09A700B6605C /* PageFiles-10784-Hiillos922_80496.jpg */; };
+		6291DA90166D09A700B6605C /* PageFiles-10790-pv00bdln_21687.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA79166D09A700B6605C /* PageFiles-10790-pv00bdln_21687.jpg */; };
+		6291DA91166D09A700B6605C /* PageFiles-2011-P_III-olut_33105.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7A166D09A700B6605C /* PageFiles-2011-P_III-olut_33105.jpg */; };
+		6291DA92166D09A700B6605C /* pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7B166D09A700B6605C /* pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg */; };
+		6291DA93166D09A700B6605C /* Punaviinihärkä_69155_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7C166D09A700B6605C /* Punaviinihärkä_69155_5.jpg */; };
+		6291DA94166D09A700B6605C /* saarioinen_kebakko_200_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7D166D09A700B6605C /* saarioinen_kebakko_200_g_150px.jpg */; };
+		6291DA95166D09A700B6605C /* santa_maria_texmex_tortilla_320_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7E166D09A700B6605C /* santa_maria_texmex_tortilla_320_g_150px.jpg */; };
+		6291DA96166D09A700B6605C /* sol_olut_0_33_l_plo_4_pack_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA7F166D09A700B6605C /* sol_olut_0_33_l_plo_4_pack_150px.jpg */; };
+		6291DA97166D09A700B6605C /* tsingtao_olut_0_33_l_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA80166D09A700B6605C /* tsingtao_olut_0_33_l_150px.jpg */; };
+		6291DA9A166D28E100B6605C /* SWDMapOffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291DA99166D28E100B6605C /* SWDMapOffersViewController.m */; };
 		62E830551666727C007EB677 /* navigation-shopping-cart-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E830531666727C007EB677 /* navigation-shopping-cart-white.png */; };
 		62E830561666727C007EB677 /* navigation-shopping-cart-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E830541666727C007EB677 /* navigation-shopping-cart-white@2x.png */; };
 		62E8305916667E0B007EB677 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */; };
@@ -134,8 +157,6 @@
 		61882D181658F24800D77E9E /* SWDProductDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductDataController.h; sourceTree = "<group>"; };
 		61882D191658F24800D77E9E /* SWDProductDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductDataController.m; sourceTree = "<group>"; };
 		61882D1E165902CC00D77E9E /* katalogi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = katalogi.csv; sourceTree = "<group>"; };
-		61882D291659183300D77E9E /* SWDAdsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDAdsDataController.h; sourceTree = "<group>"; };
-		61882D2A1659183400D77E9E /* SWDAdsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDAdsDataController.m; sourceTree = "<group>"; };
 		61882D2C16592A9000D77E9E /* product_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_pin.png; sourceTree = "<group>"; };
 		618DC6591649888400D68861 /* locate-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-icon.png"; sourceTree = "<group>"; };
 		618DC65B16498B3200D68861 /* locate-me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate-me.png"; sourceTree = "<group>"; };
@@ -165,6 +186,31 @@
 		621F50A81660199A0089534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6291DA66166CE00800B6605C /* SWDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDRootViewController.h; sourceTree = "<group>"; };
 		6291DA67166CE00800B6605C /* SWDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDRootViewController.m; sourceTree = "<group>"; };
+		6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA6B166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA6C166D09A700B6605C /* atria_lasagnette_700_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atria_lasagnette_700_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA6D166D09A700B6605C /* fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg; sourceTree = "<group>"; };
+		6291DA6E166D09A700B6605C /* fazer_marjapiirakat_140_g_2_kpl_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fazer_marjapiirakat_140_g_2_kpl_150px.jpg; sourceTree = "<group>"; };
+		6291DA6F166D09A700B6605C /* heineken_olut_0_33_l_tlk_8_pack_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heineken_olut_0_33_l_tlk_8_pack_150px.jpg; sourceTree = "<group>"; };
+		6291DA70166D09A700B6605C /* hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA71166D09A700B6605C /* hk_herkkumaksamakkarat_150_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hk_herkkumaksamakkarat_150_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA72166D09A700B6605C /* hk_naudan_palapaisti_500_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hk_naudan_palapaisti_500_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA73166D09A700B6605C /* kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA74166D09A700B6605C /* laitilan_kukko_oluet_0_5_l_tlk_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = laitilan_kukko_oluet_0_5_l_tlk_150px.jpg; sourceTree = "<group>"; };
+		6291DA75166D09A700B6605C /* oululainen_reilu_viipaleet_500_550_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oululainen_reilu_viipaleet_500_550_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA76166D09A700B6605C /* PageFiles-10768-Fileesuikale914_80495.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PageFiles-10768-Fileesuikale914_80495.jpg"; sourceTree = "<group>"; };
+		6291DA77166D09A700B6605C /* PageFiles-10774-Nakki633_70971.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PageFiles-10774-Nakki633_70971.jpg"; sourceTree = "<group>"; };
+		6291DA78166D09A700B6605C /* PageFiles-10784-Hiillos922_80496.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PageFiles-10784-Hiillos922_80496.jpg"; sourceTree = "<group>"; };
+		6291DA79166D09A700B6605C /* PageFiles-10790-pv00bdln_21687.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PageFiles-10790-pv00bdln_21687.jpg"; sourceTree = "<group>"; };
+		6291DA7A166D09A700B6605C /* PageFiles-2011-P_III-olut_33105.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PageFiles-2011-P_III-olut_33105.jpg"; sourceTree = "<group>"; };
+		6291DA7B166D09A700B6605C /* pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA7C166D09A700B6605C /* Punaviinihärkä_69155_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Punaviinihärkä_69155_5.jpg"; sourceTree = "<group>"; };
+		6291DA7D166D09A700B6605C /* saarioinen_kebakko_200_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saarioinen_kebakko_200_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA7E166D09A700B6605C /* santa_maria_texmex_tortilla_320_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = santa_maria_texmex_tortilla_320_g_150px.jpg; sourceTree = "<group>"; };
+		6291DA7F166D09A700B6605C /* sol_olut_0_33_l_plo_4_pack_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sol_olut_0_33_l_plo_4_pack_150px.jpg; sourceTree = "<group>"; };
+		6291DA80166D09A700B6605C /* tsingtao_olut_0_33_l_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tsingtao_olut_0_33_l_150px.jpg; sourceTree = "<group>"; };
+		6291DA98166D28E100B6605C /* SWDMapOffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDMapOffersViewController.h; sourceTree = "<group>"; };
+		6291DA99166D28E100B6605C /* SWDMapOffersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDMapOffersViewController.m; sourceTree = "<group>"; };
 		62E830531666727C007EB677 /* navigation-shopping-cart-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-shopping-cart-white.png"; sourceTree = "<group>"; };
 		62E830541666727C007EB677 /* navigation-shopping-cart-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-shopping-cart-white@2x.png"; sourceTree = "<group>"; };
 		62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -266,10 +312,9 @@
 		6140051C1648FC920035A21D /* StoreWizDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6291DA69166D09A700B6605C /* Mainokset */,
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
 				621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */,
-				61882D291659183300D77E9E /* SWDAdsDataController.h */,
-				61882D2A1659183400D77E9E /* SWDAdsDataController.m */,
 				FF80A228165D2FE200159775 /* SWDMapViewController.h */,
 				FF80A229165D2FE200159775 /* SWDMapViewController.m */,
 				614005311648FC920035A21D /* SWDMasterViewController.h */,
@@ -299,6 +344,8 @@
 				6140051D1648FC920035A21D /* Supporting Files */,
 				6291DA66166CE00800B6605C /* SWDRootViewController.h */,
 				6291DA67166CE00800B6605C /* SWDRootViewController.m */,
+				6291DA98166D28E100B6605C /* SWDMapOffersViewController.h */,
+				6291DA99166D28E100B6605C /* SWDMapOffersViewController.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -355,6 +402,37 @@
 				621F5085165FFF460089534A /* 193-location-arrow@2x.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		6291DA69166D09A700B6605C /* Mainokset */ = {
+			isa = PBXGroup;
+			children = (
+				6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */,
+				6291DA6B166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg */,
+				6291DA6C166D09A700B6605C /* atria_lasagnette_700_g_150px.jpg */,
+				6291DA6D166D09A700B6605C /* fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg */,
+				6291DA6E166D09A700B6605C /* fazer_marjapiirakat_140_g_2_kpl_150px.jpg */,
+				6291DA6F166D09A700B6605C /* heineken_olut_0_33_l_tlk_8_pack_150px.jpg */,
+				6291DA70166D09A700B6605C /* hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg */,
+				6291DA71166D09A700B6605C /* hk_herkkumaksamakkarat_150_g_150px.jpg */,
+				6291DA72166D09A700B6605C /* hk_naudan_palapaisti_500_g_150px.jpg */,
+				6291DA73166D09A700B6605C /* kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg */,
+				6291DA74166D09A700B6605C /* laitilan_kukko_oluet_0_5_l_tlk_150px.jpg */,
+				6291DA75166D09A700B6605C /* oululainen_reilu_viipaleet_500_550_g_150px.jpg */,
+				6291DA76166D09A700B6605C /* PageFiles-10768-Fileesuikale914_80495.jpg */,
+				6291DA77166D09A700B6605C /* PageFiles-10774-Nakki633_70971.jpg */,
+				6291DA78166D09A700B6605C /* PageFiles-10784-Hiillos922_80496.jpg */,
+				6291DA79166D09A700B6605C /* PageFiles-10790-pv00bdln_21687.jpg */,
+				6291DA7A166D09A700B6605C /* PageFiles-2011-P_III-olut_33105.jpg */,
+				6291DA7B166D09A700B6605C /* pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg */,
+				6291DA7C166D09A700B6605C /* Punaviinihärkä_69155_5.jpg */,
+				6291DA7D166D09A700B6605C /* saarioinen_kebakko_200_g_150px.jpg */,
+				6291DA7E166D09A700B6605C /* santa_maria_texmex_tortilla_320_g_150px.jpg */,
+				6291DA7F166D09A700B6605C /* sol_olut_0_33_l_plo_4_pack_150px.jpg */,
+				6291DA80166D09A700B6605C /* tsingtao_olut_0_33_l_150px.jpg */,
+			);
+			name = Mainokset;
+			path = Pienet;
 			sourceTree = "<group>";
 		};
 		FFBC73921664FD5A000E52A6 /* Images */ = {
@@ -515,6 +593,29 @@
 				62E8308B1666DA10007EB677 /* navbar-selected-cell@2x.png in Resources */,
 				62E8308D1666DCD1007EB677 /* cell-border-bottom@2x.png in Resources */,
 				FFAD496B1667804500BDF611 /* Interstate-Regular.ttf in Resources */,
+				6291DA81166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg in Resources */,
+				6291DA82166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg in Resources */,
+				6291DA83166D09A700B6605C /* atria_lasagnette_700_g_150px.jpg in Resources */,
+				6291DA84166D09A700B6605C /* fanta_ja_sprite_virvoitusjuomat_1_5_l_150px.jpg in Resources */,
+				6291DA85166D09A700B6605C /* fazer_marjapiirakat_140_g_2_kpl_150px.jpg in Resources */,
+				6291DA86166D09A700B6605C /* heineken_olut_0_33_l_tlk_8_pack_150px.jpg in Resources */,
+				6291DA87166D09A700B6605C /* hk_100__ohuet_kokolihaleikkeleet_150_g_150px.jpg in Resources */,
+				6291DA88166D09A700B6605C /* hk_herkkumaksamakkarat_150_g_150px.jpg in Resources */,
+				6291DA89166D09A700B6605C /* hk_naudan_palapaisti_500_g_150px.jpg in Resources */,
+				6291DA8A166D09A700B6605C /* kariniemen_kananpojan_minuuttipihvit_ja_sisafileet_n_600_1000_g_150px.jpg in Resources */,
+				6291DA8B166D09A700B6605C /* laitilan_kukko_oluet_0_5_l_tlk_150px.jpg in Resources */,
+				6291DA8C166D09A700B6605C /* oululainen_reilu_viipaleet_500_550_g_150px.jpg in Resources */,
+				6291DA8D166D09A700B6605C /* PageFiles-10768-Fileesuikale914_80495.jpg in Resources */,
+				6291DA8E166D09A700B6605C /* PageFiles-10774-Nakki633_70971.jpg in Resources */,
+				6291DA8F166D09A700B6605C /* PageFiles-10784-Hiillos922_80496.jpg in Resources */,
+				6291DA90166D09A700B6605C /* PageFiles-10790-pv00bdln_21687.jpg in Resources */,
+				6291DA91166D09A700B6605C /* PageFiles-2011-P_III-olut_33105.jpg in Resources */,
+				6291DA92166D09A700B6605C /* pirkka_reilun_kaupan_kaakaojuomajauhe_400_g_150px.jpg in Resources */,
+				6291DA93166D09A700B6605C /* Punaviinihärkä_69155_5.jpg in Resources */,
+				6291DA94166D09A700B6605C /* saarioinen_kebakko_200_g_150px.jpg in Resources */,
+				6291DA95166D09A700B6605C /* santa_maria_texmex_tortilla_320_g_150px.jpg in Resources */,
+				6291DA96166D09A700B6605C /* sol_olut_0_33_l_plo_4_pack_150px.jpg in Resources */,
+				6291DA97166D09A700B6605C /* tsingtao_olut_0_33_l_150px.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +652,6 @@
 				618DC66416498D9600D68861 /* SWDShoppingListTabBarController.m in Sources */,
 				61882D1A1658F24800D77E9E /* SWDProductDataController.m in Sources */,
 				FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */,
-				61882D2B1659183400D77E9E /* SWDAdsDataController.m in Sources */,
 				FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */,
 				621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */,
 				6218D0AE16615D80008FBD81 /* SWDProduct.m in Sources */,
@@ -559,6 +659,7 @@
 				62E8305C16668C0F007EB677 /* SWDShoppingListCell.m in Sources */,
 				62E830791666B608007EB677 /* SWDSidebarViewController.m in Sources */,
 				6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */,
+				6291DA9A166D28E100B6605C /* SWDMapOffersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

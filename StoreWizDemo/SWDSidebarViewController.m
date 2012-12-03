@@ -38,7 +38,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"Appearing");
-    self.tableView.frame = self.view.frame;
+    self.tableView.frame = CGRectMake(0,0,self.view.frame.size.width - 22, self.view.frame.size.height);
     [super viewWillAppear:animated];
 }
 
@@ -157,7 +157,7 @@
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
             cell.textLabel.shadowOffset = CGSizeMake(0,1);
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            cell.accessoryType = UITableViewCellAccessoryNone;
             cell.textLabel.font = [_interstateFont fontWithSize:20.0f];
         }
         

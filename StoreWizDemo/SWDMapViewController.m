@@ -8,8 +8,8 @@
 
 #import <MapKit/MapKit.h>
 #import "SWDMapViewController.h"
-#import "SWDAdsDataController.h"
 #import "SWDProduct.h"
+#import "SWDMasterViewController.h"
 
 @interface SWDMapViewController ()
 
@@ -32,12 +32,6 @@
     
     //NOTE: the map scale factor is now hard coded to 0.4, make this according to the zoom-level!!!
     self.scale = 0.4;
-    
-    SWDAdsDataController *ads = [[SWDAdsDataController alloc] initWithResource:@"mainokset"];
-    NSDictionary *ad = [ads.ads objectAtIndex:(arc4random() % [ads.ads count])];
-    
-    UIImage *adi  = [UIImage imageNamed:[ad valueForKey:@"name"]];
-    self.adView.image = adi;
     
     UIImage *map = [UIImage imageNamed:@"kartta-actual-himmee.png"];
     UIImage *checkbox = [UIImage imageNamed:@"19-circle-check.png"];
@@ -69,7 +63,7 @@
     // add some padding to the right and bottom as well
     self.scrollView.contentSize = CGSizeMake(self.mapView.frame.size.width,
                                              self.mapView.frame.size.height+70);
-    self.scrollView.contentMode = UIViewContentModeCenter;
+    self.scrollView.contentMode = UIViewContentModeBottom;
     self.scrollView.minimumZoomScale = zScale;
     self.scrollView.maximumZoomScale = 1.0;
     self.scrollView.delegate = self;

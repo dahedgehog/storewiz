@@ -12,7 +12,7 @@
 @interface SWDMapViewController : UIViewController <UIScrollViewDelegate, SMCalloutViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *adView;
+@property (weak, nonatomic) IBOutlet UIView *adView;
 @property (strong, nonatomic) NSMutableArray *products;
 
 @property (nonatomic) BOOL scrollsToCenterPointAfterAppear;

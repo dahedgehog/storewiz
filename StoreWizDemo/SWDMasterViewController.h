@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <ViewDeck/IIViewDeckController.h>
 
-@interface SWDMasterViewController : UIViewController
+@interface SWDMasterViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+- (void)configureCell:(UICollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 
 @end
