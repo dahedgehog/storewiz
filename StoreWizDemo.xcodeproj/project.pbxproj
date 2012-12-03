@@ -312,9 +312,10 @@
 		6140051C1648FC920035A21D /* StoreWizDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6291DA69166D09A700B6605C /* Mainokset */,
 				6140052E1648FC920035A21D /* MainStoryboard.storyboard */,
 				621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */,
+				6291DA98166D28E100B6605C /* SWDMapOffersViewController.h */,
+				6291DA99166D28E100B6605C /* SWDMapOffersViewController.m */,
 				FF80A228165D2FE200159775 /* SWDMapViewController.h */,
 				FF80A229165D2FE200159775 /* SWDMapViewController.m */,
 				614005311648FC920035A21D /* SWDMasterViewController.h */,
@@ -327,6 +328,8 @@
 				FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */,
 				6140055516490DBA0035A21D /* SWDProductSearchController.h */,
 				6140055616490DBA0035A21D /* SWDProductSearchController.m */,
+				6291DA66166CE00800B6605C /* SWDRootViewController.h */,
+				6291DA67166CE00800B6605C /* SWDRootViewController.m */,
 				6218D0AF16615E7E008FBD81 /* SWDShoppingList.h */,
 				6218D0B016615E7E008FBD81 /* SWDShoppingList.m */,
 				62E8305A16668C0F007EB677 /* SWDShoppingListCell.h */,
@@ -341,11 +344,8 @@
 				62E830781666B608007EB677 /* SWDSidebarViewController.m */,
 				621F507B165FFE920089534A /* Icons */,
 				FFBC73921664FD5A000E52A6 /* Images */,
+				6291DA69166D09A700B6605C /* Mainokset */,
 				6140051D1648FC920035A21D /* Supporting Files */,
-				6291DA66166CE00800B6605C /* SWDRootViewController.h */,
-				6291DA67166CE00800B6605C /* SWDRootViewController.m */,
-				6291DA98166D28E100B6605C /* SWDMapOffersViewController.h */,
-				6291DA99166D28E100B6605C /* SWDMapOffersViewController.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
