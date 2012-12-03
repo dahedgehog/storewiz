@@ -55,6 +55,7 @@
 		621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5085165FFF460089534A /* 193-location-arrow@2x.png */; };
 		621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */; };
 		621F50A91660199A0089534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F50A81660199A0089534A /* CoreData.framework */; };
+		6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291DA67166CE00800B6605C /* SWDRootViewController.m */; };
 		62E830551666727C007EB677 /* navigation-shopping-cart-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E830531666727C007EB677 /* navigation-shopping-cart-white.png */; };
 		62E830561666727C007EB677 /* navigation-shopping-cart-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E830541666727C007EB677 /* navigation-shopping-cart-white@2x.png */; };
 		62E8305916667E0B007EB677 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */; };
@@ -162,6 +163,8 @@
 		621F5085165FFF460089534A /* 193-location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow@2x.png"; sourceTree = "<group>"; };
 		621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreWizDemo.xcdatamodel; sourceTree = "<group>"; };
 		621F50A81660199A0089534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6291DA66166CE00800B6605C /* SWDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDRootViewController.h; sourceTree = "<group>"; };
+		6291DA67166CE00800B6605C /* SWDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDRootViewController.m; sourceTree = "<group>"; };
 		62E830531666727C007EB677 /* navigation-shopping-cart-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-shopping-cart-white.png"; sourceTree = "<group>"; };
 		62E830541666727C007EB677 /* navigation-shopping-cart-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-shopping-cart-white@2x.png"; sourceTree = "<group>"; };
 		62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				621F507B165FFE920089534A /* Icons */,
 				FFBC73921664FD5A000E52A6 /* Images */,
 				6140051D1648FC920035A21D /* Supporting Files */,
+				6291DA66166CE00800B6605C /* SWDRootViewController.h */,
+				6291DA67166CE00800B6605C /* SWDRootViewController.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				6218D0B116615E7E008FBD81 /* SWDShoppingList.m in Sources */,
 				62E8305C16668C0F007EB677 /* SWDShoppingListCell.m in Sources */,
 				62E830791666B608007EB677 /* SWDSidebarViewController.m in Sources */,
+				6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

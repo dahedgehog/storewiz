@@ -35,6 +35,7 @@
         _productPickerInitiallyShown = YES;
         [self.tabBarController performSegueWithIdentifier:@"ShoppingListProductSearch" sender:nil];
     }
+    [self reloadData];
 }
 
 #pragma mark - Table view data source

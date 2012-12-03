@@ -18,7 +18,6 @@
 
 @implementation SWDMasterViewController
 
-@synthesize leftSidebarViewController;
 
 - (void)awakeFromNib
 {
@@ -45,9 +44,6 @@
     searchImageView.userInteractionEnabled = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchImageView];
     [searchImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchButtonTapped:)]];
-    
-    //Set the left sidebar of view deck
-    self.viewDeckController.leftController = [[SWDSidebarViewController alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated

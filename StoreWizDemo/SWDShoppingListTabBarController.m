@@ -10,6 +10,7 @@
 #import "SWDProductPickerController.h"
 #import "SWDShoppingListProductsController.h"
 #import "SWDMapViewController.h"
+#import <ViewDeck/IIViewDeckController.h>
 
 @interface SWDShoppingListTabBarController ()
 
@@ -25,14 +26,18 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.shoppingList.name;
-    
-    UIBarButtonItem *leftBarButtonItem = self.navigationItem.leftBarButtonItem;
-    
-    [[leftBarButtonItem customView] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleSidebar:)]];
+
+    //Set the left navigation item
+    UIImage *menuImage = [UIImage imageNamed:@"nav_menu_icon.png"];
+    UIImageView *menuImageView = [[UIImageView alloc] initWithImage:menuImage];
+    menuImageView.userInteractionEnabled = YES;
+    [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleSidebar:)]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuImageView];
 }
 
 - (void)toggleSidebar:(id)sender
 {
+    [self.navigationController.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item

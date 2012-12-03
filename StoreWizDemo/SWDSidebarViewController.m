@@ -19,6 +19,8 @@
 {
     NSFetchedResultsController *_fetchedResultsController;
     UIFont *_interstateFont;
+    UINavigationController *_navigationController;
+    NSIndexPath *_selectedIndexPath;
 }
 
 - (void)viewDidLoad
@@ -27,8 +29,17 @@
     
     _interstateFont = [UIFont fontWithName:@"Interstate-Regular" size:20.0f];
     
+    _navigationController = (UINavigationController *)self.viewDeckController.centerController;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"low_contrast_linen"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"Appearing");
+    self.tableView.frame = self.view.frame;
+    [super viewWillAppear:animated];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,12 +83,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0) {
-        UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 48)];
+        UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
         
         [view setBackgroundColor:[UIColor redColor]];
         
         UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(8, 8, 250, 25);
+        label.frame = CGRectMake(0, 10, 250, 25);
         label.text = @"Citymarket Kupittaa";
         label.backgroundColor = [UIColor clearColor];
         label.font = [_interstateFont fontWithSize:19.0f];
@@ -90,11 +101,11 @@
         UIImageView *underlineImageView = [[UIImageView alloc] initWithImage:underlineImage];
         underlineImageView.frame = CGRectOffset(underlineImageView.frame, 2, 36);
         
-        [view addSubview:underlineImageView];
+        //[view addSubview:underlineImageView];
         
         UIImage *locationArrowImage = [UIImage imageNamed:@"sidebar-location-arrow.png"];
         UIImageView *locationArrowImageView = [[UIImageView alloc] initWithImage:locationArrowImage];
-        locationArrowImageView.frame = CGRectOffset(locationArrowImageView.frame, 14, 4);
+        locationArrowImageView.frame = CGRectOffset(locationArrowImageView.frame, 10, 3);
         [label addSubview:locationArrowImageView];
         
         [view addSubview:label];
@@ -108,7 +119,10 @@
         view.textLabel.shadowOffset = CGSizeMake(0,2);
         view.textLabel.font = [_interstateFont fontWithSize:19.0];
         view.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
-        view.selectionStyle = UITableViewCellSelectionStyleGray;
+        view.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:NO scrollPosition:UITableViewScrollPositionNone];
+        
         return view;
     } else if(indexPath.section == 2) {
         UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 44)];
@@ -149,18 +163,28 @@
         
         SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.textLabel.text = shoppingList.name;
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }
 }
 
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
+}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 1) {
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
-    } else if(indexPath.section == 3) {
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
+    if([self.tableView indexPathForSelectedRow] != indexPath) {
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];        
     }
 }
 
@@ -276,18 +300,26 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if(_selectedIndexPath != nil && _selectedIndexPath == indexPath) {
+//        [self.tableView deselectRowAtIndexPath:_selectedIndexPath animated:NO];
+//    }
+//    _selectedIndexPath = indexPath;
+    
+    NSLog(@"%@", indexPath);
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];    
+    
     if(indexPath.section == 1) {
+        [_navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"MasterView"] animated:NO];
     } else if(indexPath.section == 3) {
         SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-        UIStoryboard *storyboard = self.viewDeckController.centerController.storyboard;
-        SWDShoppingListTabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"ShoppingListView"];
+        SWDShoppingListTabBarController *tabBarController = [sb instantiateViewControllerWithIdentifier:@"ShoppingListView"];
         [tabBarController setShoppingList:shoppingList];
-        UINavigationController *navigationController = (UINavigationController *)[self.viewDeckController centerController];
-        [navigationController pushViewController:tabBarController animated:NO];
-        [navigationController setViewControllers:@[tabBarController]];
-        [self.viewDeckController toggleLeftViewAnimated:YES];
+        [_navigationController pushViewController:tabBarController animated:NO];
+        NSLog(@"Moving to tab bar controller");
     }
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self.viewDeckController toggleLeftView];
 }
 
 - (void)viewDidUnload
