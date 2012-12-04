@@ -22,11 +22,6 @@
     NSArray *_paths;
 }
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
