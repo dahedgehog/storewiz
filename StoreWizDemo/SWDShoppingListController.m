@@ -29,7 +29,6 @@
     }
     
     _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
-    
     return _fetchedResultsController;
 }
 
@@ -49,19 +48,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ShoppingListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShoppingListCell"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
 - (IBAction)addShoppingList:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uusi ostoslista" message:nil delegate:self cancelButtonTitle:@"Peruuta" otherButtonTitles:@"OK", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uusi ostoslista"
+                                                        message:nil delegate:self
+                                              cancelButtonTitle:@"Peruuta"
+                                              otherButtonTitles:@"OK", nil];
+    
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView show];
     [[alertView textFieldAtIndex:0] setText:@"Ostoslista"];
+    [alertView show];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,14 +102,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"Preparing for segue...");
     if ([[segue identifier] isEqualToString:@"ShowListView"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
         
-        SWDShoppingList *shoppingList = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        SWDShoppingList *shoppingList = [[self fetchedResultsController] objectAtIndexPath:index];
         [[segue destinationViewController] setShoppingList:shoppingList];
     }
 }
-
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {

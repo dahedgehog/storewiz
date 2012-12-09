@@ -24,27 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _paths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:@""];
     
-    // Set background pattern
     UIColor *pattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"billie_holiday.png"]];
     self.collectionView.backgroundColor = pattern;
     
-    //Set the left navigation item
-    UIImage *menuImage = [UIImage imageNamed:@"nav_menu_icon.png"];
-    UIImageView *menuImageView = [[UIImageView alloc] initWithImage:menuImage];
-    menuImageView.userInteractionEnabled = YES;
-    [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuImageView];
-    
-    // Set the right navigation item
-    UIImage *searchImage = [UIImage imageNamed:@"06-magnify-white-shadow.png"];
-    UIImageView *searchImageView = [[UIImageView alloc] initWithImage:searchImage];
-    searchImageView.userInteractionEnabled = YES;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchImageView];
-    [searchImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchButtonTapped:)]];
-    
-    _paths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:@""];
-    NSLog(@"%u", _paths.count);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -66,37 +56,26 @@
     return cell;
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
 - (void)configureCell:(UICollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Configuring cell");
     CALayer *layer = cell.layer;
     layer.shadowOffset = CGSizeMake(0,3);
     layer.shadowColor = [UIColor blackColor].CGColor;
     layer.shadowRadius = 1.5;
     layer.shadowOpacity = 0.7;
     layer.shouldRasterize = YES;
+    
     CGRect f = [cell.contentView.subviews[0] frame];
     layer.shadowPath = [UIBezierPath bezierPathWithRect:f].CGPath;
     [layer setMasksToBounds:NO];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"navbar-shadow.png"]];
-}
-
-- (void)searchButtonTapped:(id)sender
-{
-    [self performSegueWithIdentifier:@"ProductSearchSegue" sender:self];
-}
-
-- (void)menuButtonTapped:(id)sender
+- (void)menuButtonTapped:(UIBarButtonItem *)sender
 {
     [self.viewDeckController toggleLeftViewAnimated:YES];
 }

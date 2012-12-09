@@ -13,23 +13,17 @@
 
 @interface SWDSidebarViewController () <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) UIFont *interstateFont;
+
 @end
 
 @implementation SWDSidebarViewController
-{
-    NSFetchedResultsController *_fetchedResultsController;
-    UIFont *_interstateFont;
-    UINavigationController *_navigationController;
-    NSIndexPath *_selectedIndexPath;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _interstateFont = [UIFont fontWithName:@"Interstate-Regular" size:20.0f];
-    
-    _navigationController = (UINavigationController *)self.viewDeckController.centerController;
+    self.interstateFont = [UIFont fontWithName:@"Interstate-Regular" size:20.0f];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"low_contrast_linen"]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -37,14 +31,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"Appearing");
     self.tableView.frame = CGRectMake(0,0,self.view.frame.size.width - 22, self.view.frame.size.height);
     [super viewWillAppear:animated];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 3) {
+    if (indexPath.section == 3) {
         return YES;
     }
     return NO;
@@ -57,7 +50,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 3 || indexPath.section == 1) {
+    if (indexPath.section == 1 || indexPath.section == 3) {
         return YES;
     }
     return NO;
@@ -67,14 +60,12 @@
 {
     switch(section) {
         case 0:
-            return 1;
         case 1:
-            return 1;
         case 2:
             return 1;
         case 3:
         default: {
-            id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[0];
+            id sectionInfo = self.fetchedResultsController.sections[0];
             return [sectionInfo numberOfObjects];
         }
     }
@@ -91,7 +82,7 @@
         label.frame = CGRectMake(0, 10, 250, 25);
         label.text = @"Citymarket Kupittaa";
         label.backgroundColor = [UIColor clearColor];
-        label.font = [_interstateFont fontWithSize:19.0f];
+        label.font = [self.interstateFont fontWithSize:19.0f];
         label.textColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.61f alpha:1.0f];
         label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.88f];
         label.shadowOffset = CGSizeMake(0, 1);
@@ -109,21 +100,21 @@
         [label addSubview:locationArrowImageView];
         
         [view addSubview:label];
-        
         return view;
+        
     } else if(indexPath.section == 1) {
         UITableViewCell *view = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OffersCell"];
         view.textLabel.text = @"Tarjoukset";
         view.textLabel.textColor = [UIColor whiteColor];
         view.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         view.textLabel.shadowOffset = CGSizeMake(0,2);
-        view.textLabel.font = [_interstateFont fontWithSize:19.0];
+        view.textLabel.font = [self.interstateFont fontWithSize:19.0];
         view.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
         view.selectionStyle = UITableViewCellSelectionStyleNone;
         
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:NO scrollPosition:UITableViewScrollPositionNone];
-        
         return view;
+        
     } else if(indexPath.section == 2) {
         UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 44)];
         
@@ -147,24 +138,22 @@
         
         [view addSubview:plusImageView];
         [view addSubview:label];
-        
         return view;
+        
     } else {
-        static NSString *CellID = @"ShoppingListCell";
-        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellID];
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ShoppingListCell"];
         if(!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ShoppingListCell"];
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
             cell.textLabel.shadowOffset = CGSizeMake(0,1);
             cell.accessoryType = UITableViewCellAccessoryNone;
-            cell.textLabel.font = [_interstateFont fontWithSize:20.0f];
+            cell.textLabel.font = [self.interstateFont fontWithSize:20.0f];
         }
         
-        SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.textLabel.text = shoppingList.name;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         return cell;
     }
 }
@@ -193,18 +182,13 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+    if (_fetchedResultsController == nil) {
+        _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
     }
-    
-    _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
-    
     return _fetchedResultsController;
 }
 
-
 #pragma mark - Table view data source
-
 
 - (IBAction)addShoppingList:(id)sender
 {
@@ -237,7 +221,6 @@
 - (SWDShoppingList *)insertNewObject:(id)sender name:(NSString *)name
 {
     SWDShoppingList *shoppingList = [SWDShoppingList createEntity];
-    
     shoppingList.name = name;
     shoppingList.creationDate = [NSDate date];
     
@@ -276,8 +259,6 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            [tableView selectRowAtIndexPath:newIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-//            [self performSegueWithIdentifier:@"ShowListView" sender:self];
             break;
             
         case NSFetchedResultsChangeDelete:
@@ -300,31 +281,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if(_selectedIndexPath != nil && _selectedIndexPath == indexPath) {
-//        [self.tableView deselectRowAtIndexPath:_selectedIndexPath animated:NO];
-//    }
-//    _selectedIndexPath = indexPath;
-    
-    NSLog(@"%@", indexPath);
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     if(indexPath.section == 1) {
-        [_navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"MasterView"] animated:NO];
+        self.viewDeckController.centerController = [sb instantiateViewControllerWithIdentifier:@"RootNavi"];
+        
     } else if(indexPath.section == 3) {
-        SWDShoppingList *shoppingList = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-        SWDShoppingListTabBarController *tabBarController = [sb instantiateViewControllerWithIdentifier:@"ShoppingListView"];
+        SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        
+        UINavigationController *listNavi = [sb instantiateViewControllerWithIdentifier:@"ListNavi"];
+        id tabBarController = listNavi.topViewController;
         [tabBarController setShoppingList:shoppingList];
-        [_navigationController pushViewController:tabBarController animated:NO];
-        NSLog(@"Moving to tab bar controller");
+        
+        self.viewDeckController.centerController = listNavi;
     }
     
     [self.viewDeckController toggleLeftView];
-}
-
-- (void)viewDidUnload
-{
-    NSLog(@"Sidebar unloaded");
 }
 
 @end

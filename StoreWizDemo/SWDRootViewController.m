@@ -9,17 +9,15 @@
 #import "SWDRootViewController.h"
 #import "SWDSidebarViewController.h"
 
-@interface SWDRootViewController ()
-
-@end
-
 @implementation SWDRootViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSLog(@"Initializing...");
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    self = [super initWithCenterViewController:[[UINavigationController alloc] initWithRootViewController:[sb instantiateViewControllerWithIdentifier:@"MasterView"]]leftViewController:[[SWDSidebarViewController alloc] init]];
+    UIViewController *mv = [sb instantiateViewControllerWithIdentifier:@"MasterView"];
+    
+    self = [super initWithCenterViewController:[[UINavigationController alloc] initWithRootViewController: mv]
+                            leftViewController:[[SWDSidebarViewController alloc] init]];
     return self;
 }
 

@@ -12,7 +12,7 @@
 
 @interface SWDShoppingListTabBarController : UITabBarController <UITabBarDelegate>
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
 @property (strong, nonatomic) SWDShoppingList *shoppingList;
+- (IBAction)menuButtonTapped:(UIBarButtonItem *)sender;
 
 @end

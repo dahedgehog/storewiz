@@ -12,5 +12,6 @@
 @interface SWDMasterViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 - (void)configureCell:(UICollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath;
+- (IBAction)menuButtonTapped:(id)sender;
 
 @end
