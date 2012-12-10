@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     
-    _shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
+    self.shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
     _productPickerInitiallyShown = NO;
     
     [self reloadData];
@@ -29,7 +29,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
     
     if(_products.count == 0 && !_productPickerInitiallyShown) {
         _productPickerInitiallyShown = YES;
@@ -85,16 +85,18 @@
 
 - (void)reloadData
 {
-    NSLog(@"Reloading data");
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"collected" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES]];
-    _products = [_shoppingList.products sortedArrayUsingDescriptors:sortDescriptors];
+    NSArray *sortDescriptors = @[
+        [NSSortDescriptor sortDescriptorWithKey:@"collected" ascending:YES],
+        [NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES]
+    ];
+    _products = [self.shoppingList.products sortedArrayUsingDescriptors:sortDescriptors];
     [self.tableView reloadData];
 }
 
 - (void)productPickerDidSelectProduct:(SWDProduct *)product
 {
     product.collected = [NSNumber numberWithBool:NO];
-    [_shoppingList addProductsObject:product];
+    [self.shoppingList addProductsObject:product];
     [[NSManagedObjectContext context] saveNestedContexts];
     [SVProgressHUD showSuccessWithStatus:@"Tuote lisätty"];
     [self reloadData];

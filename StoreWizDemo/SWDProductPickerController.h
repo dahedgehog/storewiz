@@ -18,6 +18,7 @@
 
 @interface SWDProductPickerController : SWDProductSearchController
 
-@property (strong, nonatomic) id <SWDProductPickerControllerDelegate> delegate;
+@property (nonatomic, weak) id <SWDProductPickerControllerDelegate> delegate;
+- (IBAction)closeButtonTapped:(UIBarButtonItem *)sender;
 
 @end

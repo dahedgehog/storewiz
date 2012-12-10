@@ -8,13 +8,7 @@
 
 #import "SWDProductPickerController.h"
 
-@interface SWDProductPickerController ()
-
-@end
-
 @implementation SWDProductPickerController
-
-@synthesize delegate;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -24,8 +18,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SWDProduct *product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    if([delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
-        [delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
+    if([self.delegate respondsToSelector:@selector(productPickerDidSelectProduct:)]) {
+        [self.delegate performSelector:@selector(productPickerDidSelectProduct:) withObject:product];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -35,8 +29,7 @@
     return 20.0f;
 }
 
-- (IBAction)closeButtonPressed:(id)sender
-{
+- (IBAction)closeButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

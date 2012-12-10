@@ -14,8 +14,6 @@
 
 @implementation SWDShoppingListTabBarController
 
-@synthesize shoppingList = _shoppingList;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,13 +24,15 @@
 {
     if (item.tag == 1) {
         SWDShoppingListProductsController *productsController = (SWDShoppingListProductsController *)self.viewControllers[0];
-        productsController.shoppingList = _shoppingList;
+        productsController.shoppingList = self.shoppingList;
         
     } else if (item.tag == 2) {
-        //[self.navigationController setNavigationBarHidden:YES animated:YES];
+        NSSet *products = [self.shoppingList.products filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"collected == NO"]];
+        
         SWDMapViewController *mapViewController = (SWDMapViewController *)self.viewControllers[1];
-        NSSet *products = [_shoppingList.products filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"collected == NO"]];
-        [mapViewController setProducts:[NSMutableArray arrayWithArray:[products allObjects]]];
+        mapViewController.products = [NSMutableArray arrayWithArray:[products allObjects]];
+        
+        //[self.navigationController setNavigationBarHidden:YES animated:YES];
     }
 }
 
