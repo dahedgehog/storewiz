@@ -108,9 +108,10 @@
         view.textLabel.textColor = [UIColor whiteColor];
         view.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         view.textLabel.shadowOffset = CGSizeMake(0,2);
-        view.textLabel.font = [self.interstateFont fontWithSize:19.0];
+        view.textLabel.backgroundColor = [UIColor clearColor];
+        view.textLabel.font = [self.interstateFont fontWithSize:20.0];
         view.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
-        view.selectionStyle = UITableViewCellSelectionStyleNone;
+//        view.selectionStyle = UITableViewCellSelectionStyleNone;
         
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:NO scrollPosition:UITableViewScrollPositionNone];
         return view;
@@ -146,35 +147,36 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ShoppingListCell"];
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
-            cell.textLabel.shadowOffset = CGSizeMake(0,1);
-            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.shadowOffset = CGSizeMake(0,2);
+            cell.textLabel.backgroundColor = [UIColor clearColor];
             cell.textLabel.font = [self.interstateFont fontWithSize:20.0f];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+
         }
         
         SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.textLabel.text = shoppingList.name;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
-
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
-}
-
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
-}
-
+//
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
+//}
+//
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
+//}
+//
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([self.tableView indexPathForSelectedRow] != indexPath) {
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];        
-    }
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
 }
 
 # pragma mark Shopping lists
