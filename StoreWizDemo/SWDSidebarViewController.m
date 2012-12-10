@@ -130,14 +130,17 @@
         label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         label.shadowOffset = CGSizeMake(0, 1);
         
-        UIImage *plusImage = [UIImage imageNamed:@"sidebar-plus-sign-blue.png"];
-        
-        UIImageView *plusImageView = [[UIImageView alloc] initWithImage:plusImage];
-        plusImageView.frame = CGRectOffset(plusImageView.frame, tableView.frame.size.width - 25, 15);
-        plusImageView.userInteractionEnabled = YES;
-        [plusImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addShoppingList:)]];
-        
-        [view addSubview:plusImageView];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        button.frame = CGRectOffset(button.frame, tableView.frame.size.width - 40, 9);
+        [button addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addShoppingList:)]];
+//        UIImage *plusImage = [UIImage imageNamed:@"sidebar-plus-sign-blue.png"];
+//        
+//        UIImageView *plusImageView = [[UIImageView alloc] initWithImage:plusImage];
+//        plusImageView.frame = CGRectOffset(plusImageView.frame, tableView.frame.size.width - 25, 15);
+//        plusImageView.userInteractionEnabled = YES;
+//        [plusImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addShoppingList:)]];
+//        
+        [view addSubview:button];
         [view addSubview:label];
         return view;
         
