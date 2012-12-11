@@ -10,6 +10,7 @@
 #import "SWDProductDataController.h"
 #import "SWDProduct.h"
 #import "SWDMapViewController.h"
+#import <IIViewDeckController.h>
 
 @interface SWDProductSearchController ()
 
@@ -27,6 +28,8 @@
     self.searched = self.allItems;
     
     self.sections = [self sectionsGroupedByKeyPath:@"category"];
+    
+    self.viewDeckController.panningMode = IIViewDeckNoPanning;
     
     self.navigationController.navigationBar.shadowImage = nil;
 }

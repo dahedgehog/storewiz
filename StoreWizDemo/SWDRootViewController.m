@@ -18,6 +18,7 @@
     
     self = [super initWithCenterViewController:[[UINavigationController alloc] initWithRootViewController: mv]
                             leftViewController:[[SWDSidebarViewController alloc] init]];
+//    self.elastic = NO;
     return self;
 }
 

@@ -57,6 +57,10 @@
 		621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621F5085165FFF460089534A /* 193-location-arrow@2x.png */; };
 		621F508E16600E820089534A /* StoreWizDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F508C16600E820089534A /* StoreWizDemo.xcdatamodeld */; };
 		621F50A91660199A0089534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F50A81660199A0089534A /* CoreData.framework */; };
+		62295637167759ED006014C3 /* map-offers-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62295636167759ED006014C3 /* map-offers-background@2x.png */; };
+		6229563B167796F6006014C3 /* SWDOfferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */; };
+		6229563D16779F6D006014C3 /* Splash-Screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6229563C16779F6D006014C3 /* Splash-Screen@2x.png */; };
+		6229563F16779F7E006014C3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6229563E16779F7E006014C3 /* Default@2x.png */; };
 		6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291DA67166CE00800B6605C /* SWDRootViewController.m */; };
 		6291DA81166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */; };
 		6291DA82166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6B166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg */; };
@@ -129,7 +133,7 @@
 /* Begin PBXFileReference section */
 		03F731AF34EA45B0B57396CC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		611418DA1657B59300112294 /* new_grocery_store.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_grocery_store.jpeg; sourceTree = "<group>"; };
-		614005121648FC920035A21D /* StoreWizDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreWizDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		614005121648FC920035A21D /* Shopped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614005161648FC920035A21D /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		614005181648FC920035A21D /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6140051A1648FC920035A21D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +194,11 @@
 		621F5085165FFF460089534A /* 193-location-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow@2x.png"; sourceTree = "<group>"; };
 		621F508D16600E820089534A /* StoreWizDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreWizDemo.xcdatamodel; sourceTree = "<group>"; };
 		621F50A81660199A0089534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		62295636167759ED006014C3 /* map-offers-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-offers-background@2x.png"; sourceTree = "<group>"; };
+		62295639167796F6006014C3 /* SWDOfferCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDOfferCollectionViewCell.h; sourceTree = "<group>"; };
+		6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDOfferCollectionViewCell.m; sourceTree = "<group>"; };
+		6229563C16779F6D006014C3 /* Splash-Screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-Screen@2x.png"; sourceTree = "<group>"; };
+		6229563E16779F7E006014C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6291DA66166CE00800B6605C /* SWDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDRootViewController.h; sourceTree = "<group>"; };
 		6291DA67166CE00800B6605C /* SWDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDRootViewController.m; sourceTree = "<group>"; };
 		6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg; sourceTree = "<group>"; };
@@ -286,6 +295,7 @@
 		614005071648FC910035A21D = {
 			isa = PBXGroup;
 			children = (
+				6229563E16779F7E006014C3 /* Default@2x.png */,
 				6140051C1648FC920035A21D /* StoreWizDemo */,
 				614005151648FC920035A21D /* Frameworks */,
 				614005131648FC920035A21D /* Products */,
@@ -296,7 +306,7 @@
 		614005131648FC920035A21D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				614005121648FC920035A21D /* StoreWizDemo.app */,
+				614005121648FC920035A21D /* Shopped.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,6 +362,8 @@
 				FFBC73921664FD5A000E52A6 /* Images */,
 				6291DA69166D09A700B6605C /* Mainokset */,
 				6140051D1648FC920035A21D /* Supporting Files */,
+				62295639167796F6006014C3 /* SWDOfferCollectionViewCell.h */,
+				6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -446,6 +458,8 @@
 		FFBC73921664FD5A000E52A6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6229563C16779F6D006014C3 /* Splash-Screen@2x.png */,
+				62295636167759ED006014C3 /* map-offers-background@2x.png */,
 				FFBC73A81665065E000E52A6 /* 01-magnify-white.png */,
 				FFBC73A91665065E000E52A6 /* 01-magnify-white@2x.png */,
 				FFBC73A416650649000E52A6 /* 01-magnify.png */,
@@ -500,7 +514,7 @@
 			);
 			name = StoreWizDemo;
 			productName = StoreWizDemo;
-			productReference = 614005121648FC920035A21D /* StoreWizDemo.app */;
+			productReference = 614005121648FC920035A21D /* Shopped.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -628,6 +642,9 @@
 				61F02D63166DF6AA009901BA /* app-icon.png in Resources */,
 				61F02D66166DF6AF009901BA /* app-icon@2x.png in Resources */,
 				617BBD6F16752A0400F57F1C /* nav_menu_icon.png in Resources */,
+				62295637167759ED006014C3 /* map-offers-background@2x.png in Resources */,
+				6229563D16779F6D006014C3 /* Splash-Screen@2x.png in Resources */,
+				6229563F16779F7E006014C3 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +689,7 @@
 				62E830791666B608007EB677 /* SWDSidebarViewController.m in Sources */,
 				6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */,
 				6291DA9A166D28E100B6605C /* SWDMapOffersViewController.m in Sources */,
+				6229563B167796F6006014C3 /* SWDOfferCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,10 +770,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03F731AF34EA45B0B57396CC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreWizDemo/StoreWizDemo-Prefix.pch";
 				INFOPLIST_FILE = "StoreWizDemo/StoreWizDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shopped;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -764,10 +784,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03F731AF34EA45B0B57396CC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreWizDemo/StoreWizDemo-Prefix.pch";
 				INFOPLIST_FILE = "StoreWizDemo/StoreWizDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shopped;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

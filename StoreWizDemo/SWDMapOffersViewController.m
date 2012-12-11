@@ -15,17 +15,21 @@
     
 @implementation SWDMapOffersViewController
 {
-    NSArray *_paths;
+    NSMutableArray *_images;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _paths = [[NSBundle mainBundle] pathsForResourcesOfType:@".jpg" inDirectory:@""];
-    NSLog(@"%u", _paths.count);
+    NSArray *paths = [[NSBundle mainBundle] pathsForResourcesOfType:@".jpg" inDirectory:@""];
     
-    self.collectionView.backgroundColor = nil;
+    _images = [NSMutableArray array];
+    for(NSString *path in paths) {
+        [_images addObject:[UIImage imageWithContentsOfFile:path]];
+    }
+    
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"map-offers-background.png"]];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -35,7 +39,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _paths.count;
+    return _images.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -43,7 +47,7 @@
     NSLog(@"%@", indexPath);
     UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"MapOfferImageCell" forIndexPath:indexPath];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:_paths[indexPath.row]]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[_images objectAtIndex:indexPath.item]];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.frame = CGRectMake(0,0,65.5,65.5);
     

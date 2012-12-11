@@ -130,7 +130,7 @@
     self.calloutView.calloutOffset = pin.calloutOffset;
     
     [self.calloutView presentCalloutFromRect:pin.frame
-                                      inView:self.mapView constrainedToView:self.scrollView
+                                      inView:self.mapView constrainedToView:self.mapView
                     permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
 }
 

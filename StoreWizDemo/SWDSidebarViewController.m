@@ -35,6 +35,11 @@
     [super viewWillAppear:animated];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 3) {
@@ -153,7 +158,7 @@
             cell.textLabel.shadowOffset = CGSizeMake(0,2);
             cell.textLabel.backgroundColor = [UIColor clearColor];
             cell.textLabel.font = [self.interstateFont fontWithSize:20.0f];
-            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
         }
         
