@@ -25,6 +25,10 @@
 @end
 
 @implementation SWDMapViewController
+{
+    NSMutableArray *_productPins;
+    NSInteger _currentIndex;
+}
 
 - (void)viewDidLoad
 {
@@ -32,6 +36,8 @@
     
     //NOTE: the map scale factor is now hard coded to 0.4, make this according to the zoom-level!!!
     self.scale = 0.4;
+    _currentIndex = 0;
+    _productPins = [[NSMutableArray alloc] init];
     
     UIImage *map = [UIImage imageNamed:@"kartta-actual-himmee.png"];
     UIImage *checkbox = [UIImage imageNamed:@"19-circle-check.png"];
@@ -40,7 +46,7 @@
     self.calloutView = [[SMCalloutView alloc] init];
     
     if (self.scrollsToCenterPointAfterAppear) {
-        self.navigationItem.title = [[self.products objectAtIndex:0] valueForKey:@"name"];
+        self.navigationItem.title = [[self.products objectAtIndex:_currentIndex] valueForKey:@"name"];
     } else {
         UIImageView *checkboxView = [[UIImageView alloc] initWithImage:checkbox highlightedImage:highlightedCheckbox];
         checkboxView.userInteractionEnabled = YES;
@@ -71,31 +77,21 @@
     [self.scrollView addSubview:self.mapView];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self renderProducts:self.products];
+    [self showCalloutForPin:[_productPins objectAtIndex:_currentIndex]];
+}
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.mapView;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self renderProducts:self.products];
-    
-    if (self.scrollsToCenterPointAfterAppear) {
-        SWDProduct *product = [self.products objectAtIndex:0];
-        CGSize fsize = self.scrollView.frame.size;
-        
-        CGRect scrollToFrame = CGRectMake(product.x.floatValue*self.scale+5,
-                                          product.y.floatValue*self.scale,
-                                          fsize.width/2, fsize.height/2);
-        
-        [self.scrollView scrollRectToVisible:scrollToFrame animated:YES];
-    }
-}
-
 - (void)renderProducts:(NSArray *)products {
-    // Remove existing pins from the map and redraw them
     [[self.mapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_productPins removeAllObjects];
     
     for (SWDProduct *product in products) {
         [self renderProduct:product tag:[products indexOfObject:product]];
@@ -109,22 +105,19 @@
     
     pinAnnotationView.center = CGPointMake(product.x.floatValue*self.scale, product.y.floatValue*self.scale);
     pinAnnotationView.pinColor = MKPinAnnotationColorGreen;
-    
-    // Hack?
     pinAnnotationView.tag = tag;
     
     [pinAnnotationView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(pinTapped:)]];
     [self.mapView addSubview:pinAnnotationView];
+    [_productPins addObject:pinAnnotationView];
 }
 
-- (void)pinTapped:(UITapGestureRecognizer *)sender
+- (void)showCalloutForPin:(MKPinAnnotationView *)pin
 {
-    MKPinAnnotationView *pin = (MKPinAnnotationView *)sender.view;
     SWDProduct *product = [self.products objectAtIndex:pin.tag];
     
     self.selectedProduct = product;
-    
     self.calloutView.title = product.name;
     self.calloutView.subtitle = [product.price.stringValue stringByAppendingString:@" €"];
     self.calloutView.calloutOffset = pin.calloutOffset;
@@ -132,6 +125,23 @@
     [self.calloutView presentCalloutFromRect:pin.frame
                                       inView:self.mapView constrainedToView:self.mapView
                     permittedArrowDirections:SMCalloutArrowDirectionAny animated:YES];
+    
+    [self scrollToCenterProduct:product];
+}
+
+- (void)scrollToCenterProduct:(SWDProduct *)product
+{
+    CGSize fsize = self.scrollView.frame.size;
+    CGRect scrollToFrame = CGRectMake(product.x.floatValue*self.scale+5-fsize.width/2,
+                                      product.y.floatValue*self.scale+10-fsize.height/2,
+                                      fsize.width, fsize.height);
+    
+    [self.scrollView scrollRectToVisible:scrollToFrame animated:YES];
+}
+
+- (void)pinTapped:(UITapGestureRecognizer *)sender
+{
+    [self showCalloutForPin:(MKPinAnnotationView *)sender.view];
 }
 
 - (void)accessoryViewTapped:(UIGestureRecognizer *)gestureRecognizer
@@ -144,6 +154,21 @@
     [self mapTapped];
     [self renderProducts:self.products];
     [[NSManagedObjectContext defaultContext] saveNestedContexts];
+}
+
+- (IBAction)changeCenteredProduct:(UISegmentedControl *)sender {
+    NSInteger segment = sender.selectedSegmentIndex;
+    if (segment == 0) {
+        _currentIndex++;
+        if (_currentIndex >= self.products.count)
+            _currentIndex = 0;
+    }
+    if (segment == 1) {
+        _currentIndex--;
+        if (_currentIndex < 0)
+            _currentIndex = self.products.count - 1;
+    }
+    [self showCalloutForPin:[_productPins objectAtIndex:_currentIndex]];
 }
 
 - (void)mapTapped

@@ -14,11 +14,9 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UIViewController *mv = [sb instantiateViewControllerWithIdentifier:@"MasterView"];
     
-    self = [super initWithCenterViewController:[[UINavigationController alloc] initWithRootViewController: mv]
+    self = [super initWithCenterViewController:[sb instantiateViewControllerWithIdentifier:@"RootNavi"]
                             leftViewController:[[SWDSidebarViewController alloc] init]];
-//    self.elastic = NO;
     return self;
 }
 

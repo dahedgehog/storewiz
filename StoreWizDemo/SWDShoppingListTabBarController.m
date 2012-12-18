@@ -18,9 +18,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.shoppingList.name;
-    
+
     UIImageView *menuImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"]];
-    menuImageView.userInteractionEnabled = YES;
     [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
     self.navigationItem.leftBarButtonItem.customView = menuImageView;
 }
@@ -36,8 +35,6 @@
         
         SWDMapViewController *mapViewController = (SWDMapViewController *)self.viewControllers[1];
         mapViewController.products = [NSMutableArray arrayWithArray:[products allObjects]];
-        
-        //[self.navigationController setNavigationBarHidden:YES animated:YES];
     }
 }
 

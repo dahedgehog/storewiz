@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Ilari Kontinen. All rights reserved.
 //
 
+#import <IIViewDeckController.h>
 #import "SWDSidebarViewController.h"
 #import "SWDShoppingList.h"
 #import "SWDShoppingListTabBarController.h"
-#import <IIViewDeckController.h>
 
-@interface SWDSidebarViewController () <NSFetchedResultsControllerDelegate>
+@interface SWDSidebarViewController() <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) UIFont *interstateFont;
@@ -19,6 +19,9 @@
 @end
 
 @implementation SWDSidebarViewController
+{
+    BOOL _initialized;
+}
 
 - (void)viewDidLoad
 {
@@ -38,6 +41,27 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (!_initialized) {
+        _initialized = YES;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 4;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch(section) {
+        case 0: case 1: case 2:
+            return 1;
+        case 3: default: {
+            id sectionInfo = self.fetchedResultsController.sections[0];
+            return [sectionInfo numberOfObjects];
+        }
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,11 +72,6 @@
     return NO;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 4;
-}
-
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1 || indexPath.section == 3) {
@@ -61,93 +80,47 @@
     return NO;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    switch(section) {
-        case 0:
-        case 1:
-        case 2:
-            return 1;
-        case 3:
-        default: {
-            id sectionInfo = self.fetchedResultsController.sections[0];
-            return [sectionInfo numberOfObjects];
-        }
-    }
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0) {
-        UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
+        cell.imageView.image = [UIImage imageNamed:@"sidebar-location-arrow.png"];
         
-        [view setBackgroundColor:[UIColor redColor]];
+        cell.textLabel.text = @"Citymarket Kupittaa";
+        cell.textLabel.textColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.61f alpha:1.0f];
+        cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.88f];
+        cell.textLabel.shadowOffset = CGSizeMake(0, 1);
+        cell.textLabel.font = [self.interstateFont fontWithSize:19.0f];
         
-        UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(0, 10, 250, 25);
-        label.text = @"Citymarket Kupittaa";
-        label.backgroundColor = [UIColor clearColor];
-        label.font = [self.interstateFont fontWithSize:19.0f];
-        label.textColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.61f alpha:1.0f];
-        label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.88f];
-        label.shadowOffset = CGSizeMake(0, 1);
-        label.textAlignment = NSTextAlignmentCenter;
-        
-        UIImage *underlineImage = [UIImage imageNamed:@"sidebar-location-underline.png"];
-        UIImageView *underlineImageView = [[UIImageView alloc] initWithImage:underlineImage];
-        underlineImageView.frame = CGRectOffset(underlineImageView.frame, 2, 36);
-        
-        //[view addSubview:underlineImageView];
-        
-        UIImage *locationArrowImage = [UIImage imageNamed:@"sidebar-location-arrow.png"];
-        UIImageView *locationArrowImageView = [[UIImageView alloc] initWithImage:locationArrowImage];
-        locationArrowImageView.frame = CGRectOffset(locationArrowImageView.frame, 10, 3);
-        [label addSubview:locationArrowImageView];
-        
-        [view addSubview:label];
-        return view;
+        return cell;
         
     } else if(indexPath.section == 1) {
-        UITableViewCell *view = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OffersCell"];
-        view.textLabel.text = @"Tarjoukset";
-        view.textLabel.textColor = [UIColor whiteColor];
-        view.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
-        view.textLabel.shadowOffset = CGSizeMake(0,2);
-        view.textLabel.backgroundColor = [UIColor clearColor];
-        view.textLabel.font = [self.interstateFont fontWithSize:20.0];
-        view.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
-//        view.selectionStyle = UITableViewCellSelectionStyleNone;
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OffersCell"];
+        cell.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
         
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:NO scrollPosition:UITableViewScrollPositionNone];
-        return view;
+        cell.textLabel.text = @"Tarjoukset";
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
+        cell.textLabel.shadowOffset = CGSizeMake(0,2);
+        cell.textLabel.font = [self.interstateFont fontWithSize:20.0];
+        
+        return cell;
         
     } else if(indexPath.section == 2) {
-        UITableViewCell *view = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 44)];
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LabelCell"];
         
-        [view setBackgroundColor:[UIColor redColor]];
-        
-        UILabel *label = [[UILabel alloc] init];
-        label.frame = CGRectMake(8, 15, 150, 15);
-        label.text = @"OSTOSLISTAT";
-        label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:14.0];
-        label.textColor = [UIColor colorWithRed:136.0f/255.0f green:136.0f/255.0f blue:136.0f/255.0f alpha:1.0f];
-        label.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
-        label.shadowOffset = CGSizeMake(0, 1);
+        cell.textLabel.text = @"OSTOSLISTAT";
+        cell.textLabel.textColor = [UIColor colorWithRed:136.0f/255.0f green:136.0f/255.0f blue:136.0f/255.0f alpha:1.0f];
+        cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
+        cell.textLabel.shadowOffset = CGSizeMake(0, 1);
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
         button.frame = CGRectOffset(button.frame, tableView.frame.size.width - 40, 9);
         [button addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addShoppingList:)]];
-//        UIImage *plusImage = [UIImage imageNamed:@"sidebar-plus-sign-blue.png"];
-//        
-//        UIImageView *plusImageView = [[UIImageView alloc] initWithImage:plusImage];
-//        plusImageView.frame = CGRectOffset(plusImageView.frame, tableView.frame.size.width - 25, 15);
-//        plusImageView.userInteractionEnabled = YES;
-//        [plusImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addShoppingList:)]];
-//        
-        [view addSubview:button];
-        [view addSubview:label];
-        return view;
+        [cell addSubview:button];
+        
+        return cell;
         
     } else {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ShoppingListCell"];
@@ -156,31 +129,16 @@
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
             cell.textLabel.shadowOffset = CGSizeMake(0,2);
-            cell.textLabel.backgroundColor = [UIColor clearColor];
             cell.textLabel.font = [self.interstateFont fontWithSize:20.0f];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
         }
-        
         SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.textLabel.text = shoppingList.name;
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
     }
 }
-//
-//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar-selected-cell.png"]];
-//}
-//
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
-//}
-//
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell-border-bottom.png"]];
@@ -188,7 +146,6 @@
 }
 
 # pragma mark Shopping lists
-
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -198,24 +155,12 @@
     return _fetchedResultsController;
 }
 
-#pragma mark - Table view data source
-
 - (IBAction)addShoppingList:(id)sender
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uusi ostoslista" message:nil delegate:self cancelButtonTitle:@"Peruuta" otherButtonTitles:@"OK", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView textFieldAtIndex:0].text = @"Ostoslista";
     [alertView show];
-    [[alertView textFieldAtIndex:0] setText:@"Ostoslista"];
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(editingStyle == UITableViewCellEditingStyleDelete) {
-        SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-        
-        [shoppingList deleteEntity];
-        [[NSManagedObjectContext defaultContext] saveNestedContexts];
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -228,15 +173,23 @@
     }
 }
 
-- (SWDShoppingList *)insertNewObject:(id)sender name:(NSString *)name
+- (void)insertNewObject:(id)sender name:(NSString *)name
 {
     SWDShoppingList *shoppingList = [SWDShoppingList createEntity];
     shoppingList.name = name;
     shoppingList.creationDate = [NSDate date];
     
     [[NSManagedObjectContext defaultContext] saveNestedContexts];
-    
-    return shoppingList;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        [shoppingList deleteEntity];
+        
+        [[NSManagedObjectContext defaultContext] saveNestedContexts];
+    }
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
@@ -258,29 +211,26 @@
     }
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
     indexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:3];
     newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:3];
-    
     switch(type) {
+        case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
@@ -294,7 +244,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     if(indexPath.section == 1) {
-        self.viewDeckController.centerController = [sb instantiateViewControllerWithIdentifier:@"RootNavi"];
+        UINavigationController *rootNavi = [sb instantiateViewControllerWithIdentifier:@"RootNavi"];
+        self.viewDeckController.centerController = rootNavi;
         
     } else if(indexPath.section == 3) {
         SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
@@ -305,7 +256,6 @@
         
         self.viewDeckController.centerController = listNavi;
     }
-    
     [self.viewDeckController toggleLeftView];
 }
 

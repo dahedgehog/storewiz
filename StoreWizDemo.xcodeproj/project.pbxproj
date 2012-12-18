@@ -15,7 +15,6 @@
 		614005231648FC920035A21D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 614005221648FC920035A21D /* main.m */; };
 		614005271648FC920035A21D /* SWDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 614005261648FC920035A21D /* SWDAppDelegate.m */; };
 		614005291648FC920035A21D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 614005281648FC920035A21D /* Default.png */; };
-		6140052B1648FC920035A21D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6140052A1648FC920035A21D /* Default@2x.png */; };
 		6140052D1648FC920035A21D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6140052C1648FC920035A21D /* Default-568h@2x.png */; };
 		614005301648FC920035A21D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6140052E1648FC920035A21D /* MainStoryboard.storyboard */; };
 		614005331648FC920035A21D /* SWDMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614005321648FC920035A21D /* SWDMasterViewController.m */; };
@@ -60,7 +59,6 @@
 		62295637167759ED006014C3 /* map-offers-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62295636167759ED006014C3 /* map-offers-background@2x.png */; };
 		6229563B167796F6006014C3 /* SWDOfferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */; };
 		6229563D16779F6D006014C3 /* Splash-Screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6229563C16779F6D006014C3 /* Splash-Screen@2x.png */; };
-		6229563F16779F7E006014C3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6229563E16779F7E006014C3 /* Default@2x.png */; };
 		6291DA68166CE00800B6605C /* SWDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291DA67166CE00800B6605C /* SWDRootViewController.m */; };
 		6291DA81166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */; };
 		6291DA82166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6291DA6B166D09A700B6605C /* atria_kulinaari_kylmasavuleikkeleet_100_g_150px.jpg */; };
@@ -144,7 +142,6 @@
 		614005251648FC920035A21D /* SWDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWDAppDelegate.h; sourceTree = "<group>"; };
 		614005261648FC920035A21D /* SWDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWDAppDelegate.m; sourceTree = "<group>"; };
 		614005281648FC920035A21D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		6140052A1648FC920035A21D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6140052C1648FC920035A21D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6140052F1648FC920035A21D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		614005311648FC920035A21D /* SWDMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWDMasterViewController.h; sourceTree = "<group>"; };
@@ -198,7 +195,7 @@
 		62295639167796F6006014C3 /* SWDOfferCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDOfferCollectionViewCell.h; sourceTree = "<group>"; };
 		6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDOfferCollectionViewCell.m; sourceTree = "<group>"; };
 		6229563C16779F6D006014C3 /* Splash-Screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-Screen@2x.png"; sourceTree = "<group>"; };
-		6229563E16779F7E006014C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6229563E16779F7E006014C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		6291DA66166CE00800B6605C /* SWDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDRootViewController.h; sourceTree = "<group>"; };
 		6291DA67166CE00800B6605C /* SWDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDRootViewController.m; sourceTree = "<group>"; };
 		6291DA6A166D09A700B6605C /* atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atria_italialainen_kolmen_juuston_ja_kinkku_pepperoni_pizzat_200_g_150px.jpg; sourceTree = "<group>"; };
@@ -295,7 +292,6 @@
 		614005071648FC910035A21D = {
 			isa = PBXGroup;
 			children = (
-				6229563E16779F7E006014C3 /* Default@2x.png */,
 				6140051C1648FC920035A21D /* StoreWizDemo */,
 				614005151648FC920035A21D /* Frameworks */,
 				614005131648FC920035A21D /* Products */,
@@ -336,6 +332,8 @@
 				FF80A229165D2FE200159775 /* SWDMapViewController.m */,
 				614005311648FC920035A21D /* SWDMasterViewController.h */,
 				614005321648FC920035A21D /* SWDMasterViewController.m */,
+				62295639167796F6006014C3 /* SWDOfferCollectionViewCell.h */,
+				6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */,
 				6218D0AC16615D7F008FBD81 /* SWDProduct.h */,
 				6218D0AD16615D7F008FBD81 /* SWDProduct.m */,
 				61882D181658F24800D77E9E /* SWDProductDataController.h */,
@@ -362,8 +360,6 @@
 				FFBC73921664FD5A000E52A6 /* Images */,
 				6291DA69166D09A700B6605C /* Mainokset */,
 				6140051D1648FC920035A21D /* Supporting Files */,
-				62295639167796F6006014C3 /* SWDOfferCollectionViewCell.h */,
-				6229563A167796F6006014C3 /* SWDOfferCollectionViewCell.m */,
 			);
 			path = StoreWizDemo;
 			sourceTree = "<group>";
@@ -371,21 +367,18 @@
 		6140051D1648FC920035A21D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61F02D65166DF6AF009901BA /* app-icon@2x.png */,
 				61F02D62166DF6AA009901BA /* app-icon.png */,
-				FFAD496A1667804500BDF611 /* Interstate-Regular.ttf */,
-				62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */,
-				FFBC73AE166510BE000E52A6 /* OpenSans-Bold.ttf */,
-				FFBC73AC16650F1D000E52A6 /* OpenSans-Regular.ttf */,
+				61F02D65166DF6AF009901BA /* app-icon@2x.png */,
 				614005751649444D0035A21D /* btn_background.png */,
 				61400571164935C40035A21D /* city_loytoja.png */,
 				61400573164938210035A21D /* citymarket_logo.png */,
 				6140053A1648FCB50035A21D /* Citymarketin_Logo.png */,
 				6140052C1648FC920035A21D /* Default-568h@2x.png */,
 				614005281648FC920035A21D /* Default.png */,
-				6140052A1648FC920035A21D /* Default@2x.png */,
+				6229563E16779F7E006014C3 /* Default@2x.png */,
 				6140057716494B9F0035A21D /* grocery_store.jpeg */,
 				6140051F1648FC920035A21D /* InfoPlist.strings */,
+				FFAD496A1667804500BDF611 /* Interstate-Regular.ttf */,
 				6218D0C0166172CC008FBD81 /* kartta-actual-himmee.png */,
 				61C3A8FB1662C935009325E6 /* katalogi-3.csv */,
 				61882D1E165902CC00D77E9E /* katalogi.csv */,
@@ -400,6 +393,9 @@
 				61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */,
 				61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */,
 				611418DA1657B59300112294 /* new_grocery_store.jpeg */,
+				FFBC73AE166510BE000E52A6 /* OpenSans-Bold.ttf */,
+				FFBC73AC16650F1D000E52A6 /* OpenSans-Regular.ttf */,
+				62E8305816667E0B007EB677 /* OpenSans-Semibold.ttf */,
 				61882D2C16592A9000D77E9E /* product_pin.png */,
 				6140051E1648FC920035A21D /* StoreWizDemo-Info.plist */,
 				614005241648FC920035A21D /* StoreWizDemo-Prefix.pch */,
@@ -551,7 +547,6 @@
 			files = (
 				614005211648FC920035A21D /* InfoPlist.strings in Resources */,
 				614005291648FC920035A21D /* Default.png in Resources */,
-				6140052B1648FC920035A21D /* Default@2x.png in Resources */,
 				6140052D1648FC920035A21D /* Default-568h@2x.png in Resources */,
 				614005301648FC920035A21D /* MainStoryboard.storyboard in Resources */,
 				6140053C1648FCB50035A21D /* Citymarketin_Logo.png in Resources */,
@@ -644,7 +639,6 @@
 				617BBD6F16752A0400F57F1C /* nav_menu_icon.png in Resources */,
 				62295637167759ED006014C3 /* map-offers-background@2x.png in Resources */,
 				6229563D16779F6D006014C3 /* Splash-Screen@2x.png in Resources */,
-				6229563F16779F7E006014C3 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

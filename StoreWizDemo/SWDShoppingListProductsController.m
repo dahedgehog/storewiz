@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     
-    self.shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
+	self.shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
     _productPickerInitiallyShown = NO;
     
     [self reloadData];
@@ -29,8 +29,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    //[self.navigationController setNavigationBarHidden:NO animated:YES];
-    
     if(_products.count == 0 && !_productPickerInitiallyShown) {
         _productPickerInitiallyShown = YES;
         [self.tabBarController performSegueWithIdentifier:@"ShoppingListProductSearch" sender:nil];

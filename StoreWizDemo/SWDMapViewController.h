@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *adView;
 @property (strong, nonatomic) NSMutableArray *products;
-
 @property (nonatomic) BOOL scrollsToCenterPointAfterAppear;
+- (IBAction)changeCenteredProduct:(UISegmentedControl *)sender;
 
 @end

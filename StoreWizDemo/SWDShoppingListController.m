@@ -12,10 +12,13 @@
 #import "SWDShoppingList.h"
 #import "SWDMasterViewController.h"
 
+@interface SWDShoppingListController() <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@end
+
 @implementation SWDShoppingListController
-{
-    NSFetchedResultsController *_fetchedResultsController;
-}
 
 - (void)viewDidLoad
 {
@@ -24,11 +27,9 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+    if (_fetchedResultsController == nil) {
+        _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
     }
-    
-    _fetchedResultsController = [SWDShoppingList fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self];
     return _fetchedResultsController;
 }
 

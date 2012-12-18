@@ -10,10 +10,9 @@
 
 @class SWDShoppingListDataController;
 
-@interface SWDShoppingListController : UITableViewController <UIAlertViewDelegate, NSFetchedResultsControllerDelegate>
+@interface SWDShoppingListController : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) SWDShoppingListDataController *dataController;
-
 - (IBAction)addShoppingList:(id)sender;
 
 @end

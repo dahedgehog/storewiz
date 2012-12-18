@@ -164,7 +164,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowProductView"]) {
-        NSLog(@"Showing product view");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         SWDProduct* product = [[self.sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
