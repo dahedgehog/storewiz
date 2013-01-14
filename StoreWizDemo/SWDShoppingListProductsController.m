@@ -15,6 +15,7 @@
 {
     BOOL _productPickerInitiallyShown;
     NSArray *_products;
+    UIFont *_interstate;
 }
 
 - (void)viewDidLoad
@@ -23,6 +24,8 @@
     
 	self.shoppingList = [(SWDShoppingListTabBarController *)self.tabBarController shoppingList];
     _productPickerInitiallyShown = NO;
+    
+    _interstate = [UIFont fontWithName:@"Interstate-Regular" size:20.0f];
     
     [self reloadData];
 }
@@ -55,7 +58,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[SWDShoppingListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[SWDShoppingListCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     [self configureCell:cell indexPath:(NSIndexPath *)indexPath];
@@ -91,6 +94,11 @@
     [self.tableView reloadData];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 34.0f;
+}
+
 - (void)productPickerDidSelectProduct:(SWDProduct *)product
 {
     product.collected = [NSNumber numberWithBool:NO];
@@ -105,6 +113,9 @@
     SWDProduct *product = [_products objectAtIndex:indexPath.row];
     cell.textLabel.text = product.name;
     cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.font = _interstate;
+    cell.detailTextLabel.text = [[product.price stringValue] stringByAppendingString:@" €"];
+    cell.detailTextLabel.font = [_interstate fontWithSize:15.0f];
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     if(product.collected.boolValue) {
