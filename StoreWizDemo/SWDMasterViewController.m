@@ -28,6 +28,16 @@
     UIImageView *menuImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"]];
     [menuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonTapped:)]];
     self.navigationItem.leftBarButtonItem.customView = menuImageView;
+    
+   
+    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchButton.showsTouchWhenHighlighted = YES;
+    [searchButton setImage:[UIImage imageNamed:@"06-magnify-white-shadow.png"] forState:UIControlStateNormal];
+    searchButton.frame = CGRectMake(0,0,32,32);
+    [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchButton];
+    
 
     UIColor *pattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"billie_holiday.png"]];
     self.collectionView.backgroundColor = pattern;
@@ -76,6 +86,11 @@
 - (void)menuButtonTapped:(UIBarButtonItem *)sender
 {
     [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+
+- (void)searchButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"ProductSearchSegue" sender:self];
 }
 
 @end
