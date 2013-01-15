@@ -94,10 +94,7 @@
     [self.tableView reloadData];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 34.0f;
-}
+
 
 - (void)productPickerDidSelectProduct:(SWDProduct *)product
 {
