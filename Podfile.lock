@@ -1,19 +1,44 @@
 
 PODS:
+- AFNetworking (1.1.0)
 - MagicalRecord (2.0.8)
+- RestKit (0.20.0pre6):
+  - RestKit/Core (= 0.20.0pre6)
+- RestKit/Core (0.20.0pre6):
+  - RestKit/CoreData
+  - RestKit/Network
+  - RestKit/ObjectMapping
+- RestKit/CoreData (0.20.0pre6)
+- RestKit/Network (0.20.0pre6):
+  - AFNetworking (= 1.1.0)
+  - RestKit/ObjectMapping
+  - RestKit/Support
+  - SOCKit
+- RestKit/ObjectMapping (0.20.0pre6)
+- RestKit/Support (0.20.0pre6)
 - SMCalloutView (1.0.1)
+- SOCKit (1.1)
 - SVProgressHUD (0.8)
 - ViewDeck (1.4.2)
 
 DEPENDENCIES:
 - MagicalRecord
+- RestKit
 - SMCalloutView
 - SVProgressHUD
 - ViewDeck
 
 SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   MagicalRecord: daa15d6c83bd7d30e074c8923e53c64248ae6930
-  SMCalloutView: 5039079c2bfee3ece8fae29b77aa1c3049b32f0c
+  RestKit: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  RestKit/Core: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  RestKit/CoreData: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  RestKit/Network: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  RestKit/ObjectMapping: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  RestKit/Support: ccca19640fcc3031f82ad4250c44061e2e2ddce7
+  SMCalloutView: 25807b1995e8469473848ef01c83bba9b4efe277
+  SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
   ViewDeck: a05ad18f6dcd87a95429c0b5bcaf58a450787c87
 

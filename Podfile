@@ -1,6 +1,7 @@
-platform :ios
+platform :ios, '5.0'
 xcodeproj 'StoreWizDemo.xcodeproj'
 pod 'SVProgressHUD'
 pod 'SMCalloutView'
 pod 'MagicalRecord'
 pod 'ViewDeck'
+pod 'RestKit'
