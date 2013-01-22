@@ -108,6 +108,7 @@
 		FF26131C1667964D007512B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF26131B1667964D007512B7 /* QuartzCore.framework */; };
 		FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF80A229165D2FE200159775 /* SWDMapViewController.m */; };
 		FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */; };
+		FF939FA816A866C70079A64D /* navbarbutton-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF939FA716A866C70079A64D /* navbarbutton-background.png */; };
 		FFAD496B1667804500BDF611 /* Interstate-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFAD496A1667804500BDF611 /* Interstate-Regular.ttf */; };
 		FFBC73961664FE06000E52A6 /* fabric_plaid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73941664FE06000E52A6 /* fabric_plaid@2x.png */; };
 		FFBC73971664FE06000E52A6 /* fabric_plaid.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBC73951664FE06000E52A6 /* fabric_plaid.png */; };
@@ -251,6 +252,7 @@
 		FF80A229165D2FE200159775 /* SWDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDMapViewController.m; sourceTree = "<group>"; };
 		FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductPickerController.h; sourceTree = "<group>"; };
 		FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDProductPickerController.m; sourceTree = "<group>"; };
+		FF939FA716A866C70079A64D /* navbarbutton-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbarbutton-background.png"; sourceTree = "<group>"; };
 		FFAD496A1667804500BDF611 /* Interstate-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Interstate-Regular.ttf"; sourceTree = "<group>"; };
 		FFBC73941664FE06000E52A6 /* fabric_plaid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fabric_plaid@2x.png"; sourceTree = "<group>"; };
 		FFBC73951664FE06000E52A6 /* fabric_plaid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fabric_plaid.png; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 		FFBC73921664FD5A000E52A6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FF939FA716A866C70079A64D /* navbarbutton-background.png */,
 				6229563C16779F6D006014C3 /* Splash-Screen@2x.png */,
 				62295636167759ED006014C3 /* map-offers-background@2x.png */,
 				FFBC73A81665065E000E52A6 /* 01-magnify-white.png */,
@@ -639,6 +642,7 @@
 				617BBD6F16752A0400F57F1C /* nav_menu_icon.png in Resources */,
 				62295637167759ED006014C3 /* map-offers-background@2x.png in Resources */,
 				6229563D16779F6D006014C3 /* Splash-Screen@2x.png in Resources */,
+				FF939FA816A866C70079A64D /* navbarbutton-background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
