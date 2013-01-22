@@ -55,8 +55,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch(section) {
-        case 0: case 1: case 2:
+        case 0: case 2:
             return 1;
+        case 1:
+            return 3;
         case 3: default: {
             id sectionInfo = self.fetchedResultsController.sections[0];
             return [sectionInfo numberOfObjects];
@@ -86,7 +88,7 @@
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
         cell.imageView.image = [UIImage imageNamed:@"sidebar-location-arrow.png"];
         
-        cell.textLabel.text = @"Citymarket Kupittaa";
+        cell.textLabel.text = @"Supermarket";
         cell.textLabel.textColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.61f alpha:1.0f];
         cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.88f];
         cell.textLabel.shadowOffset = CGSizeMake(0, 1);
@@ -96,9 +98,21 @@
         
     } else if(indexPath.section == 1) {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OffersCell"];
-        cell.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
         
-        cell.textLabel.text = @"Tarjoukset";
+        switch(indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"Tarjoukset";
+                cell.imageView.image = [UIImage imageNamed:@"tags-icon.png"];
+                break;
+            case 1:
+                cell.textLabel.text = @"Reseptit";
+                cell.imageView.image = [UIImage imageNamed:@"recipes-icon.png"];
+                break;
+            case 2:
+                cell.textLabel.text = @"Profiili";
+                cell.imageView.image = [UIImage imageNamed:@"profile-icon.png"];
+                break;
+        }
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         cell.textLabel.shadowOffset = CGSizeMake(0,2);
@@ -244,9 +258,16 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     if(indexPath.section == 1) {
-        UINavigationController *rootNavi = [sb instantiateViewControllerWithIdentifier:@"RootNavi"];
-        self.viewDeckController.centerController = rootNavi;
-        
+        if(indexPath.row == 0) {
+            UINavigationController *rootNavi = [sb instantiateViewControllerWithIdentifier:@"RootNavi"];
+            self.viewDeckController.centerController = rootNavi;
+        } else if(indexPath.row == 1) {
+            UINavigationController *recipesNavi = [sb instantiateViewControllerWithIdentifier:@"RecipesNavi"];
+            self.viewDeckController.centerController = recipesNavi;
+        } else {
+            UINavigationController *profileNavi = [sb instantiateViewControllerWithIdentifier:@"ProfileNavi"];
+            self.viewDeckController.centerController = profileNavi;
+        }
     } else if(indexPath.section == 3) {
         SWDShoppingList *shoppingList = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         

@@ -27,9 +27,9 @@
                           UITextAttributeTextShadowColor:[UIColor colorWithWhite:0.0 alpha:0.8],
                          UITextAttributeTextShadowOffset:[NSValue valueWithCGSize:CGSizeMake(0, 1)],
                                      UITextAttributeFont:[UIFont fontWithName:@"Interstate-Regular" size:20.0f]}];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:4.0f forBarMetrics:UIBarMetricsDefault];
     
-    
-//    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:63.0f/255.0f green:167.0f/255.0f blue:200.0f/255.0f alpha:1.0f]];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:63.0f/255.0f green:167.0f/255.0f blue:200.0f/255.0f alpha:1.0f]];
 }
 				
 - (void)applicationWillResignActive:(UIApplication *)application

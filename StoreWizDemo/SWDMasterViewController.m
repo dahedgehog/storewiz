@@ -41,7 +41,7 @@
 
     UIColor *pattern = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"billie_holiday.png"]];
     self.collectionView.backgroundColor = pattern;
-    self.navigationItem.title = @"CM Kupittaa";
+    self.navigationItem.title = @"Supermarket";
 }
 
 - (void)viewWillAppear:(BOOL)animated
