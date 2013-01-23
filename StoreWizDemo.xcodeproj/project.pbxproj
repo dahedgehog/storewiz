@@ -40,7 +40,6 @@
 		61A24A3F16598F6500DF0754 /* mainos_pikkuprinssi.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */; };
 		61A24A4016598F6500DF0754 /* mainos_vihrkuulat.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */; };
 		61A24A421659929D00DF0754 /* mainokset.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61A24A411659929D00DF0754 /* mainokset.csv */; };
-		61C3A8FC1662C935009325E6 /* katalogi-3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61C3A8FB1662C935009325E6 /* katalogi-3.csv */; };
 		61F02D63166DF6AA009901BA /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F02D62166DF6AA009901BA /* app-icon.png */; };
 		61F02D66166DF6AF009901BA /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F02D65166DF6AF009901BA /* app-icon@2x.png */; };
 		6218D0AE16615D80008FBD81 /* SWDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 6218D0AD16615D7F008FBD81 /* SWDProduct.m */; };
@@ -129,6 +128,7 @@
 		FF7E6BAC16AF18FB0092F94D /* recipes-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E6BAA16AF18FB0092F94D /* recipes-icon@2x.png */; };
 		FF7E6BB516AF1CC70092F94D /* SWDRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7E6BB416AF1CC70092F94D /* SWDRecipesViewController.m */; };
 		FF7E6BB716AF266E0092F94D /* Profile screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E6BB616AF266E0092F94D /* Profile screen@2x.png */; };
+		FF7E6BB916B00FB80092F94D /* katalogi-3.csv in Resources */ = {isa = PBXBuildFile; fileRef = FF7E6BB816B00FB80092F94D /* katalogi-3.csv */; };
 		FF80A22A165D2FE200159775 /* SWDMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF80A229165D2FE200159775 /* SWDMapViewController.m */; };
 		FF8C5E83165959A8000B5F59 /* SWDProductPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8C5E82165959A8000B5F59 /* SWDProductPickerController.m */; };
 		FF939FA816A866C70079A64D /* navbarbutton-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF939FA716A866C70079A64D /* navbarbutton-background.png */; };
@@ -197,7 +197,6 @@
 		61A24A3A16598F6500DF0754 /* mainos_pikkuprinssi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_pikkuprinssi.png; sourceTree = "<group>"; };
 		61A24A3B16598F6500DF0754 /* mainos_vihrkuulat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainos_vihrkuulat.png; sourceTree = "<group>"; };
 		61A24A411659929D00DF0754 /* mainokset.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainokset.csv; sourceTree = "<group>"; };
-		61C3A8FB1662C935009325E6 /* katalogi-3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "katalogi-3.csv"; sourceTree = "<group>"; };
 		61F02D62166DF6AA009901BA /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "../app-icon.png"; sourceTree = "<group>"; };
 		61F02D65166DF6AF009901BA /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon@2x.png"; path = "../app-icon@2x.png"; sourceTree = "<group>"; };
 		6218D0AC16615D7F008FBD81 /* SWDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProduct.h; sourceTree = "<group>"; };
@@ -295,6 +294,7 @@
 		FF7E6BB316AF1CC70092F94D /* SWDRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDRecipesViewController.h; sourceTree = "<group>"; };
 		FF7E6BB416AF1CC70092F94D /* SWDRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDRecipesViewController.m; sourceTree = "<group>"; };
 		FF7E6BB616AF266E0092F94D /* Profile screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile screen@2x.png"; sourceTree = "<group>"; };
+		FF7E6BB816B00FB80092F94D /* katalogi-3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = "katalogi-3.csv"; sourceTree = "<group>"; };
 		FF80A228165D2FE200159775 /* SWDMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDMapViewController.h; sourceTree = "<group>"; };
 		FF80A229165D2FE200159775 /* SWDMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDMapViewController.m; sourceTree = "<group>"; };
 		FF8C5E81165959A8000B5F59 /* SWDProductPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDProductPickerController.h; sourceTree = "<group>"; };
@@ -407,6 +407,7 @@
 				618DC66316498D9600D68861 /* SWDShoppingListTabBarController.m */,
 				62E830771666B607007EB677 /* SWDSidebarViewController.h */,
 				62E830781666B608007EB677 /* SWDSidebarViewController.m */,
+				FF7E6BB816B00FB80092F94D /* katalogi-3.csv */,
 				621F507B165FFE920089534A /* Icons */,
 				FFBC73921664FD5A000E52A6 /* Images */,
 				6291DA69166D09A700B6605C /* Mainokset */,
@@ -433,7 +434,6 @@
 				6140051F1648FC920035A21D /* InfoPlist.strings */,
 				FFAD496A1667804500BDF611 /* Interstate-Regular.ttf */,
 				6218D0C0166172CC008FBD81 /* kartta-actual-himmee.png */,
-				61C3A8FB1662C935009325E6 /* katalogi-3.csv */,
 				61882D1E165902CC00D77E9E /* katalogi.csv */,
 				618DC6591649888400D68861 /* locate-icon.png */,
 				618DC65B16498B3200D68861 /* locate-me.png */,
@@ -657,7 +657,6 @@
 				621F508A165FFF460089534A /* 193-location-arrow.png in Resources */,
 				621F508B165FFF460089534A /* 193-location-arrow@2x.png in Resources */,
 				6218D0C1166172CC008FBD81 /* kartta-actual-himmee.png in Resources */,
-				61C3A8FC1662C935009325E6 /* katalogi-3.csv in Resources */,
 				FFBC73961664FE06000E52A6 /* fabric_plaid@2x.png in Resources */,
 				FFBC73971664FE06000E52A6 /* fabric_plaid.png in Resources */,
 				FFBC739A1665008F000E52A6 /* navigation-bar-bg.png in Resources */,
@@ -744,6 +743,7 @@
 				FF7E6BAB16AF18FB0092F94D /* profile-icon@2x.png in Resources */,
 				FF7E6BAC16AF18FB0092F94D /* recipes-icon@2x.png in Resources */,
 				FF7E6BB716AF266E0092F94D /* Profile screen@2x.png in Resources */,
+				FF7E6BB916B00FB80092F94D /* katalogi-3.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
